@@ -1,2 +1,2 @@
-kite_compare
+Compare all kitesurf boards and kites
 ============
