@@ -18,7 +18,7 @@ class MaterielsControllerTest < ActionController::TestCase
 
   test "should create materiel" do
     assert_difference('Materiel.count') do
-      post :create, materiel: { annee: @materiel.annee, description_avantages: @materiel.description_avantages, description_inconvenients: @materiel.description_inconvenients, nom: @materiel.nom, prix_neuf: @materiel.prix_neuf, prix_occasion: @materiel.prix_occasion, type: @materiel.type }
+      post :create, materiel: { annee: @materiel.annee, description_avantages: @materiel.description_avantages, description_inconvenients: @materiel.description_inconvenients, marque: @materiel.marque, modele: @materiel.modele, prix_neuf: @materiel.prix_neuf, prix_occasion: @materiel.prix_occasion, type_materiel: @materiel.type_materiel, url_image: @materiel.url_image }
     end
 
     assert_redirected_to materiel_path(assigns(:materiel))
@@ -35,7 +35,7 @@ class MaterielsControllerTest < ActionController::TestCase
   end
 
   test "should update materiel" do
-    patch :update, id: @materiel, materiel: { annee: @materiel.annee, description_avantages: @materiel.description_avantages, description_inconvenients: @materiel.description_inconvenients, nom: @materiel.nom, prix_neuf: @materiel.prix_neuf, prix_occasion: @materiel.prix_occasion, type: @materiel.type }
+    patch :update, id: @materiel, materiel: { annee: @materiel.annee, description_avantages: @materiel.description_avantages, description_inconvenients: @materiel.description_inconvenients, marque: @materiel.marque, modele: @materiel.modele, prix_neuf: @materiel.prix_neuf, prix_occasion: @materiel.prix_occasion, type_materiel: @materiel.type_materiel, url_image: @materiel.url_image }
     assert_redirected_to materiel_path(assigns(:materiel))
   end
 

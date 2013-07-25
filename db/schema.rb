@@ -11,6 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130725230933) do
+
+  create_table "materiels", force: true do |t|
+    t.string   "type_materiel"
+    t.string   "modele"
+    t.string   "marque"
+    t.integer  "annee"
+    t.string   "url_image"
+    t.integer  "prix_neuf"
+    t.integer  "prix_occasion"
+    t.text     "description_avantages"
+    t.text     "description_inconvenients"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

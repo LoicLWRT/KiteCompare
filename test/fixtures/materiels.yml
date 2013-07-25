@@ -1,18 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nom: MyString
-  type: 
+  type_materiel: MyString
+  modele: MyString
+  marque: MyString
   annee: 1
+  url_image: MyString
   prix_neuf: 1
   prix_occasion: 1
   description_avantages: MyText
   description_inconvenients: MyText
 
 two:
-  nom: MyString
-  type: 
+  type_materiel: MyString
+  modele: MyString
+  marque: MyString
   annee: 1
+  url_image: MyString
   prix_neuf: 1
   prix_occasion: 1
   description_avantages: MyText
