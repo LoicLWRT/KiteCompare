@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nom: MyString
+  type: 
+  annee: 1
+  prix_neuf: 1
+  prix_occasion: 1
+  description_avantages: MyText
+  description_inconvenients: MyText
+
+two:
+  nom: MyString
+  type: 
+  annee: 1
+  prix_neuf: 1
+  prix_occasion: 1
+  description_avantages: MyText
+  description_inconvenients: MyText

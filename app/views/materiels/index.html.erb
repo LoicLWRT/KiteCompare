@@ -1,0 +1,39 @@
+<h1>Listing materiels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Type</th>
+      <th>Annee</th>
+      <th>Prix neuf</th>
+      <th>Prix occasion</th>
+      <th>Description avantages</th>
+      <th>Description inconvenients</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materiels.each do |materiel| %>
+      <tr>
+        <td><%= materiel.nom %></td>
+        <td><%= materiel.type %></td>
+        <td><%= materiel.annee %></td>
+        <td><%= materiel.prix_neuf %></td>
+        <td><%= materiel.prix_occasion %></td>
+        <td><%= materiel.description_avantages %></td>
+        <td><%= materiel.description_inconvenients %></td>
+        <td><%= link_to 'Show', materiel %></td>
+        <td><%= link_to 'Edit', edit_materiel_path(materiel) %></td>
+        <td><%= link_to 'Destroy', materiel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Materiel', new_materiel_path %>

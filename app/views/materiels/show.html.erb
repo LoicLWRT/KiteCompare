@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @materiel.nom %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @materiel.type %>
+</p>
+
+<p>
+  <strong>Annee:</strong>
+  <%= @materiel.annee %>
+</p>
+
+<p>
+  <strong>Prix neuf:</strong>
+  <%= @materiel.prix_neuf %>
+</p>
+
+<p>
+  <strong>Prix occasion:</strong>
+  <%= @materiel.prix_occasion %>
+</p>
+
+<p>
+  <strong>Description avantages:</strong>
+  <%= @materiel.description_avantages %>
+</p>
+
+<p>
+  <strong>Description inconvenients:</strong>
+  <%= @materiel.description_inconvenients %>
+</p>
+
+<%= link_to 'Edit', edit_materiel_path(@materiel) %> |
+<%= link_to 'Back', materiels_path %>
