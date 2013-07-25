@@ -12,17 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :materieltype_id %><br>
-    <%= f.number_field :materieltype_id %>
+    <%= f.select(:materieltype_id, MaterielType.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select type of material') %>
   </div>
+
   <div class="field">
     <%= f.label :modele %><br>
     <%= f.text_field :modele %>
   </div>
+
   <div class="field">
-    <%= f.label :marque_id %><br>
-    <%= f.number_field :marque_id %>
+    <%= f.select(:marque_id, Marque.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select brand') %>
   </div>
+
   <div class="field">
     <%= f.label :annee %><br>
     <%= f.number_field :annee %>
