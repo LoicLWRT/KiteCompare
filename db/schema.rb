@@ -11,12 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130725230933) do
+ActiveRecord::Schema.define(version: 20130725232630) do
+
+  create_table "marques", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materiel_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "materiels", force: true do |t|
-    t.string   "type_materiel"
+    t.integer  "materieltype_id"
     t.string   "modele"
-    t.string   "marque"
+    t.integer  "marque_id"
     t.integer  "annee"
     t.string   "url_image"
     t.integer  "prix_neuf"

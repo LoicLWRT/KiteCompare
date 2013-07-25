@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  type_materiel: MyString
+  materieltype_id: 1
   modele: MyString
-  marque: MyString
+  marque_id: 1
   annee: 1
   url_image: MyString
   prix_neuf: 1
@@ -12,9 +12,9 @@ one:
   description_inconvenients: MyText
 
 two:
-  type_materiel: MyString
+  materieltype_id: 1
   modele: MyString
-  marque: MyString
+  marque_id: 1
   annee: 1
   url_image: MyString
   prix_neuf: 1

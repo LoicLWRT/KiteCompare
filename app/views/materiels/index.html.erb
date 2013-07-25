@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Type materiel</th>
+      <th>Materieltype</th>
       <th>Modele</th>
       <th>Marque</th>
       <th>Annee</th>
@@ -21,9 +21,9 @@
   <tbody>
     <% @materiels.each do |materiel| %>
       <tr>
-        <td><%= materiel.type_materiel %></td>
+        <td><%= materiel.materieltype_id %></td>
         <td><%= materiel.modele %></td>
-        <td><%= materiel.marque %></td>
+        <td><%= materiel.marque_id %></td>
         <td><%= materiel.annee %></td>
         <td><%= materiel.url_image %></td>
         <td><%= materiel.prix_neuf %></td>

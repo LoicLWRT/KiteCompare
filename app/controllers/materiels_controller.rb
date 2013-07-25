@@ -69,6 +69,6 @@ class MaterielsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def materiel_params
-      params.require(:materiel).permit(:type_materiel, :modele, :marque, :annee, :url_image, :prix_neuf, :prix_occasion, :description_avantages, :description_inconvenients)
+      params.require(:materiel).permit(:materieltype_id, :modele, :marque_id, :annee, :url_image, :prix_neuf, :prix_occasion, :description_avantages, :description_inconvenients)
     end
 end
