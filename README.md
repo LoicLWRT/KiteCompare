@@ -1,6 +1,6 @@
-Compare all kitesurf boards and kites
+KiteCompare
 ============
-Project's description.
+Comparer le matériel de kite : aile, planche et bar.
 
 Data model
 ============
@@ -12,4 +12,10 @@ Matériel
 - Prix neuf
 - Avantages
 - Inconvénients
+- 
 
+A faire dans le future
+============
+- Fonction ajouter aux favoris
+- Lien pour des shops
+- 
