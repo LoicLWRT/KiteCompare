@@ -1,0 +1,85 @@
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand">Comparateur de kite</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="/pages/contact">Contact</a></li>
+  
+            </ul>
+            
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+    
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <img src="./ordi.png" height="130" width="130" class="jetstrap-selected pull-right"><h1 class="jetstrap-highlighted">TixCreation</h1>
+        <p class="">Nous créons pour vous des sites web sur mesure de A à Z.&nbsp;</p>
+      </div>
+      
+      <div class="hero-unit">
+        <h2 class="jetstrap-highlighted">Qualitée & Design</h2>
+        <p class="">Chez TixCreation, la qualité et le design sont les mots d'ordre.&nbsp;</p>
+      </div>
+      
+      <div class="hero-unit">
+        <h2 class="jetstrap-highlighted">Référencement</h2>
+        <p class="">Nous faisons le maximum pour que votre site soit réferencé efficacement.&nbsp;</p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2 class="">Blog</h2>
+          <p class="">Nous pouvons vous créer un blog, avec une interface de contrôle. Cliquez ici pour voir un exemple de blog.&nbsp;</p><div class="">A partir de 10€ par blog.</div><p></p>
+          <p class=""><a class="btn" href="./blog.html">Détails »</a></p>
+        </div>
+        <div class="span4">
+          <h2 class="">Site de renseignement</h2>
+          <p class="">Si vous avez une boutique ou une entreprise, il sera très utile d'avoir un site contenant l'adresse, le numéro et l'email de la boutique. Nous vous créons ça pour seulement 20€.</p>
+          <p class=""><a class="btn" href="./rens.html">Détails »</a></p>
+       </div>
+        <div class="span4">
+          <h2 class="">Site vitrine</h2>
+          <p class="">Pour une entreprise, il est nécessaire d'avoir un site vitrine avec la déscription de l'activité de l'entreprise, une page de contact, ou n'importe quoi à l'image de l'entreprise. Seulement pour 15€ par pages.</p>
+          <p class=""><a class="btn" href="./vitrine.html">Détails »</a></p>
+        </div>
+      </div>
+    
+      <hr class="">
+    
+      <footer>
+        <p class="">© TixCreation 2013</p>
+      </footer>
+    
+    </div> <!-- /container -->
+    
+
+    <style>
+      
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+    </script>
+    <script src="assets/js/bootstrap.js">
+    </script>
+    <script>
+
+    </script>
+
+</body>

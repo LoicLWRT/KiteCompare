@@ -1,9 +1,10 @@
 class MaterielsController < ApplicationController
   before_action :set_materiel, only: [:show, :edit, :update, :destroy]
-
+    
   # GET /materiels
   # GET /materiels.json
-  def index
+  def index 
+    @title = "Comparer le materiel de kite"
     @materiels = Materiel.all
   end
 
