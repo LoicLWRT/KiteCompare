@@ -3,15 +3,15 @@
 <table>
   <thead>
     <tr>
-      <th>Type | </th>
-      <th>Modèle | </th>
-      <th>Marque | </th>
-      <th>Année | </th>
-      <th>Image | </th>
-      <th>Prix | </th>
-      <th>Prix d'occasion | </th>
-      <th>Avantages | </th>
-      <th>Inconvénients | </th>
+      <th>Type</th>
+      <th>Modèle</th>
+      <th>Marque</th>
+      <th>Année</th>
+      <th>Image</th>
+      <th>Prix</th>
+      <th>Prix d'occasion</th>
+      <th>Avantages</th>
+      <th>Inconvénients</th>
       <th></th>
       <th></th>
       <th></th>
@@ -41,3 +41,17 @@
 <br>
 
 <%= link_to 'Ajouter', new_materiel_path %>
+
+<br>
+
+<ul class="thumbnails">
+<% @materiels.each do |materiel| %>
+  <li class="span4">
+    <div class="thumbnail">
+	<img data-src="holder.js/300x200" alt="">
+    <h3><%= materiel.marque_id.to_s() + " " + materiel.modele + " " + materiel.annee.to_s() %></h3>
+    <p><%= link_to 'Show', materiel %></p>
+  </div>
+</li>
+<% end %>
+</ul>
