@@ -4,7 +4,7 @@ Comparer le matériel de kite : aile, planche et bar.
 
 Data model
 ============
-Matériel
+Matériel :
 - Nom
 - Type
 - Année
@@ -12,10 +12,8 @@ Matériel
 - Prix neuf
 - Avantages
 - Inconvénients
-- 
 
 A faire dans le future
 ============
 - Fonction ajouter aux favoris
 - Lien pour des shops
-- 
