@@ -19,5 +19,5 @@ export -f copy_file
 find . -name "*.jpg" -exec bash -c 'copy_file "$0"' {} \;
 
 cd ../../app/assets/images/kites/
-sips -Z 300 *-small.jpg
+sips -Z 200 *-small.jpg
 sips -Z 600 *-large.jpg

@@ -1,55 +1,21 @@
-<h1>Listing ailes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Modele</th>
-      <th>Marque</th>
-      <th>Annee</th>
-      <th>Url image</th>
-      <th>Prix neuf</th>
-      <th>Prix occasion</th>
-      <th>Description avantages</th>
-      <th>Description inconvenients</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ailes.each do |aile| %>
-      <tr>
-        <td><%= aile.modele %></td>
-        <td><%= aile.marque_id %></td>
-        <td><%= aile.annee %></td>
-        <td><%= aile.url_image %></td>
-        <td><%= aile.prix_neuf %></td>
-        <td><%= aile.prix_occasion %></td>
-        <td><%= aile.description_avantages %></td>
-        <td><%= aile.description_inconvenients %></td>
-        <td><%= link_to 'Show', aile %></td>
-        <td><%= link_to 'Edit', edit_aile_path(aile) %></td>
-        <td><%= link_to 'Destroy', aile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<h1>Les ailes de kitesurf</h1>
 <br>
-
-<%= link_to 'New Aile', new_aile_path %>
-
-<br>
-
 
 <ul class="thumbnails">
 <% @ailes.each do |aile| %>
   <li class="span4">
     <div class="thumbnail">
-	<img data-src="holder.js/300x200" alt="">
-    <h3><%= Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s() %></h3>
-    <p><%= link_to 'Show', aile %></p>
+
+	<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
+	<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.jpg" %>
+	<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.jpg"  end%>
+	
+	
+	
+	
+	<%= image_tag @image_url %>
+    <h3><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h3>
   </div>
 </li>
 <% end %>
