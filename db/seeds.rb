@@ -17,12 +17,12 @@ Marque.create(name: 'Nobile')
 Marque.create(name: 'Gaastra')
 Marque.create(name: 'Slingshot')
 
-Aile.create(modele:'Bandit 5', marque_id:1, annee:2012, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
+Aile.create(modele:'Bandit 5', marque_id:2, annee:2012, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
 
-Aile.create(modele:'Bandit 6', marque_id:1, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
+Aile.create(modele:'Bandit 6', marque_id:2, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
 
-Aile.create(modele:'Vegas', marque_id:2, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
+Aile.create(modele:'Vegas', marque_id:3, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
 
-Aile.create(modele:'Evo', marque_id:2, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
+Aile.create(modele:'Evo', marque_id:3, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
 
-Aile.create(modele:'Fuse', marque_id:2, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
+Aile.create(modele:'Fuse', marque_id:3, annee:2013, url_image:'', prix_neuf:800, prix_occasion:500, description_avantages:'', description_inconvenients:'')
