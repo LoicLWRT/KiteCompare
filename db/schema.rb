@@ -32,24 +32,4 @@ ActiveRecord::Schema.define(version: 20130727002239) do
     t.datetime "updated_at"
   end
 
-  create_table "materiel_types", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "materiels", force: true do |t|
-    t.integer  "materieltype_id"
-    t.string   "modele"
-    t.integer  "marque_id"
-    t.integer  "annee"
-    t.string   "url_image"
-    t.integer  "prix_neuf"
-    t.integer  "prix_occasion"
-    t.text     "description_avantages"
-    t.text     "description_inconvenients"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
