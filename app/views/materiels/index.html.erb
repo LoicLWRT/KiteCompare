@@ -49,7 +49,7 @@
   <li class="span4">
     <div class="thumbnail">
 	<img data-src="holder.js/300x200" alt="">
-    <h3><%= materiel.marque_id.to_s() + " " + materiel.modele + " " + materiel.annee.to_s() %></h3>
+    <h3><%= Marque.find(materiel.marque_id).name + " " + materiel.modele + " " + materiel.annee.to_s() %></h3>
     <p><%= link_to 'Show', materiel %></p>
   </div>
 </li>
