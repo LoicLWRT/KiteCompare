@@ -14,7 +14,10 @@
 	
 	<%= image_tag @image_url %>
     <h3 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h3>
+	<span class="label"><%= if not aile.prix_neuf.nil? then "Neuf : " + aile.prix_neuf.round.to_s() + "€" end%></span>
+		<span class="label"><%= if not aile.prix_occasion.nil? then "Occasion : " + aile.prix_occasion.round.to_s() + "€" end%></span>
   </div>
 </li>
 <% end %>
 </ul>
+
