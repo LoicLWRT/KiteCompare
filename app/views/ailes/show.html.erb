@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Modele:</strong>
+  <strong>Marque:</strong>
+  <%= Marque.find(@aile.marque_id).name %>
+</p>
+
+<p>
+  <strong>Modèle:</strong>
   <%= @aile.modele %>
 </p>
 
 <p>
-  <strong>Marque:</strong>
-  <%= @aile.marque_id %>
-</p>
-
-<p>
-  <strong>Annee:</strong>
+  <strong>Année:</strong>
   <%= @aile.annee %>
 </p>
 
-<p>
-  <strong>Url image:</strong>
-  <%= @aile.url_image %>
-</p>
+<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.jpg" %>
+<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.jpg"  end%>
+<%= image_tag @image_url %>
 
 <p>
   <strong>Prix neuf:</strong>
@@ -31,13 +31,13 @@
 </p>
 
 <p>
-  <strong>Description avantages:</strong>
-  <%= @aile.description_avantages %>
+  <strong>Avantages:</strong>
+  <%= simple_format(@aile.description_avantages).html_safe %>
 </p>
 
 <p>
-  <strong>Description inconvenients:</strong>
-  <%= @aile.description_inconvenients %>
+  <strong>Inconvénients:</strong>
+  <%= simple_format(@aile.description_inconvenients).html_safe %>
 </p>
 
 <%= link_to 'Edit', edit_aile_path(@aile) %> |

@@ -4,7 +4,7 @@
 
 <ul class="thumbnails">
 <% @ailes.each do |aile| %>
-  <li class="span4">
+  <li class="span3">
     <div class="thumbnail">
 
 	<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
