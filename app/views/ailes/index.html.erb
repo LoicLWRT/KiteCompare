@@ -4,7 +4,7 @@
 
 <ul class="thumbnails">
 <% @ailes.each do |aile| %>
-  <li class="span3">
+  <li class="span4">
     <div class="thumbnail">
 
 	<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
@@ -12,10 +12,8 @@
 	<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.jpg"  end%>
 	
 	
-	
-	
 	<%= image_tag @image_url %>
-    <h3><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h3>
+    <h3 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h3>
   </div>
 </li>
 <% end %>
