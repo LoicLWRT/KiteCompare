@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MaterielTypeTest < ActiveSupport::TestCase
+class AileTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

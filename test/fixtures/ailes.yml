@@ -1,23 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  materieltype_id: 1
   modele: MyString
   marque_id: 1
   annee: 1
   url_image: MyString
-  prix_neuf: 1
-  prix_occasion: 1
+  prix_neuf: 1.5
+  prix_occasion: 1.5
   description_avantages: MyText
   description_inconvenients: MyText
 
 two:
-  materieltype_id: 1
   modele: MyString
   marque_id: 1
   annee: 1
   url_image: MyString
-  prix_neuf: 1
-  prix_occasion: 1
+  prix_neuf: 1.5
+  prix_occasion: 1.5
   description_avantages: MyText
   description_inconvenients: MyText

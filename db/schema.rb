@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130725233312) do
+ActiveRecord::Schema.define(version: 20130727002239) do
+
+  create_table "ailes", force: true do |t|
+    t.string   "modele"
+    t.integer  "marque_id"
+    t.integer  "annee"
+    t.string   "url_image"
+    t.float    "prix_neuf"
+    t.float    "prix_occasion"
+    t.text     "description_avantages"
+    t.text     "description_inconvenients"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "marques", force: true do |t|
     t.string   "name"

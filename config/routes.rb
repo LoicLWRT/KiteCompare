@@ -1,14 +1,12 @@
 KiteCompare::Application.routes.draw do
+  resources :ailes
+
   root :to => 'pages#home'
   
   get "pages/home"
   get "pages/contact"
   
-  resources :marques
-  resources :materiel_types
-  resources :materiels
-
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :marques  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

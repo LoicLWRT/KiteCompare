@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Modele:</strong>
+  <%= @aile.modele %>
+</p>
+
+<p>
+  <strong>Marque:</strong>
+  <%= @aile.marque_id %>
+</p>
+
+<p>
+  <strong>Annee:</strong>
+  <%= @aile.annee %>
+</p>
+
+<p>
+  <strong>Url image:</strong>
+  <%= @aile.url_image %>
+</p>
+
+<p>
+  <strong>Prix neuf:</strong>
+  <%= @aile.prix_neuf %>
+</p>
+
+<p>
+  <strong>Prix occasion:</strong>
+  <%= @aile.prix_occasion %>
+</p>
+
+<p>
+  <strong>Description avantages:</strong>
+  <%= @aile.description_avantages %>
+</p>
+
+<p>
+  <strong>Description inconvenients:</strong>
+  <%= @aile.description_inconvenients %>
+</p>
+
+<%= link_to 'Edit', edit_aile_path(@aile) %> |
+<%= link_to 'Back', ailes_path %>

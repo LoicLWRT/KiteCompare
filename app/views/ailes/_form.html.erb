@@ -1,10 +1,10 @@
-<%= form_for(@materiel) do |f| %>
-  <% if @materiel.errors.any? %>
+<%= form_for(@aile) do |f| %>
+  <% if @aile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@materiel.errors.count, "error") %> prohibited this materiel from being saved:</h2>
+      <h2><%= pluralize(@aile.errors.count, "error") %> prohibited this aile from being saved:</h2>
 
       <ul>
-      <% @materiel.errors.full_messages.each do |msg| %>
+      <% @aile.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.select(:materieltype_id, MaterielType.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select type of material') %>
-  </div>
-
-  <div class="field">
     <%= f.label :modele %><br>
     <%= f.text_field :modele %>
   </div>
-
   <div class="field">
-    <%= f.select(:marque_id, Marque.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select brand') %>
+    <%= f.label :marque_id %><br>
+    <%= f.number_field :marque_id %>
   </div>
-
   <div class="field">
     <%= f.label :annee %><br>
     <%= f.number_field :annee %>
@@ -34,11 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :prix_neuf %><br>
-    <%= f.number_field :prix_neuf %>
+    <%= f.text_field :prix_neuf %>
   </div>
   <div class="field">
     <%= f.label :prix_occasion %><br>
-    <%= f.number_field :prix_occasion %>
+    <%= f.text_field :prix_occasion %>
   </div>
   <div class="field">
     <%= f.label :description_avantages %><br>
