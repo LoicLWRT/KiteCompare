@@ -4,18 +4,10 @@ one:
   modele: MyString
   marque_id: 1
   annee: 1
-  url_image: MyString
-  prix_neuf: 1.5
-  prix_occasion: 1.5
-  description_avantages: MyText
-  description_inconvenients: MyText
+  note: 1
 
 two:
   modele: MyString
   marque_id: 1
   annee: 1
-  url_image: MyString
-  prix_neuf: 1.5
-  prix_occasion: 1.5
-  description_avantages: MyText
-  description_inconvenients: MyText
+  note: 1

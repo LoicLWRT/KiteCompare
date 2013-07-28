@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type_critique_id: 1
+  source: MyString
+  lien: MyString
+  contenu: MyText
+  aile_id: 1
+
+two:
+  type_critique_id: 1
+  source: MyString
+  lien: MyString
+  contenu: MyText
+  aile_id: 1

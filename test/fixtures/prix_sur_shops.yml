@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nom_shop: MyString
+  lien_produit: MyString
+  prix_avec_barre: 1.5
+  prix_sans_barre: 1.5
+  surface: 1
+  aile_id: 1
+
+two:
+  nom_shop: MyString
+  lien_produit: MyString
+  prix_avec_barre: 1.5
+  prix_sans_barre: 1.5
+  surface: 1
+  aile_id: 1

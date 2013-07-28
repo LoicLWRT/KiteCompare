@@ -18,7 +18,7 @@ class AilesControllerTest < ActionController::TestCase
 
   test "should create aile" do
     assert_difference('Aile.count') do
-      post :create, aile: { annee: @aile.annee, description_avantages: @aile.description_avantages, description_inconvenients: @aile.description_inconvenients, marque_id: @aile.marque_id, modele: @aile.modele, prix_neuf: @aile.prix_neuf, prix_occasion: @aile.prix_occasion, url_image: @aile.url_image }
+      post :create, aile: { annee: @aile.annee, marque_id: @aile.marque_id, modele: @aile.modele, note: @aile.note }
     end
 
     assert_redirected_to aile_path(assigns(:aile))
@@ -35,7 +35,7 @@ class AilesControllerTest < ActionController::TestCase
   end
 
   test "should update aile" do
-    patch :update, id: @aile, aile: { annee: @aile.annee, description_avantages: @aile.description_avantages, description_inconvenients: @aile.description_inconvenients, marque_id: @aile.marque_id, modele: @aile.modele, prix_neuf: @aile.prix_neuf, prix_occasion: @aile.prix_occasion, url_image: @aile.url_image }
+    patch :update, id: @aile, aile: { annee: @aile.annee, marque_id: @aile.marque_id, modele: @aile.modele, note: @aile.note }
     assert_redirected_to aile_path(assigns(:aile))
   end
 

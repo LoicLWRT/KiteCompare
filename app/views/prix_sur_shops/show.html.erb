@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom shop:</strong>
+  <%= @prix_sur_shop.nom_shop %>
+</p>
+
+<p>
+  <strong>Lien produit:</strong>
+  <%= @prix_sur_shop.lien_produit %>
+</p>
+
+<p>
+  <strong>Prix avec barre:</strong>
+  <%= @prix_sur_shop.prix_avec_barre %>
+</p>
+
+<p>
+  <strong>Prix sans barre:</strong>
+  <%= @prix_sur_shop.prix_sans_barre %>
+</p>
+
+<p>
+  <strong>Surface:</strong>
+  <%= @prix_sur_shop.surface %>
+</p>
+
+<p>
+  <strong>Aile:</strong>
+  <%= @prix_sur_shop.aile_id %>
+</p>
+
+<%= link_to 'Edit', edit_prix_sur_shop_path(@prix_sur_shop) %> |
+<%= link_to 'Back', prix_sur_shops_path %>

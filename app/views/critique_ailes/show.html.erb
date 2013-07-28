@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type critique:</strong>
+  <%= @critique_aile.type_critique_id %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @critique_aile.source %>
+</p>
+
+<p>
+  <strong>Lien:</strong>
+  <%= @critique_aile.lien %>
+</p>
+
+<p>
+  <strong>Contenu:</strong>
+  <%= @critique_aile.contenu %>
+</p>
+
+<p>
+  <strong>Aile:</strong>
+  <%= @critique_aile.aile_id %>
+</p>
+
+<%= link_to 'Edit', edit_critique_aile_path(@critique_aile) %> |
+<%= link_to 'Back', critique_ailes_path %>

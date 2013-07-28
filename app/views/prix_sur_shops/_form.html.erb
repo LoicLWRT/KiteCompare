@@ -1,0 +1,41 @@
+<%= form_for(@prix_sur_shop) do |f| %>
+  <% if @prix_sur_shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prix_sur_shop.errors.count, "error") %> prohibited this prix_sur_shop from being saved:</h2>
+
+      <ul>
+      <% @prix_sur_shop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom_shop %><br>
+    <%= f.text_field :nom_shop %>
+  </div>
+  <div class="field">
+    <%= f.label :lien_produit %><br>
+    <%= f.text_field :lien_produit %>
+  </div>
+  <div class="field">
+    <%= f.label :prix_avec_barre %><br>
+    <%= f.text_field :prix_avec_barre %>
+  </div>
+  <div class="field">
+    <%= f.label :prix_sans_barre %><br>
+    <%= f.text_field :prix_sans_barre %>
+  </div>
+  <div class="field">
+    <%= f.label :surface %><br>
+    <%= f.number_field :surface %>
+  </div>
+  <div class="field">
+    <%= f.label :aile_id %><br>
+    <%= f.number_field :aile_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Listing type_critiques</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @type_critiques.each do |type_critique| %>
+      <tr>
+        <td><%= type_critique.name %></td>
+        <td><%= link_to 'Show', type_critique %></td>
+        <td><%= link_to 'Edit', edit_type_critique_path(type_critique) %></td>
+        <td><%= link_to 'Destroy', type_critique, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Type critique', new_type_critique_path %>

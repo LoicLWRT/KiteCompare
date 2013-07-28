@@ -11,22 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130727002239) do
+ActiveRecord::Schema.define(version: 20130728004453) do
 
   create_table "ailes", force: true do |t|
     t.string   "modele"
     t.integer  "marque_id"
     t.integer  "annee"
-    t.string   "url_image"
-    t.float    "prix_neuf"
-    t.float    "prix_occasion"
-    t.text     "description_avantages"
-    t.text     "description_inconvenients"
+    t.integer  "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "critique_ailes", force: true do |t|
+    t.integer  "type_critique_id"
+    t.string   "source"
+    t.string   "lien"
+    t.text     "contenu"
+    t.integer  "aile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "marques", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prix_sur_shops", force: true do |t|
+    t.string   "nom_shop"
+    t.string   "lien_produit"
+    t.float    "prix_avec_barre"
+    t.float    "prix_sans_barre"
+    t.integer  "aile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "type_critiques", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

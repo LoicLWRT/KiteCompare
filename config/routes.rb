@@ -1,5 +1,13 @@
 KiteCompare::Application.routes.draw do
+  resources :prix_sur_shops
+
+  resources :critique_ailes
+
   resources :ailes
+
+  resources :type_critiques
+
+  resources :marques
 
   root :to => 'pages#home'
   

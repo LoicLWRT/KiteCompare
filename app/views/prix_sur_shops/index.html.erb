@@ -1,0 +1,37 @@
+<h1>Listing prix_sur_shops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom shop</th>
+      <th>Lien produit</th>
+      <th>Prix avec barre</th>
+      <th>Prix sans barre</th>
+      <th>Surface</th>
+      <th>Aile</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prix_sur_shops.each do |prix_sur_shop| %>
+      <tr>
+        <td><%= prix_sur_shop.nom_shop %></td>
+        <td><%= prix_sur_shop.lien_produit %></td>
+        <td><%= prix_sur_shop.prix_avec_barre %></td>
+        <td><%= prix_sur_shop.prix_sans_barre %></td>
+        <td><%= prix_sur_shop.surface %></td>
+        <td><%= prix_sur_shop.aile_id %></td>
+        <td><%= link_to 'Show', prix_sur_shop %></td>
+        <td><%= link_to 'Edit', edit_prix_sur_shop_path(prix_sur_shop) %></td>
+        <td><%= link_to 'Destroy', prix_sur_shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prix sur shop', new_prix_sur_shop_path %>

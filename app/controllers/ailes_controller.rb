@@ -69,6 +69,6 @@ class AilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def aile_params
-      params.require(:aile).permit(:modele, :marque_id, :annee, :url_image, :prix_neuf, :prix_occasion, :description_avantages, :description_inconvenients)
+      params.require(:aile).permit(:modele, :marque_id, :annee, :note)
     end
 end
