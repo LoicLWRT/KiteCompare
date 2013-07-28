@@ -17,7 +17,7 @@ Marque.create(name: 'Gaastra')
 Marque.create(name: 'Slingshot')
 
 # Ailes
-Aile.create(modele:'Bandit 5', marque_id:2, annee:2012)
+Aile.create(modele:'Bandit 5', marque_id:2, annee:2012, note:4)
 
 # Bandit 6
 Aile.create(modele:'Bandit 6', marque_id:2, annee:2013, note:5)
@@ -36,6 +36,8 @@ CritiqueAile.create(type_critique_id:2, source:'Kite-Spirit forum', lien:'http:/
 CritiqueAile.create(type_critique_id:3, source:'Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-evo-2013/', contenu:'Le pivot est mieux qu\'une Rebel, mais moins bien qu\'une Vegas.', aile_id:4)
 PrixSurShop.create(nom_shop:'Freeride Attitude', lien_produit:'http://www.freeride-attitude.com/north-evo-2013,20823.html', prix_sans_barre:1249, surface:10, aile_id:4)
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1442.html', prix_sans_barre:1249, surface:10, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - Rennes', lien_produit:'http://www.surfavenue-rennes.com/e-shop/north-evo-2013.html', prix_sans_barre:1189, surface:9, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - Rennes', lien_produit:'http://www.surfavenue-rennes.com/e-shop/north-evo-2013.html', prix_sans_barre:1299, surface:11, aile_id:4)
 
 # Fuse 2013
 Aile.create(modele:'Fuse', marque_id:3, annee:2013, note:4)
@@ -45,9 +47,10 @@ PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-sho
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-fuse.html', prix_sans_barre:1279, surface:10, aile_id:5)
 
 # Rebel 2013
-Aile.create(modele:'Rebel', marque_id:3, annee:2013, note:4)
-CritiqueAile.create(type_critique_id:1, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'Tire trop sur la barre pour faire du déhooké.', aile_id:4)
-CritiqueAile.create(type_critique_id:2, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'Tire trop sur la barre pour faire du déhooké.', aile_id:4)
+Aile.create(modele:'Rebel', marque_id:3, annee:2013, note:3)
+CritiqueAile.create(type_critique_id:1, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'Le kite tire trop sur la barre pour faire du déhooké.', aile_id:4)
+CritiqueAile.create(type_critique_id:2, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'L\'aile a perdu en plage basse : il est donc plus difficile de naviguer en vent faible.', aile_id:4)
+CritiqueAile.create(type_critique_id:2, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'L\'aile perd en réactivitée si on l\'utilise avec une barre North 2012.', aile_id:4)
 PrixSurShop.create(nom_shop:'Freeride Attitude', lien_produit:'http://www.freeride-attitude.com/north-rebel-2013,18933.html', prix_sans_barre:1279, surface:10, aile_id:6)
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-rebel-nue.html', prix_sans_barre:1279, surface:10, aile_id:6)
 PrixSurShop.create(nom_shop:'Surf Avenue - Rennes', lien_produit:'http://www.surfavenue-rennes.com/e-shop/kitesurf/north-rebel-2013.html', prix_sans_barre:999, surface:9, aile_id:6)

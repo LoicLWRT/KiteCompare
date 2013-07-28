@@ -1,53 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Modele:</strong>
-  <%= @aile.modele %>
-</p>
 
-<p>
-  <strong>Marque:</strong>
-  <%= @aile.marque_id %>
-</p>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span6">
+      	<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+		<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
+		<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+		<%= image_tag @image_url %>
+    </div>
+    <div class="span5">
+      	<h1 class="text-center"> <%= Marque.find(@aile.marque_id).name + " " + @aile.modele %> </h1>
+		<h3 class="text-center"> <%=@aile.annee.to_s() %> </h3>
+		<p class="text-center">
+		<% if not @aile.note.nil? then %>
+			<% (@aile.note).times do %>
+			<%= image_tag "full_star_32.png" %>
+			<% end %>
+			<% (5 - @aile.note).times do %>
+			<%= image_tag "empty_star_32.png" %>
+			<% end %>
+		<% end %>
+		</p>
+		
+		<br><br>
+		<h4>Critiques</h4>
+		<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
 
-<p>
-  <strong>Annee:</strong>
-  <%= @aile.annee %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @aile.note %>
-</p>
-
-<%= link_to 'Edit', edit_aile_path(@aile) %> |
-<%= link_to 'Back', ailes_path %>
-
-<br><br>
-<h4>Critiques</h4>
-<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
-
-<% @critiques.each do |critique| %>
-  	<blockquote>
-		<%== if critique.type_critique_id==1 then '<i class="icon-heart"></i>' end %>
-		<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
-		<%== if critique.type_critique_id==3 then '<i class="icon-asterisk"></i>' end %>
-		<p><%= critique.contenu %></p>
-  		<small><%= critique.source %></small>
-	</blockquote>
-<% end %>
+		<% @critiques.each do |critique| %>
+		  	<blockquote>
+				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
+				<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
+				<%== if critique.type_critique_id==3 then '<i class="icon-asterisk"></i>' end %>
+				<p><%= critique.contenu %></p>
+		  		<small><%= critique.source %></small>
+			</blockquote>
+		<% end %>
 
 
-<br><br>
-<h4>Prix</h4>
-<% @prixs = PrixSurShop.where(aile_id: @aile.id)%>
+		<br><br>
+		<h4>Prix</h4>
+		<% @prixs = PrixSurShop.where(aile_id: @aile.id)%>
 
-<% @prixs.each do |prix| %>
-  	<blockquote>
-		<p><%= prix.prix_sans_barre %></p>
-  		<small><%= prix.nom_shop %></small>
-	</blockquote>
-<% end %>
+		<% @prixs.each do |prix| %>
+		  	<blockquote>
+				<p><%= prix.prix_sans_barre %></p>
+		  		<small><%= prix.nom_shop %></small>
+			</blockquote>
+		<% end %>
+
+
+		<%= link_to 'Edit', edit_aile_path(@aile) %> |
+		<%= link_to 'Back', ailes_path %>
+		
+		
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 

@@ -9,10 +9,19 @@
 	<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
 	<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.jpg" %>
 	<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.jpg"  end%>
-
-
 	<%= image_tag @image_url %>
+	
     <h3 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h3>
+	<p class="text-center">
+		<% if not aile.note.nil? then %>
+			<% (aile.note).times do %>
+			<%== '<i class="icon-star"></i>' %>
+			<% end %>
+			<% (5 - aile.note).times do %>
+			<%== '<i class="icon-star-empty"></i>' %>
+			<% end %>
+		<% end %>
+	</p>
 	
   </div>
 </li>
