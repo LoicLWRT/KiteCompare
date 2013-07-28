@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130728004453) do
+ActiveRecord::Schema.define(version: 20130728010444) do
 
   create_table "ailes", force: true do |t|
     t.string   "modele"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20130728004453) do
     t.string   "lien_produit"
     t.float    "prix_avec_barre"
     t.float    "prix_sans_barre"
+    t.integer  "surface"
     t.integer  "aile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
