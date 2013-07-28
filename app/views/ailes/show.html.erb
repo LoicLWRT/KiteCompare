@@ -38,3 +38,16 @@
 <% end %>
 
 
+<br><br>
+<h4>Prix</h4>
+<% @prixs = PrixSurShop.where(aile_id: @aile.id)%>
+
+<% @prixs.each do |prix| %>
+  	<blockquote>
+		<p><%= prix.prix_sans_barre %></p>
+  		<small><%= prix.nom_shop %></small>
+	</blockquote>
+<% end %>
+
+
+
