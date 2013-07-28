@@ -31,7 +31,7 @@
 		  	<blockquote>
 				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
 				<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
-				<%== if critique.type_critique_id==3 then '<i class="icon-asterisk"></i>' end %>
+				<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
 				<p><%= critique.contenu %></p>
 		  		<small><%= critique.source %></small>
 			</blockquote>
@@ -39,20 +39,20 @@
 
 
 		<br><br>
-		<h4>Prix</h4>
+		<h4>Les prix *</h4>
+						
 		<% @prixs = PrixSurShop.where(aile_id: @aile.id)%>
-
-		<% @prixs.each do |prix| %>
-		  	<blockquote>
-				<p><%= prix.prix_sans_barre %></p>
-		  		<small><%= prix.nom_shop %></small>
-			</blockquote>
+		
+		<% @prixs.each do |prix| %>		
+			<p><span class="label label-info"><%= prix.prix_sans_barre.round.to_s() + "€" %></span> chez <%= link_to prix.nom_shop, prix.lien_produit %>.</p>
 		<% end %>
-
+		
+		<br>
+		<small>* Pour une surface de 10m² sans barre</small>
+		<br><br>
 
 		<%= link_to 'Edit', edit_aile_path(@aile) %> |
 		<%= link_to 'Back', ailes_path %>
-		
 		
     </div>
   </div>
