@@ -41,14 +41,14 @@
 		<br><br>
 		<h4>Les prix sur le net</h4>
 						
-		<% @prixs = PrixSurShop.where(aile_id: @aile.id)%>
+		<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC')%>
 		
 		<% @prixs.each do |prix| %>		
-			<p><span class="label label-info"><%= prix.prix_sans_barre.round.to_s() + "€" %></span> chez <%= link_to prix.nom_shop, prix.lien_produit %>.</p>
+			<p><span class="label label-info"><%= prix.prix_sans_barre.round.to_s() + "€" %></span> pour une <span class="label label-important"><%= prix.surface.to_s() + " m²" %></span> chez <%= link_to prix.nom_shop, prix.lien_produit %>.</p>
 		<% end %>
 		
 		<br>
-		<small>* Prix pour une surface de 10m² sans barre livraison comprise</small>
+		<small>*Prix pour une surface de 10m², sans barre, livraison comprise.</small>
 		<br><br>
 
 		<%= link_to 'Edit', edit_aile_path(@aile) %> |
