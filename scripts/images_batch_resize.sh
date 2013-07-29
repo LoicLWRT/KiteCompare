@@ -22,13 +22,14 @@ function copy_file_png
 	file_name=`echo ${file_name%????}`
 	file_name=${file_name:2}
 	
-	cp "$file_name.jpg" ../../app/assets/images/kites/"$file_name-small.png"
-	cp "$file_name.jpg" ../../app/assets/images/kites/"$file_name-large.png"
+	cp "$file_name.png" ../../app/assets/images/kites/"$file_name-small.png"
+	cp "$file_name.png" ../../app/assets/images/kites/"$file_name-large.png"
 	
 	echo "Operation finie pour le PNG $1"
 }
 
-export -f copy_file
+export -f copy_file_jpg
+export -f copy_file_png
 find . -name "*.jpg" -exec bash -c 'copy_file_jpg "$0"' {} \;
 find . -name "*.png" -exec bash -c 'copy_file_png "$0"' {} \;
 
@@ -36,8 +37,8 @@ cd ../../app/assets/images/kites/
 sips -Z 200 *-small.jpg
 sips -Z 600 *-large.jpg
 
-sips -Z 200 --setProperty format jpeg *-small.png --out *-small.jpg
-sips -Z 600 --setProperty format jpeg *-large.png --out *-large.jpg
+sips -Z 200 --setProperty format jpeg *-small.png
+sips -Z 600 --setProperty format jpeg *-large.png
 
 for file in *.png ; do mv $file `echo $file | sed 's/\(.*\.\)png/\1jpg/'` ; done
 
