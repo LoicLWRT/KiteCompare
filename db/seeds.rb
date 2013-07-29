@@ -25,6 +25,7 @@ CritiqueAile.create(type_critique_id:2, source:'Forum Flysurf', lien:'http://for
 
 # Bandit 6
 Aile.create(modele:'Bandit 6', marque_id:2, annee:2013, note:5)
+CritiqueAile.create(type_critique_id:1, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2474', contenu:'Des améliorations en déhooké par rapport à la version précédente.', aile_id:2)
 PrixSurShop.create(nom_shop:'Freeride Attitude', lien_produit:'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre:945, surface:10, aile_id:2)
 PrixSurShop.create(nom_shop:'Surf\'n Kite', lien_produit:'http://shop.surfnkite.fr/ailes-de-kitesurf/1129-fone-bandit-6.html', prix_sans_barre:944, surface:10, aile_id:2)
 PrixSurShop.create(nom_shop:'FranceKiteShop', lien_produit:'http://www.francekiteshop.com/ailes-de-kitesurf-f-one/135-f-one-bandit-6-2013-.html', prix_sans_barre:1180, surface:10, aile_id:2)
