@@ -39,7 +39,7 @@
 
 
 		<br><br>
-		<h4>Les prix *</h4>
+		<h4>Les prix sur le net</h4>
 						
 		<% @prixs = PrixSurShop.where(aile_id: @aile.id)%>
 		
@@ -48,7 +48,7 @@
 		<% end %>
 		
 		<br>
-		<small>* Pour une surface de 10m² sans barre</small>
+		<small>* Prix pour une surface de 10m² sans barre livraison comprise</small>
 		<br><br>
 
 		<%= link_to 'Edit', edit_aile_path(@aile) %> |

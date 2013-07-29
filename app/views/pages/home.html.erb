@@ -1,5 +1,20 @@
+<div id="myCarousel" class="carousel">
+	<div class="carousel-inner">
+		<div class="item active">
+			<%#= image_tag @image_background, :class => "image_resize" %>
+			<div class="image_resize"></div>
+			<div class="container">
+				<div class="carousel-caption">
+					<h2 class="text-center">Kite Compare</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 <div class="container-fluid">
-	<!-- Main hero unit for a primary marketing message or call to action -->
 	<center>
 		<div class="jumbotron">
 			<br>
@@ -9,14 +24,41 @@
 				<div class="span6">
 					<p class="lead">Le but de ce site web et d'aider tous les riders débutants et confirmés à choisir aile de Kitesurf en fonction de ses nécessités.</p>
 				</div>
-			
+
 				<div class="span6">
-				<a class="btn btn-large btn-success lead" href="/ailes">Comparer les kites</a>
+					<a class="btn btn-large btn-success lead" href="/ailes">Comparer les kites</a>
 				</div>
-			</div>
-			</div>
+
+			</div> <!-- rowfluid -->
 		</div>
 	</center>
-
 </div> <!-- /container -->
+
+<% @image_background = "/assets/backgrounds/" + (1 + rand(4)).to_s() + ".jpg" %>
+
+<style>
+body {
+	padding-top: 250px;
+}
+
+.image_resize{
+	height: 200px;
+	width: 100%;
+	background-size: cover;
+	background-image: url(<%= @image_background %>);
+}
+.carousel {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+}
+.carousel-caption {
+	color: #ffffff;
+	text-shadow: 0 2px 2px rgba(0,0,0,.8);
+	background: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+}
+</style>
 
