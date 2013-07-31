@@ -1,4 +1,6 @@
 class MarquesController < ApplicationController
+  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show]
+  
   before_action :set_marque, only: [:show, :edit, :update, :destroy]
 
   # GET /marques
