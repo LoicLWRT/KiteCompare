@@ -1,4 +1,6 @@
 class PrixSurShopsController < ApplicationController
+  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show]
+  
   before_action :set_prix_sur_shop, only: [:show, :edit, :update, :destroy]
 
   # GET /prix_sur_shops

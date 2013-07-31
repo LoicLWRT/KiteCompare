@@ -1,5 +1,11 @@
+require 'digest'
+
 class AilesController < ApplicationController
+  
+  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show]
+  
   before_action :set_aile, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /ailes
   # GET /ailes.json
