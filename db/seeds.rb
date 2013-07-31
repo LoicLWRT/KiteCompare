@@ -47,6 +47,14 @@ PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetven
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/7,0,f,one,bandit6,aile,kite,nue,2013-150913-40201.html', prix_sans_barre:824, surface:7, aile_id:2)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/6,0,f,one,bandit6,aile,kite,nue,2013-150911-40201.html', prix_sans_barre:776, surface:6, aile_id:2)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/5,0,f,one,bandit6,aile,kite,nue,2013-150909-40201.html', prix_sans_barre:736, surface:5, aile_id:2)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/de-91-a-11-m/1153-f-one-bandit-6-2013.html', prix_sans_barre:776, surface:6, aile_id:2)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/de-91-a-11-m/1153-f-one-bandit-6-2013.html', prix_sans_barre:824, surface:7, aile_id:2)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/de-91-a-11-m/1153-f-one-bandit-6-2013.html', prix_sans_barre:872, surface:8, aile_id:2)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/de-91-a-11-m/1153-f-one-bandit-6-2013.html', prix_sans_barre:904, surface:9, aile_id:2)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/de-91-a-11-m/1153-f-one-bandit-6-2013.html', prix_sans_barre:944, surface:10, aile_id:2)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/de-91-a-11-m/1153-f-one-bandit-6-2013.html', prix_sans_barre:1000, surface:11, aile_id:2)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/de-91-a-11-m/1153-f-one-bandit-6-2013.html', prix_sans_barre:1040, surface:12, aile_id:2)
+
 
 
 # Vegas 2013
@@ -74,15 +82,15 @@ CritiqueAile.create(type_critique_id:1, source:'Kite-Spirit', lien:'http://www.k
 CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2797', contenu:'Léger temps de décalage dans les commandes.', aile_id:4)
 CritiqueAile.create(type_critique_id:3, source:'Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-evo-2013/', contenu:'Le pivot est mieux qu\'une Rebel, mais moins bien qu\'une Vegas.', aile_id:4)
 PrixSurShop.create(nom_shop:'Freeride Attitude', lien_produit:'http://www.freeride-attitude.com/north-evo-2013,20823.html', prix_sans_barre:1249, surface:10, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:4, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:5, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:6, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:7, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:899, surface:4, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:949, surface:5, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1009, surface:6, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1069, surface:7, aile_id:4)
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:10, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:11, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:12, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:13, aile_id:4)
-PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1249, surface:14, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1299, surface:11, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1349, surface:12, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1419, surface:13, aile_id:4)
+PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-evo-1452.html', prix_sans_barre:1479, surface:14, aile_id:4)
 PrixSurShop.create(nom_shop:'Surf Avenue - Rennes', lien_produit:'http://www.surfavenue-rennes.com/e-shop/north-evo-2013.html', prix_sans_barre:1189, surface:9, aile_id:4)
 PrixSurShop.create(nom_shop:'Surf Avenue - Rennes', lien_produit:'http://www.surfavenue-rennes.com/e-shop/north-evo-2013.html', prix_sans_barre:1299, surface:11, aile_id:4)
 PrixSurShop.create(nom_shop:'Zeph Control', lien_produit:'http://www.zephcontrol.com/evo-2013-p-1045.html', prix_sans_barre:1249, surface:10, aile_id:4)
@@ -95,6 +103,16 @@ PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetven
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/8,0,north,evo,nue,aile,kite,2013-153835-40201.html', prix_sans_barre:1129, surface:8, aile_id:4)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/7,0,north,evo,nue,aile,kite,2013-153833-40201.html', prix_sans_barre:1069, surface:7, aile_id:4)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/6,0,north,evo,nue,aile,kite,2013-153831-40201.html', prix_sans_barre:1009, surface:6, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1069, surface:7, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1129, surface:8, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1189, surface:9, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1249, surface:10, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1299, surface:11, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1359, surface:12, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1419, surface:13, aile_id:4)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1358-north-evo-2013-nue.html', prix_sans_barre:1479, surface:14, aile_id:4)
+
+
 
 # Fuse 2013
 CritiqueAile.create(type_critique_id:1, source:'Kiteforum.com', lien:'http://www.kiteforum.com/viewtopic.php?t=2379687&p=787189', contenu:'Il est très facile de remonter au vent avec la Fuse.', aile_id:5)
@@ -109,18 +127,19 @@ PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-sho
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-fuse.html', prix_sans_barre:1529, surface:14, aile_id:5)
 PrixSurShop.create(nom_shop:'Zeph Control', lien_produit:'http://www.zephcontrol.com/fuse-2013-p-673.htm', prix_sans_barre:1279, surface:10, aile_id:5)
 
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1414-north-fuse-2013.html', prix_sans_barre:1279, surface:10, aile_id:5)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1414-north-fuse-2013.html', prix_sans_barre:1529, surface:14, aile_id:5)
+
 # Rebel 2013
 Aile.create(modele:'Rebel', marque_id:3, annee:2013, note:3)
 CritiqueAile.create(type_critique_id:1, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'Le kite tire trop sur la barre pour être à l\'aise en déhooké.', aile_id:6)
 CritiqueAile.create(type_critique_id:2, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'L\'aile a perdu en plage basse cette année: il est donc plus difficile de naviguer en vent faible.', aile_id:6)
 CritiqueAile.create(type_critique_id:2, source:'Commentaire sur Kite-Spirit', lien:'http://www.kite-spirit.com/info/test-north-rebel-2013/', contenu:'L\'aile perd en réactivitée si on l\'utilise avec une barre North 2012.', aile_id:6)
 PrixSurShop.create(nom_shop:'Freeride Attitude', lien_produit:'http://www.freeride-attitude.com/north-rebel-2013,18933.html', prix_sans_barre:1279, surface:10, aile_id:6)
-
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-rebel-nue.html', prix_sans_barre:1089, surface:7, aile_id:6)
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-rebel-nue.html', prix_sans_barre:1149, surface:8, aile_id:6)
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-rebel-nue.html', prix_sans_barre:1219, surface:9, aile_id:6)
 PrixSurShop.create(nom_shop:'Airwave-shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-rebel-nue.html', prix_sans_barre:1279, surface:10, aile_id:6)
-
 PrixSurShop.create(nom_shop:'Surf Avenue - Rennes', lien_produit:'http://www.surfavenue-rennes.com/e-shop/kitesurf/north-rebel-2013.html', prix_sans_barre:999, surface:9, aile_id:6)
 PrixSurShop.create(nom_shop:'Surf Avenue - Rennes', lien_produit:'http://www.surfavenue-rennes.com/e-shop/kitesurf/north-rebel-2013.html', prix_sans_barre:1119, surface:11, aile_id:6)
 PrixSurShop.create(nom_shop:'Newway Leucate', lien_produit:'http://www.neway-leucate.com/fr/shop/fiche_produit/ailes_kite-north-rebel_2013-ref/?ref_produit=590996&url_retour=L2ZyL3Nob3AvbGlzdGVfcHJvZHVpdC9raXRlLWFpbGVzX2tpdGUtYWlsZXNfa2l0ZS1yZWYvP3JlZl9zc2ZhbWlsbGU9MDIwMjAx', prix_sans_barre:1279, surface:10, aile_id:6)
@@ -214,6 +233,14 @@ PrixSurShop.create(nom_shop:'Airwave-Shop', lien_produit:'http://www.airwave-sho
 PrixSurShop.create(nom_shop:'Airwave-Shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-neo-nue.html', prix_sans_barre:1129, surface:10, aile_id:12)
 PrixSurShop.create(nom_shop:'Airwave-Shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-neo-nue.html', prix_sans_barre:1179, surface:11, aile_id:12)
 PrixSurShop.create(nom_shop:'Airwave-Shop', lien_produit:'http://www.airwave-shop.com/kitesurf/ailes-kitesurf/2013-north-neo-nue.html', prix_sans_barre:1239, surface:12, aile_id:12)
+
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1415-north-neo-2013.html', prix_sans_barre:849, surface:5, aile_id:12)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1415-north-neo-2013.html', prix_sans_barre:949, surface:7, aile_id:12)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1415-north-neo-2013.html', prix_sans_barre:999, surface:8, aile_id:12)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1415-north-neo-2013.html', prix_sans_barre:1059, surface:9, aile_id:12)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1415-north-neo-2013.html', prix_sans_barre:1129, surface:10, aile_id:12)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1415-north-neo-2013.html', prix_sans_barre:1179, surface:11, aile_id:12)
+PrixSurShop.create(nom_shop:'Surf Avenue - La Rochelle', lien_produit:'http://www.surfavenuelarochelle.com/-de-9-m/1415-north-neo-2013.html', prix_sans_barre:1239, surface:12, aile_id:12)
 
 # Park 2012
 Aile.create(modele:'Park', marque_id:1, annee:2012, note:4)
