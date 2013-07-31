@@ -36,16 +36,16 @@
 			</blockquote>
 			<% end %>
 		</div>
-
-
+		
+		
 		<div class="span12">
 			<h4>Les prix sur le net</h4>
 			<br>			
-			<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC')%>
+			<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC') %>
 
 
 			<% 
-			all_surfaces=Vector["5m²" ,"6m²" ,"7m²","8m²" ,"9m²" ,"10m²","11m²","12m²","13m²","14m²"] 
+			all_surfaces=Array["5m²" ,"6m²" ,"7m²","8m²" ,"9m²" ,"10m²","11m²","12m²","13m²","14m²"] 
 			c = Array.new
 			all_surfaces.each do |surface|
 				c << [surface] + Array.new(8){Array.new(3)}
@@ -83,7 +83,7 @@
 				j=0
 				i=i+1
 			end
-			nombre_max_prix_par_surface=nombre_max_prix_par_surface-1 %>
+ nombre_max_prix_par_surface=nombre_max_prix_par_surface-1 %>
 
 
 
