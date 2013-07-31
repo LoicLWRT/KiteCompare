@@ -1,74 +1,144 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span6">
-      	<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-		<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
-		<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-		<%= image_tag @image_url %>
-    </div>
-    <div class="span5">
-      	<h1 class="text-center"> <%= Marque.find(@aile.marque_id).name + " " + @aile.modele %> </h1>
-		<h3 class="text-center"> <%=@aile.annee.to_s() %> </h3>
-		<p class="text-center">
-		<% if not @aile.note.nil? then %>
-			<% (@aile.note).times do %>
-			<%= image_tag "full_star_32.png" %>
-			<% end %>
-			<% (5 - @aile.note).times do %>
-			<%= image_tag "empty_star_32.png" %>
-			<% end %>
-		<% end %>
-		</p>
-		
-		<br><br>
-		<h4>Critiques</h4>
-		<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
+	<div class="row-fluid">
+		<div class="span6">
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span5">
+			<h1 class="text-center"> <%= Marque.find(@aile.marque_id).name + " " + @aile.modele %> </h1>
+			<h3 class="text-center"> <%=@aile.annee.to_s() %> </h3>
+			<p class="text-center">
+				<% if not @aile.note.nil? then %>
+				<% (@aile.note).times do %>
+				<%= image_tag "full_star_32.png" %>
+				<% end %>
+				<% (5 - @aile.note).times do %>
+				<%= image_tag "empty_star_32.png" %>
+				<% end %>
+				<% end %>
+			</p>
 
-		<% @critiques.each do |critique| %>
-		  	<blockquote>
+			<br><br>
+			<h4>Critiques</h4>
+			<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
+
+			<% @critiques.each do |critique| %>
+			<blockquote>
 				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
 				<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
 				<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
 				<p><%= critique.contenu %></p>
-		  		<small><%= critique.source %></small>
+				<small><%= critique.source %></small>
 			</blockquote>
-		<% end %>
+			<% end %>
+		</div>
 
 
-		<br><br>
-		<h4>Les prix sur le net</h4>
-						
-		<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC')%>
-		
-		<% @prixs.each do |prix| %>		
-			<p><span class="label label-info"><%= prix.prix_sans_barre.round.to_s() + "€" %></span> pour une <span class="label label-important"><%= prix.surface.to_s() + " m²" %></span> chez <%= link_to prix.nom_shop, prix.lien_produit %>.</p>
-		<% end %>
-		
-		<br>
-		<small>*Prix pour une surface de 10m², sans barre, livraison comprise.</small>
-		<br><br>
-
-		<%= link_to 'Edit', edit_aile_path(@aile) %> |
-		<%= link_to 'Back', ailes_path %>
-		
-		<br><br>
-				
-		<% @prixs.each do |prix| %>	
-		<% end %>
-		
-		
-				
-		
-    </div>
-  </div>
-</div>
+		<div class="span12">
+			<h4>Les prix sur le net</h4>
+			<br>			
+			<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC')%>
 
 
+			<% 
+			all_surfaces=Vector["5m²" ,"6m²" ,"7m²","8m²" ,"9m²" ,"10m²","11m²","12m²","13m²","14m²"] 
+			c = Array.new
+			all_surfaces.each do |surface|
+				c << [surface] + Array.new(8){Array.new(3)}
+			end
+			%>
+
+			<%
+			i = 0
+			j = 0
+			all_surfaces.each do |one_surface|
+				@prixs.each do |prix|
+					if prix.surface.to_s() + "m²" == one_surface.to_s() 
+						then	c[i][j+1]=[prix.prix_sans_barre,prix.nom_shop, prix.lien_produit]
+						j=j+1
+					end
+				end
+				j=0
+				i=i+1
+			end
+			%>
 
 
+			<%
+			#Calcul du nombre max de prix pour une surface 
+			i=0
+			j=0
+			nombre_max_prix_par_surface=0
+			c.each do |element| 
+				c[i].each do |prix|
+					if not prix[0].nil? then
+						j=j+1
+						nombre_max_prix_par_surface = [j,nombre_max_prix_par_surface].max
+					end
+				end
+				j=0
+				i=i+1
+			end
+			nombre_max_prix_par_surface=nombre_max_prix_par_surface-1 %>
+
+
+
+			<%			
+			to_del=Array.new
+			0.upto(20) do |i|	
+				if not c.transpose[1][i].nil? then
+					if c.transpose[1][i][0].nil? then
+						to_del.push(i)
+					end
+				end
+			end
+			%>
+
+			<%
+			to_del.reverse.each do |i| %>
+			<%	c.delete_at(i) %>
+			<%end %>
+
+			<% c= c.transpose.slice!(0,nombre_max_prix_par_surface+1).transpose %>
+
+
+			<table class="table table-bordered table-striped" align="center">
+				<TR> 
+					<% 
+					if not c.transpose[0].nil? then
+						c.transpose[0].each do |one_surface| %>
+						<%== "<TH>" + one_surface.to_s + "</TH>" %>
+						<% end
+					end %>
+				</TR>
+				<% 
+				i=0
+				c.transpose.each do |element| 
+					if i>0 then
+						%>
+						<TR>
+							<% c.transpose[i].each do |prix| %>
+							<% if not prix[0].nil? then %>
+							<%== '<TD><a href="'+ prix[2].to_s + '"TARGET="_blank"> <span class="label label-info">' + prix[0].to_s + "€" + '</span>' + '<small> chez ' + prix[1].to_s + '</small></a></TD>' %>
+							<% else %> 	
+							<%== "<TD><p class=text-center> - <p></TD>"%>
+								<% end %>
+								<%end%>
+							</TR>
+							<% 
+						end
+						i=i+1
+					end 
+					%>
+				</table>
+
+			</div>
+		</div>
+	</div>
 
 
 
