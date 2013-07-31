@@ -58,7 +58,8 @@
 			all_surfaces.each do |one_surface|
 				@prixs.each do |prix|
 					if prix.surface.to_s() + "m²" == one_surface.to_s() 
-						then	c[i][j+1]=[prix.prix_sans_barre,prix.nom_shop, prix.lien_produit]
+					then	
+						c[i][j+1] = [prix.prix_sans_barre, prix.nom_shop, prix.lien_produit]
 						j=j+1
 					end
 				end

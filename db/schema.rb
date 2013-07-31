@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20130728010444) do
     t.integer  "marque_id"
     t.integer  "annee"
     t.integer  "note"
+    t.integer  "prix_10m_sans_barre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

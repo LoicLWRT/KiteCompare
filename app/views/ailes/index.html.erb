@@ -21,6 +21,12 @@
 			<%== '<i class="icon-star-empty"></i>' %>
 			<% end %>
 		<% end %>
+	
+	<%== "&nbsp;" * 15 %>
+		
+		<% if not aile.prix_10m_sans_barre.nil? then %>
+		<%=='<small>10m² à </small>&nbsp;&nbsp;' + '<span class="label label-info">' + aile.prix_10m_sans_barre.to_s + ' €</span>'%>
+		<% end %>
 	</p>
 	
   </div>
