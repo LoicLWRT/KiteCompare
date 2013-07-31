@@ -33,6 +33,9 @@ PrixSurShop.create(nom_shop:'FranceKiteShop', lien_produit:'http://www.francekit
 
 # Vegas 2013
 Aile.create(modele:'Vegas', marque_id:3, annee:2013, note:4)
+CritiqueAile.create(type_critique_id:1, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2795', contenu:'Aile très réactive.', aile_id:3)
+CritiqueAile.create(type_critique_id:1, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2795', contenu:'Très bon kite pour le freestyle et le wakestyle..', aile_id:3)
+CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2795', contenu:'La remontée au vent est plus difficile.', aile_id:3)
 PrixSurShop.create(nom_shop:'Freeride Attitude', lien_produit:'http://www.freeride-attitude.com/north-vegas-2013,19941.html', prix_sans_barre:1279, surface:10, aile_id:3)
 PrixSurShop.create(nom_shop:'Neway Leucate', lien_produit:'http://www.neway-leucate.com/fr/shop/fiche_produit/ailes_kite-north-vegas_2013-ref/?ref_produit=591006&url_retour=L2ZyL3Nob3AvbGlzdGVfcHJvZHVpdC9raXRlLWFpbGVzX2tpdGUtYWlsZXNfa2l0ZS1yZWYvP3JlZl9zc2ZhbWlsbGU9MDIwMjAx', prix_sans_barre:1279, surface:10, aile_id:3)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/14,0,north,vegas,aile,kite,2013,nue-141357-40202.html', prix_sans_barre:1529, surface:14, aile_id:3)
@@ -112,12 +115,17 @@ PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetven
 
 # Vegas 2012
 Aile.create(modele:'Vegas', marque_id:3, annee:2012, note:4)
+CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2190', contenu:'Redécollage assez technique.', aile_id:8)
+CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2190', contenu:'La plage basse n\'est pas énorme.', aile_id:8)
+CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2190', contenu:'La plage haute est très bonne.', aile_id:8)
+CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2190', contenu:'Pas d\'améliorations majeures par rapport a l\'année dernière, on améliore ce qu\'on peut améliorer.', aile_id:8)
 PrixSurShop.create(nom_shop:'Neway Leucate', lien_produit:'http://www.neway-leucate.com/fr/shop/fiche_produit/ailes_kite-north-vegas_2012-ref/?ref_produit=590851&url_retour=L2ZyL3Nob3AvbGlzdGVfcHJvZHVpdC9raXRlLWFpbGVzX2tpdGUtYWlsZXNfa2l0ZS1yZWYvP3JlZl9zc2ZhbWlsbGU9MDIwMjAx', prix_sans_barre:1229, surface:10, aile_id:8)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/8,0,north,vegas,kite,2012,nue-69807-40201.html', prix_sans_barre:714, surface:8, aile_id:8)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/7,0,north,vegas,kite,2012,nue-69805-40201.html', prix_sans_barre:727, surface:7, aile_id:8)
 
 # Rebel 2012
 Aile.create(modele:'Rebel', marque_id:3, annee:2012, note:4)
+CritiqueAile.create(type_critique_id:1, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2190', contenu:'L\'aile gagne en polyvalence par rapport à la version précédente.', aile_id:9)
 PrixSurShop.create(nom_shop:'Neway Leucate', lien_produit:'http://www.neway-leucate.com/fr/shop/fiche_produit/ailes_kite-north-rebel_2012-ref/?ref_produit=590842&url_retour=L2ZyL3Nob3AvbGlzdGVfcHJvZHVpdC9raXRlLWFpbGVzX2tpdGUtYWlsZXNfa2l0ZS1yZWYvP3JlZl9zc2ZhbWlsbGU9MDIwMjAx', prix_sans_barre:1229, surface:10, aile_id:9)
 
 # Fuse 2012
@@ -131,15 +139,39 @@ PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetven
 # Neo 2012
 Aile.create(modele:'Neo', marque_id:3, annee:2012, note:4)
 CritiqueAile.create(type_critique_id:1, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2352', contenu:'En surf l\'aile est très bien optimisée.', aile_id:11)
-CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2352', contenu:'L\'aile n\'est pas faite pour le freestyle mais plutot pour le wakestyle : vous aurez du mal à monter haut en saut.', aile_id:11)
+CritiqueAile.create(type_critique_id:2, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2352', contenu:'L\'aile n\'est pas faite pour le freestyle mais plutôt pour le wakestyle : vous aurez du mal à monter haut en saut.', aile_id:11)
 CritiqueAile.create(type_critique_id:3, source:'Forum Kite-Spirit', lien:'http://www.kite-spirit.com/forum/viewtopic.php?id=2352', contenu:'Le redécollage fonctionne très bien, même si la Evo domine encore le secteur.', aile_id:11)
 PrixSurShop.create(nom_shop:'Neway Leucate', lien_produit:'http://www.neway-leucate.com/fr/shop/fiche_produit/ailes_kite-north-neo_2012-ref/?ref_produit=590936&url_retour=L2ZyL3Nob3AvbGlzdGVfcHJvZHVpdC9raXRlLWFpbGVzX2tpdGUtYWlsZXNfa2l0ZS1yZWYvP3JlZl9zc2ZhbWlsbGU9MDIwMjAx', prix_sans_barre:1229, surface:10, aile_id:11)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/12,0,north,neo,kite,nue,2012-122873-40202.html', prix_sans_barre:789, surface:12, aile_id:11)
 
 # Neo 2013
 Aile.create(modele:'Neo', marque_id:3, annee:2013, note:4)
-CritiqueAile.create(type_critique_id:1, source:'Kiteforum.com', lien:'http://www.kiteforum.com/viewtopic.php?t=2380605&p=795073', contenu:'Le depower est très impressionnant : on peut mettre ou enlever de la puissance simpl.', aile_id:4)
+CritiqueAile.create(type_critique_id:1, source:'Kiteforum.com', lien:'http://www.kiteforum.com/viewtopic.php?t=2380605&p=795073', contenu:'Le depower est très impressionnant : on peut mettre ou enlever de la puissance simplement.', aile_id:12)
 PrixSurShop.create(nom_shop:'Neway Leucate', lien_produit:'http://www.neway-leucate.com/fr/shop/fiche_produit/ailes_kite-north-vegas_2012-ref/?ref_produit=590851&url_retour=L2ZyL3Nob3AvbGlzdGVfcHJvZHVpdC9raXRlLWFpbGVzX2tpdGUtYWlsZXNfa2l0ZS1yZWYvP3JlZl9zc2ZhbWlsbGU9MDIwMjAx', prix_sans_barre:1229, surface:10, aile_id:12)
 PrixSurShop.create(nom_shop:'Zeph Control', lien_produit:'http://www.zephcontrol.com/neo-2013-p-1044.html', prix_sans_barre:1129, surface:10, aile_id:12)
 PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/10,0,north,neo,kite,nue,2013-173520-40201.html', prix_sans_barre:1129, surface:10, aile_id:12)
 PrixSurShop.create(nom_shop:'Freeride Attitude', lien_produit:'http://www.freeride-attitude.com/north-neo-2013,23104.html', prix_sans_barre:1129, surface:10, aile_id:12)
+
+# Park 2012
+Aile.create(modele:'Park', marque_id:1, annee:2012, note:4)
+CritiqueAile.create(type_critique_id:2, source:'Kiteforum.com', lien:'http://www.kiteforum.com/viewtopic.php?t=2380605&p=795073', contenu:'Certains utilisateurs se plaignent de ne pas pouvoir correctement border avec les réglages de base, il faut pour cela raccoucir les arrières.', aile_id:13)
+
+# Park 2013
+Aile.create(modele:'Park', marque_id:1, annee:2013, note:4)
+CritiqueAile.create(type_critique_id:3, source:'Fun And Kite', lien:'http://www.funandkite.com/v2/forum_topic_view-id_topic-15146-titretopic-Naish+Park+2011+2012+2013+Quelles+sont+les+differences+.html', contenu:'Pas de gros changements par rapport a l\'année précédente, mais quelques améliorations.', aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/14,0,naish,park,aile,kite,nue,2013-141827-40202.html', prix_sans_barre:1329, surface:14, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/12,0,naish,park,aile,kite,nue,2013-141821-40202.html', prix_sans_barre:1229, surface:12, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/11,0,naish,park,aile,kite,nue,2013-141988-40202.html', prix_sans_barre:1179, surface:11, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/10,0,naish,park,aile,kite,nue,2013-141813-40201.html', prix_sans_barre:1129, surface:10, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/9,0,naish,park,aile,kite,nue,2013-141853-40201.html', prix_sans_barre:1069, surface:9, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/8,0,naish,park,aile,kite,nue,2013-141847-40201.html', prix_sans_barre:999, surface:8, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/7,0,naish,park,aile,kite,nue,2013-141843-40201.html', prix_sans_barre:949, surface:7, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/6,0,naish,park,aile,kite,nue,2013-141837-40201.html', prix_sans_barre:899, surface:6, aile_id:14)
+PrixSurShop.create(nom_shop:'Vague et Vent', lien_produit:'http://www.vagueetvent.com/5,0,naish,park,aile,kite,nue,2013-141833-40201.html', prix_sans_barre:849, surface:5, aile_id:14)
+
+# Torch 2012
+Aile.create(modele:'Torch', marque_id:1, annee:2012, note:4)
+
+# Torch 2013
+Aile.create(modele:'Torch', marque_id:1, annee:2013, note:4)
+
