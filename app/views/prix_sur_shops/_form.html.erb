@@ -32,8 +32,7 @@
     <%= f.number_field :surface %>
   </div>
   <div class="field">
-    <%= f.label :aile_id %><br>
-    <%= f.number_field :aile_id %>
+    <%= f.select(:aile_id, Aile.find(:all).collect {|u| [u.modele.to_s + " " + u.annee.to_s, u.id]}, :prompt => 'Select aile') %>
   </div>
   <div class="actions">
     <%= f.submit %>

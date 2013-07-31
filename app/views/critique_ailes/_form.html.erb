@@ -12,9 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :type_critique_id %><br>
-    <%= f.number_field :type_critique_id %>
+    <%= f.select(:type_critique_id, TypeCritique.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select critique') %>
   </div>
+
+
   <div class="field">
     <%= f.label :source %><br>
     <%= f.text_field :source %>
@@ -27,10 +28,11 @@
     <%= f.label :contenu %><br>
     <%= f.text_area :contenu %>
   </div>
+
   <div class="field">
-    <%= f.label :aile_id %><br>
-    <%= f.number_field :aile_id %>
+    <%= f.select(:aile_id, Aile.find(:all).collect {|u| [u.modele.to_s + " " + u.annee.to_s, u.id]}, :prompt => 'Select aile') %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

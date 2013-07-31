@@ -1,33 +1,36 @@
-<h1>Listing critique_ailes</h1>
+<h1>Critiques pour les ailes</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Type critique</th>
-      <th>Source</th>
-      <th>Lien</th>
-      <th>Contenu</th>
-      <th>Aile</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+	<thead>
+		<tr>
+			<th>Type critique</th>
+			<th>Source</th>
+			<th>Lien</th>
+			<th>Contenu</th>
+			<th>Aile</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
 
-  <tbody>
-    <% @critique_ailes.each do |critique_aile| %>
-      <tr>
-        <td><%= critique_aile.type_critique_id %></td>
-        <td><%= critique_aile.source %></td>
-        <td><%= critique_aile.lien %></td>
-        <td><%= critique_aile.contenu %></td>
-        <td><%= critique_aile.aile_id %></td>
-        <td><%= link_to 'Show', critique_aile %></td>
-        <td><%= link_to 'Edit', edit_critique_aile_path(critique_aile) %></td>
-        <td><%= link_to 'Destroy', critique_aile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	<tbody>
+		<% @critique_ailes.each do |critique_aile| %>
+		<tr>
+
+			<td><%= TypeCritique.find(critique_aile.type_critique_id).name %></td>
+			<td><%= critique_aile.source %></td>
+			<td><%= link_to "Lien", critique_aile.lien%></td>
+
+			<td><%= critique_aile.contenu %></td>
+			<% @aile = Aile.find(critique_aile.aile_id) %>
+			<td><%=  @aile.modele + " " + @aile.annee.to_s()%></td>
+			<td><%= link_to 'Show', critique_aile %></td>
+			<td><%= link_to 'Edit', edit_critique_aile_path(critique_aile) %></td>
+			<td><%= link_to 'Destroy', critique_aile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+		<% end %>
+	</tbody>
 </table>
 
 <br>
