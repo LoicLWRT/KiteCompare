@@ -1,4 +1,5 @@
 class TypeCritiquesController < ApplicationController
+  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show]
   before_action :set_type_critique, only: [:show, :edit, :update, :destroy]
 
   # GET /type_critiques
