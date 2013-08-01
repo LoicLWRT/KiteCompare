@@ -12,6 +12,14 @@ class AilesController < ApplicationController
   def index
     @ailes = Aile.all
   end
+  
+  def prix
+    @ailes = Aile.all.order('prix_10m_sans_barre ASC')
+  end
+  
+  def note
+    @ailes = Aile.all.order('note DESC')
+  end
 
   # GET /ailes/1
   # GET /ailes/1.json
