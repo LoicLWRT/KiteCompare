@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @aile %> |
-<%= link_to 'Back', ailes_path %>
+<%= link_to 'Back', ailes_path %> | 
+<%= link_to 'Destroy', @aile, method: :delete, data: { confirm: 'Are you sure?' } %>

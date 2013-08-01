@@ -43,6 +43,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-gem 'protected_attributes'
-gem "seed_dump", "~> 0.5.3"

@@ -2,10 +2,17 @@
 
 cd ../db/
 now=$(date +"%k-%M__%d-%m-%Y") 
-echo $now
 filename="$now seeds.rb"
-echo $filename
+echo "Saving DB at db/save/ $filename"
 cp seeds.rb save/"$filename"
-
 cd ../
-rake db:seed:dump FILE=db/seeds.rb
+
+rake database:save > db/seeds.rb
+echo "Creating db/seeds.rb with the DB"
+
+echo "Now resetting"
+rake db:drop
+rake db:migrate
+rake db:seed
+rake ailes:prix
+echo "Reset complete"
