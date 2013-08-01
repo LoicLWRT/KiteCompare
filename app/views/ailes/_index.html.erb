@@ -1,7 +1,26 @@
-<h1>Les ailes de kitesurf</h1>
+
+	<h1 class="text-center">Les ailes de kitesurf</h1>
+
+<div class="btn-group pull-right">
+  <a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">
+    Trier par&nbsp;
+    <span class="caret"></span>
+  </a>
+	<ul class="dropdown-menu">
+		<li><a href="/ailesparprix">Prix</a></li>
+		<li><a href="/ailesparnote">Note</a></li>
+	</ul>
+</div>
 <br>
 
-<ul class="thumbnails">
+
+
+
+
+<br>
+
+<ul class="thumbnails" >
+
 <% @ailes.each do |aile| %>
   <li class="span4">
     <div class="thumbnail">
@@ -33,3 +52,22 @@
 </li>
 <% end %>
 </ul>
+</div>
+
+<style>
+.border {
+	border: 1px solid #CECECE;
+	border-radius: 7px;
+	padding: 10px;
+}
+.thumbnails {
+    text-align: center;
+}
+.thumbnails li {
+    float: none !important;
+    display: inline-block;
+    *display: inline; /* ie7 support */
+    zoom: 1;
+}
+
+</style>
