@@ -11,19 +11,23 @@ class AilesController < ApplicationController
   # GET /ailes.json
   def index
     @ailes = Aile.all
+    @title = "Ailes"
   end
   
   def prix
     @ailes = Aile.all.order('prix_10m_sans_barre ASC')
+    @title = "Ailes"
   end
   
   def note
     @ailes = Aile.all.order('note DESC')
+    @title = "Ailes"
   end
 
   # GET /ailes/1
   # GET /ailes/1.json
   def show
+    @title =  Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()
   end
 
   # GET /ailes/new

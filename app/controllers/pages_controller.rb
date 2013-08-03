@@ -6,4 +6,9 @@ class PagesController < ApplicationController
   def contact
     @title = "Contact"
   end
+  
+  def recommandations
+    @title = "Recommandations"
+  end
+     
 end

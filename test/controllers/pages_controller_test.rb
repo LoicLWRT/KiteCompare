@@ -10,5 +10,10 @@ class PagesControllerTest < ActionController::TestCase
     get :contact
     assert_response :success
   end
+  
+  test "should get recommandations" do
+    get :recommandations
+    assert_response :success
+  end
 
 end
