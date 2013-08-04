@@ -12,7 +12,7 @@
 	</div>
 </div>
 
-<% @image_background = "/assets/backgrounds/" + (1 + rand(4)).to_s() + ".jpg" %>
+<% @image_background = "backgrounds/" + (1 + rand(4)).to_s() + ".jpg" %>
 
 <style>
 body {
@@ -23,7 +23,7 @@ body {
 	height: 300px;
 	width: 100%;
 	background-size: cover;
-	background-image: url(<%= @image_background %>);
+	background-image: url(<%= asset_path @image_background %>);
 }
 .carousel {
 	position: absolute;
