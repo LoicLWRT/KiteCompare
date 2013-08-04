@@ -15,10 +15,12 @@
     <%= f.label :modele %><br>
     <%= f.text_field :modele %>
   </div>
+
   <div class="field">
-    <%= f.label :marque_id %><br>
-    <%= f.number_field :marque_id %>
+    <%= f.select(:marque_id, Marque.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select marque') %>
   </div>
+
+
   <div class="field">
     <%= f.label :annee %><br>
     <%= f.number_field :annee %>
