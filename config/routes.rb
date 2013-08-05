@@ -1,5 +1,7 @@
 KiteCompare::Application.routes.draw do
-  get "pages/recommandations"
+  get "pages/debutant"
+  get "pages/avance"
+  
   resources :prix_sur_shops
 
   resources :critique_ailes
