@@ -37,9 +37,12 @@ cd ../../app/assets/images/kites/
 sips -Z 200 *-small.jpg
 sips -Z 600 *-large.jpg
 
-sips -Z 200 --setProperty format jpeg *-small.png
-sips -Z 600 --setProperty format jpeg *-large.png
+#sips -Z 200 --setProperty format jpeg *-small.png
+#sips -Z 600 --setProperty format jpeg *-large.png
 
-for file in *.png ; do mv $file `echo $file | sed 's/\(.*\.\)png/\1jpg/'` ; done
+#for file in *.png ; do mv $file `echo $file | sed 's/\(.*\.\)png/\1jpg/'` ; done
+
+sips -Z 200 *-small.png
+sips -Z 600 *-large.png
 
 

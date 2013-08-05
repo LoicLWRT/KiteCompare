@@ -6,8 +6,8 @@
 	<div class="row-fluid">
 		<div class="span6">
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.png"  end%>
 			<%= image_tag @image_url %>
 		</div>
 		<div class="span5">

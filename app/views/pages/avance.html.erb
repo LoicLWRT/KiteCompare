@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="span4">
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
 			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
 			<%= image_tag @image_url %>
 		</div>
@@ -44,7 +44,7 @@
 	<div class="row">
 		<div class="span4">
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
 			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
 			<%= image_tag @image_url %>
 		</div>
