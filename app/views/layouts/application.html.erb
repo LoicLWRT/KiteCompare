@@ -9,19 +9,14 @@
 </head>
 <body>
 
-	<div class="navbar navbar-fixed-top">
+	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
 
 				<a class="brand" href="/"><i class="icon-fire icon-white"></i>CompareKite</a>
+				
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-
 						<li><a href="/">Home</a></li>
 						<li><a href="/pages/contact">Contact</a></li>
 					</ul>
@@ -37,11 +32,14 @@
 		padding-left:20px;
 		padding-right:20px;
 	}
+	
+	.navbar-inner {
+	    border-radius: 0px !important;
+		padding-left: 0;
+	}
 	</style>
 
 	<%= yield %>
-
-
 
 	<hr class="">
 	<small><p class="text-center">Site fraîchement cuisiné par @loic_lwrt et Tobios</p></small>
