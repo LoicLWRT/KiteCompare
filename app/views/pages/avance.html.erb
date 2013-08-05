@@ -1,30 +1,27 @@
 <%= render "shared/notcaroussel" %>
 
 <% 
-@ID=2 #ID de l'aide à changer 
+@ID=4 #ID de l'aide à changer 
 @aile = Aile.find(@ID)
 %>
 
-<h1></h1>
-<h3>Niveau avancé</h3>
+<h1 class="text-center">Niveau avancé</h3>
 
 <br>
 
-<div class="hero-unit">
-	<div class="page-header">
-	  <h1>Example page header <small>Subtext for header</small></h1>
-	</div>
-	<h3>Aile XX</h3>
-	<div class="row">
+<div class="cadre">
+	  <h2 class="text-center">Polyvalence & Résistance<br/></h2>
+	<h3 class="text-center">North Evo 2013</h3>
+	<div class="row-fluid">
 		<div class="span4">
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
 			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
 			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
 			<%= image_tag @image_url %>
 		</div>
-
 		<div class="span8">
-			<p class="lead">CACA1 glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijefl</p>
+			<br/>
+			<p class="lead justify">La Evo est une aile très polyvalente qui s'adapte à tous les domaines, que l'on soit débutant ou rider confirmé, elle vous suivra le long de votre progression. Le redécollage est facile de sorte à pouvoir essayer de nouvelles choses. L'aile est vraiment résistante aux choques. Son prix reste très élevé par rapport a la concurrence.</p>
 		</div>
 	</div>
 </div>
@@ -32,34 +29,39 @@
 <br>
 
 <% 
-@ID=4 #ID de l'aide à changer 
+@ID=16 #ID de l'aide à changer 
 @aile = Aile.find(@ID)
 %>
 
-<div class="hero-unit">
-	<div class="page-header">
-	  <h2>Example page header <small>Subtext for header</small></h2>
-	</div>
-	<h3>Aile XX</h3>
-	<div class="row">
+<div class="cadre">
+	  <h2 class="text-center">Polyvalence & Prix bas<br/></h2>
+	<h3 class="text-center">Naish Torch 2013</h3>
+	<div class="row-fluid">
 		<div class="span4">
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
 			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.jpg" %>
 			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
 			<%= image_tag @image_url %>
 		</div>
-
 		<div class="span8">
-			<p class="lead">CACA2 glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijeflCACA glrzijefl</p>
+			<br/>
+			<p class="lead justify">La Torch est sans doute l'aile polyvalente avec le meilleur rapport qualité/prix. Cependant, il n'y pas de gros changement avec l'année dernière, il sera donc mieux d'acheter la génération précédente qui vous coûtera moins cher.</p>
 		</div>
 	</div>
 </div>
-
-<p>Find me in app/views/pages/recommandations.html.erb</p>
-
 <style>
 .row {
 	margin-left: auto;
 	margin-right: auto;
+}
+.cadre {
+background-color:#ecf0f1;
+border:1px solid #ecf0f1;
+padding:20px;
+padding-left:10px;
+border-radius:10px;
+}
+.justify {
+text-align: justify;
 }
 </style>
