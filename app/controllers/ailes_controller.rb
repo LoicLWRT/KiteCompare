@@ -10,7 +10,7 @@ class AilesController < ApplicationController
   # GET /ailes
   # GET /ailes.json
   def index
-    @ailes = Aile.all
+    @ailes = Aile.all.order('annee DESC')
     @title = "Ailes"
   end
   
