@@ -14,4 +14,6 @@ rake assets:precompile RAILS_ENV=production
 
 echo ""
 echo "New data loaded into KiteCompare ;)"
-echo "If the code changed you should restart Apache as well"
+
+sudo /etc/init.d/apache2 restart
+echo "Apache restarted"
