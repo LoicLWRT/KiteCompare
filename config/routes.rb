@@ -1,24 +1,26 @@
 KiteCompare::Application.routes.draw do
-  get "pages/debutant"
-  get "pages/avance"
   
-  resources :prix_sur_shops
-
-  resources :critique_ailes
-
-  resources :ailes
-
-  resources :type_critiques
-
-  resources :marques
-  
-  get 'ailesparprix', to: 'ailes#prix'
-  get 'ailesparnote', to: 'ailes#note'
-
   root :to => 'pages#home'
-  
   get "pages/home"
   get "pages/contact"
+  
+  resources :ailes
+  get 'ailesparprix', to: 'ailes#prix'
+  get 'ailesparnote', to: 'ailes#note'
+  
+  get "pages/debutant"
+  get "pages/avance"
+  get "pages/cgu"
+  get "pages/mentionslegales"
+  
+  resources :prix_sur_shops
+  resources :critique_ailes
+  
+  resources :type_critiques
+  resources :marques
+  
+
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
