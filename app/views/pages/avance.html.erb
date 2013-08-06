@@ -55,12 +55,51 @@
 <br>
 <h2>Waveride</h2>
 <br>
+<% 
+@ID=12 #ID de l'aide à changer 
+@aile = Aile.find(@ID)
+%>
+
+<div class="cadre">
+	  <h2 class="text-center">La surfeuse<br/></h2>
+	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+	<div class="row-fluid">
+		<div class="span3">
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span9">
+			<br/>
+			<p class="lead justify">La Neo possède un depower impressionnant qui est donc un grand atout en surf. Biensûr, cette voile est encore très chere pas rapport a la concurrence.</p>
+		</div>
+	</div>
+</div>
 <br>
-<h2>Freestyle</h2>
+<h2>Wakestyle</h2>
 <br>
-<br>
-<h2>Race</h2>
-<br>
+<% 
+@ID=3 #ID de l'aide à changer 
+@aile = Aile.find(@ID)
+%>
+
+<div class="cadre">
+	  <h2 class="text-center">La machine du déhooké<br/></h2>
+	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+	<div class="row-fluid">
+		<div class="span3">
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span9">
+			<br/>
+			<p class="lead justify">La Vegas est "l'aile" dédiée au wakestyle/freestyle. Très réactive, un bon lift et un bon hangtime, de quoi se procurer de bonnes sensations en saut. Son principal défaut reste, comme sur toute la gamme North son prix élevé.</p>
+		</div>
+	</div>
+</div>
 
 
 <style>
@@ -69,11 +108,11 @@
 	margin-right: auto;
 }
 .cadre {
-background-color:#ecf0f1;
-border:1px solid #ecf0f1;
-padding:20px;
-padding-left:10px;
-border-radius:10px;
+	background-color:#ecf0f1;
+	border:1px solid #ecf0f1;
+	padding:20px;
+	padding-left:10px;
+	border-radius:10px;
 }
 .justify {
 text-align: justify;
