@@ -1,5 +1,44 @@
 <%= render "shared/notcaroussel" %>
 
-<h1>Nos recommandations</h1>
-<h3>Niveau débutant</h3>
-<p>Find me in app/views/pages/recommandations.html.erb</p>
+<% 
+@ID=4 #ID de l'aide à changer 
+@aile = Aile.find(@ID)
+%>
+
+<h1 class="text-center">Niveau débutant</h3>
+
+<br>
+
+<div class="cadre">
+	  <h2 class="text-center">Polyvalence & Résistance<br/></h2>
+	<h3 class="text-center">North Evo 2013</h3>
+	<div class="row-fluid">
+		<div class="span3">
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span9">
+			<br/>
+			<p class="lead justify">La Evo est une aile très polyvalente qui s'adapte à tous les domaines, que l'on soit débutant ou rider confirmé, elle vous suivra le long de votre progression. Le redécollage est facile de sorte à pouvoir essayer de nouvelles choses. L'aile est vraiment résistante aux chocs. Son prix reste très élevé par rapport a la concurrence.</p>
+		</div>
+	</div>
+</div>
+
+<style>
+.row {
+	margin-left: auto;
+	margin-right: auto;
+}
+.cadre {
+background-color:#ecf0f1;
+border:1px solid #ecf0f1;
+padding:20px;
+padding-left:10px;
+border-radius:10px;
+}
+.justify {
+text-align: justify;
+}
+</style>
