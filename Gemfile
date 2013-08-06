@@ -46,3 +46,5 @@ end
 
 gem 'execjs'
 gem 'therubyracer'
+
+gem 'mysql2'
