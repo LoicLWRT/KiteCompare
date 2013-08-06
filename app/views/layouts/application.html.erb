@@ -14,7 +14,7 @@
 			<div class="container-fluid">
 
 				<a class="brand" href="/"><i class="icon-fire icon-white"></i>CompareKite</a>
-				
+
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li><a href="/">Home</a></li>
@@ -32,27 +32,26 @@
 		padding-left:20px;
 		padding-right:20px;
 	}
-	
+
 	.navbar-inner {
-	    border-radius: 0px !important;
+		border-radius: 0px !important;
 		padding-left: 0;
 	}
-	
+
 	[class^="icon-"],
 	[class*=" icon-"] {
-	  background-image: url(<%= asset_path 'glyphicons-halflings.png' %>);
+		background-image: url(<%= asset_path 'glyphicons-halflings.png' %>);
 	}
-	
-	
+
+
 	.icon-white {
-	  background-image: url(<%= asset_path 'glyphicons-halflings-white.png' %>);
+		background-image: url(<%= asset_path 'glyphicons-halflings-white.png' %>);
 	}
 	</style>
 
 	<%= yield %>
 
-	<hr class="">
-	<small><p class="text-center">Site fraîchement cuisiné par @loic_lwrt et Tobios</p></small>
+	<%= render "shared/footer" %>
 
 </body>
 </html>
