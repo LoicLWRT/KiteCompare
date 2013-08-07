@@ -10,8 +10,8 @@
 <br>
 
 <div class="cadre">
-	  <h2 class="text-center">Polyvalence & Résistance<br/></h2>
-	<h3 class="text-center">North Evo 2013</h3>
+	  <h2 class="text-center">Polyvalente & Résistante<br/></h2>
+	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
 	<div class="row-fluid">
 		<div class="span3">
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
@@ -25,6 +25,32 @@
 		</div>
 	</div>
 </div>
+
+<% 
+@ID=20 #ID de l'aide à changer 
+@aile = Aile.find(@ID)
+%>
+
+
+<br>
+
+<div class="cadre">
+	  <h2 class="text-center">Polyvalente & Abordable<br/></h2>
+	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+	<div class="row-fluid">
+		<div class="span3">
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span9">
+			<br/>
+			<p class="lead justify">Pour un prix assez abordable, la Rally est une aile plutôt polyvalente. Le redécollage est aussi assez facile et l'aile est plutôt réactive. Cependant, pas de gros changements avec l'année dernière, il peut donc être plus intéressant d'acheter <a href="#">la génération précédente.</a></p>
+		</div>
+	</div>
+</div>
+
 
 <style>
 .row {
