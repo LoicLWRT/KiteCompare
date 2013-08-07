@@ -78,10 +78,6 @@ CritiqueAile.create(type_critique_id: 1, source: "Forum RNK35.fr", lien: 'http:/
 CritiqueAile.create(type_critique_id: 2, source: "Flysurf", lien: 'http://www.flysurf.com/tests-matos/fiche/cabrinha-vector-2012.htm?testmatosid=97', contenu: "Le sac est trop petit, il faut très bien plier l'aile pour la faire rentrer dedans.", aile_id: 18)
 CritiqueAile.create(type_critique_id: 1, source: "Forum Flysurf", lien: 'http://forum.flysurf.com/parlons-matos/cabrinha-vector-2012-t62419.html', contenu: "L'aile est très polyvalente.", aile_id: 18)
 CritiqueAile.create(type_critique_id: 1, source: "Epikoo", lien: 'http://epikoo.com/kiteboarding/gear/kites/cabrinha-vector-2012', contenu: "Redécollage très facile", aile_id: 18)
-CritiqueAile.create(type_critique_id: 2, source: "Hanglos", lien: 'http://www.hanglos.fr/news/303686/news-kitesurf-test-hanglos.fr---slingshot-rally-2013--une-valeur-sure.html', contenu: "Pas d'élastique aux extrémités de la barre pour le rangement des lignes.", aile_id: 20)
-CritiqueAile.create(type_critique_id: 1, source: "Hanglos", lien: 'http://www.hanglos.fr/news/303686/news-kitesurf-test-hanglos.fr---slingshot-rally-2013--une-valeur-sure.html', contenu: "L'aile est très réactive grâce a ses lignes de 20m.", aile_id: 20)
-CritiqueAile.create(type_critique_id: 1, source: "Hanglos", lien: 'http://www.hanglos.fr/news/303686/news-kitesurf-test-hanglos.fr---slingshot-rally-2013--une-valeur-sure.html', contenu: "Redécollage assez facile.", aile_id: 20)
-CritiqueAile.create(type_critique_id: 1, source: "Hanglos", lien: 'http://www.hanglos.fr/news/303686/news-kitesurf-test-hanglos.fr---slingshot-rally-2013--une-valeur-sure.html', contenu: "L'aile est assez polyvalente.", aile_id: 20)
 
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 775.0, surface: 6, aile_id: 2)
@@ -282,6 +278,5 @@ PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/fi
 PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rally-2013-nue.htm?sectionid=25&productid=3730&variationid=8594', prix_sans_barre: 809.0, surface: 8, aile_id: 20)
 PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rally-2013-nue.htm?sectionid=25&productid=3730&variationid=8595', prix_sans_barre: 849.0, surface: 9, aile_id: 20)
 PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rally-2013-nue.htm?sectionid=25&productid=3730&variationid=8596', prix_sans_barre: 889.0, surface: 10, aile_id: 20)
-PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rally-2013-nue.htm?sectionid=25&productid=3730&variationid=8597', prix_sans_barre: 949.0, surface: 12, aile_id: 20)
-PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
+PrixSurShop.create(nom_shop: "Flysurf", lien_produit: '', prix_sans_barre: 0.0, surface: 12, aile_id: 20)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
