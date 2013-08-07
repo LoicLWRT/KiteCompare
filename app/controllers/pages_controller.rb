@@ -15,5 +15,13 @@ class PagesController < ApplicationController
   def avance
     @title = "Niveau avancés: recommandations"
   end
+  
+  def cgu
+    @title = "Conditions générales d'utilisation"
+  end
+  
+  def mentionslegales
+    @title = "Mentions légales"
+  end
      
 end

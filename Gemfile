@@ -47,7 +47,11 @@ end
 gem 'execjs'
 gem 'therubyracer'
 
+<<<<<<< HEAD
 group :production do
 	gem 'mysql2'
 end
 
+=======
+gem 'mysql2'
+>>>>>>> e0fe598c4bf7a4699465687e8c9974a48a907aa9
