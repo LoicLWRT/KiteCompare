@@ -1,93 +1,190 @@
 <%= render "shared/notcaroussel" %>
 
-<h1 class="text-center">Niveau débutant</h3>
+<h2 class="text-center">Niveau débutant <small>Les meilleures ailes de kitesurf</small></h2>
 <br>
-<p class="lead">Avant d'acheter une aile, il faut savoir que la plupart du temps, il n'y a pas de changements majeurs entre 2 générations d'aile. Cependant dans certains cas, un kite peu beaucoup évoluer, si, par exemple, un défaut majeur a été corrigé.<br/>Attention à ne pas tomber dans les pièges marketing des marques.</p>
-<br>
-<br>
-<% 
-@ID=4 #ID de l'aide à changer 
-@aile = Aile.find(@ID)
-%>
-<div class="cadre">
-	  <h2 class="text-center">Polyvalente & Résistante<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+
+<div class="container-fluid">
+	<br>
+
+
+
 	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
+		<!-- Première aile -->
+
+		<div class="span12">
+			<% 
+			@ID=20 #ID de l'aide à changer 
+			@titre="Abordable"
+			@aile = Aile.find(@ID)
+			%>
+			<div class="cadregrand">								
+				<div class="row-fluid">
+				<div class="span4">
+					<center>
+						<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+						<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.png" %>
+						<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+						<%= image_tag @image_url %>
+					</center>
+				</div>
+				
+				<div class="span4">
+					<div class="titlewinggrand">
+						<h2 class="text-center"><%= @titre %><br/></h2>
+						<h3 class="text-center"><%=  Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>		
+						
+						<br>
+						<center>
+						<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+						</center>
+						
+						
+						
+					</div>
+				</div>	
+
+				<div class="span4">
+					<br/>
+					<p class="lead justify">Pour un prix assez abordable, la Rally est une aile plutôt polyvalente. Le redécollage est aussi assez facile et l'aile est plutôt réactive. Cependant, pas de gros changements avec l'année dernière, il peut donc être plus intéressant d'acheter la génération précédente.</a></p>
+				</div>
+				</div>
+			</div>
 		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">La Evo est une aile très polyvalente qui s'adapte à tous les domaines, que l'on soit débutant ou rider confirmé, elle vous suivra le long de votre progression. Le redécollage est facile de sorte à pouvoir essayer de nouvelles choses. L'aile est vraiment résistante aux chocs. Son prix reste très élevé par rapport a la concurrence.</p>
+	</div> <!-- row-fluid -->
+
+
+	<div class="row-fluid">
+		<!-- Première aile -->
+		
+		<div class="containercadre">
+			
+		<div class="span6">
+			<% 
+			@ID=4 #ID de l'aide à changer 
+			@titre="Résistante"
+			@aile = Aile.find(@ID)
+			%>
+			<div class="cadre">								
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+						
+							<center>
+							<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+							</center>
+						</div>
+					</div>	
+				</div>
+				<br/>
+				<p class="lead justify">La Evo est une aile très polyvalente qui s'adapte à tous les domaines, que l'on soit débutant ou rider confirmé, elle vous suivra le long de votre progression. Le redécollage est facile de sorte à pouvoir essayer de nouvelles choses. L'aile est vraiment résistante aux chocs. Son prix reste très élevé par rapport a la concurrence.</p>
+			</div>
+		</div>
+
+
+		<!-- Deuxième aile -->
+		<div class="span6">
+			<% 
+			@ID=14 #ID de l'aide à changer 
+			@titre="Économique"
+			@aile = Aile.find(@ID)
+			%>
+			<div class="cadre">								
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+								<center>
+								<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+								</center>
+						</div>
+					</div>	
+				</div>
+				<br/>
+				<p class="lead justify">La Park. Elle devrait vous satisfaire pour de la navigation simple et pour débuter le freestyle. Son prix bas et un grand atout pour ceux qui ne veulent pas dépenser beaucoup dans une aile. Néanmoins, l'aile n'a pas trop évolué depuis <a href="/ailes/13-naish-park-2012">l'année précédente.</a></p>
+			</div>
+		</div>
+		</div>
+	</div> <!-- row-fluid -->
+
+
+
+	<br>
+	<div class="row-fluid">
+		<div class="span6 offset3 justify">
+			<p>Avant d'acheter une aile, il faut savoir que la plupart du temps, il n'y a pas de changements majeurs entre 2 générations d'aile. Cependant dans certains cas, un kite peu beaucoup évoluer, si, par exemple, un défaut majeur a été corrigé. Attention donc à ne pas tomber dans les pièges marketing des marques.</p>
 		</div>
 	</div>
+	<br>
+
 </div>
-<% 
-@ID=14 #ID de l'aide à changer 
-@aile = Aile.find(@ID)
-%>
-
-
-<br>
-
-<div class="cadre">
-	  <h2 class="text-center">Polyvalente & Pas chère<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
-		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">La Park . Elle devrait vous satisfaire pour de la navigation simple et pour débuter le freestyle. Son prix bas et un grand atout pour ceux qui ne veulent pas dépenser beaucoup dans une aile. Néanmoins, l'aile n'a pas trop évolué depuis <a href="/ailes/13-naish-park-2012">l'année précédente.</a></p>
-		</div>
-	</div>
-</div>
-<% 
-@ID=20 #ID de l'aide à changer 
-@aile = Aile.find(@ID)
-%>
-
-
-<br>
-
-<div class="cadre">
-	  <h2 class="text-center">Polyvalente & Abordable<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
-		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">Pour un prix assez abordable, la Rally est une aile plutôt polyvalente. Le redécollage est aussi assez facile et l'aile est plutôt réactive. Cependant, pas de gros changements avec l'année dernière, il peut donc être plus intéressant d'acheter la génération précédente.</p>
-		</div>
-	</div>
-</div>
-
-
 
 
 <style>
+
 .row {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.titlewing{
+	top:100%; height:100%; margin-top:12%;
+}
+
+.titlewinggrand{
+	top:100%; height:100%; margin-top:20%;
+}
+
+.containercadre{
+	margin-left: auto;
+	margin-right: auto;
+	max-width:1150px;
+}
 .cadre {
-background-color:#ecf0f1;
-border:1px solid #ecf0f1;
-padding:20px;
-padding-left:10px;
-border-radius:10px;
+	background-color:#ecf0f1;
+	border:1px solid #ecf0f1;
+	padding:20px;
+	height: 100%;
+	border-radius:10px;
+	max-width:560px;
+	margin-bottom:20px;
+}
+
+.cadregrand {
+	background-color:#ecf0f1;
+	border:1px solid #ecf0f1;
+	padding:20px;
+	border-radius:10px;
+	max-width:1100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:20px;
+}
+
+.lead {
+	font-size: 18px;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top:0px;
 }
 
 </style>

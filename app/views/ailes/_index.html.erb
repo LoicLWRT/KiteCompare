@@ -1,12 +1,12 @@
 <%= render "shared/notcaroussel" %>
 
-	<h1 class="text-center">Les ailes de kitesurf</h1>
+<h1 class="text-center">Les ailes de kitesurf</h1>
 
 <div class="btn-group pull-right">
-  <a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">
-    Trier par&nbsp;
-    <span class="caret"></span>
-  </a>
+	<a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">
+		Trier par&nbsp;
+		<span class="caret"></span>
+	</a>
 	<ul class="dropdown-menu">
 		<li><a href="/ailesparprix">Prix</a></li>
 		<li><a href="/ailesparnote">Note</a></li>
@@ -15,45 +15,42 @@
 <br>
 
 
-
-
-
 <br>
-
 <ul class="thumbnails" >
 
 <% @ailes.each do |aile| %>
-  <li class="span4">
-    <div class="thumbnail">
+<li class="span4">
+	<div class="thumbnail">
 
-	<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
-	<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-	<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.png"  end%>
-	<%= image_tag @image_url %>
-	
-    <h3 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h3>
-	<p class="text-center">
-		<% if not aile.note.nil? then %>
+		<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
+		<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+		<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.png"  end%>
+		<%= image_tag @image_url %>
+
+		<h3 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h3>
+		<p class="text-center">
+			<% if not aile.note.nil? then %>
 			<% (aile.note).times do %>
 			<%== '<i class="icon-star"></i>' %>
 			<% end %>
 			<% (5 - aile.note).times do %>
 			<%== '<i class="icon-star-empty"></i>' %>
 			<% end %>
-		<% end %>
-	
-	<%== "&nbsp;" * 15 %>
-		
-		<% if not aile.prix_10m_sans_barre.nil? then %>
-		<%=='<small>10m² à </small>&nbsp;&nbsp;' + '<span class="label label-info">' + aile.prix_10m_sans_barre.to_s + ' €</span>'%>
-		<% end %>
-	</p>
-	
-  </div>
+			<% end %>
+
+			<%== "&nbsp;" * 15 %>
+
+			<% if not aile.prix_10m_sans_barre.nil? then %>
+			<%=='<small>10m² à </small>&nbsp;&nbsp;' + '<span class="label label-info">' + aile.prix_10m_sans_barre.to_s + ' €</span>'%>
+			<% end %>
+		</p>
+
+	</div>
 </li>
 <% end %>
 </ul>
 </div>
+
 
 <style>
 .border {
@@ -62,13 +59,16 @@
 	padding: 10px;
 }
 .thumbnails {
-    text-align: center;
+	text-align: center;
 }
 .thumbnails li {
-    float: none !important;
-    display: inline-block;
-    *display: inline; /* ie7 support */
-    zoom: 1;
+	float: none !important;
+	display: inline-block;
+	*display: inline; /* ie7 support */
+	zoom: 1;
 }
 
+.span4 {
+	width: 300px;
+}
 </style>
