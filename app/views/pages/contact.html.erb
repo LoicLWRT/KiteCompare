@@ -1,6 +1,20 @@
-<%= render "shared/caroussel" %>
+<%= render "shared/caroussel", :title_caroussel => @title %>
 
-<div class="container-fluid">
-	<h1>Contact</h1>
-	<p class="lead" >Si vous avez une question, si vous voulez nous faire une remarque, ou si tout simplement vous voulez nous contacter, envoyez nous un e-mail à <a href="mailto:contact@comparekite.com"><strong>contact@comparekite.com</strong></a> .</p>
-</div>
+<div class="container">
+
+	<br>
+
+	<div class="row">
+		<div class="span6 offset3">
+			<p class="lead justify">
+				Pour toute question ou remarque n'hésitez pas à nous contacter à l'adresse suivante: </p>
+			</div>
+		</div> <!-- rowfluid -->
+
+		<center>
+			<a href="mailto:contact@comparekite.com"><button class="btn btn-primary">contact@comparekite.com</button></a>
+		</center>
+
+		<br><br>
+
+	</div>

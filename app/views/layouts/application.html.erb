@@ -13,12 +13,11 @@
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<a class="brand" href="/"><i class="icon-fire icon-white"></i>CompareKite</a>
-				<div class="nav-collapse collapse">
-					<ul class="nav">
-						<li><a href="/">Accueil</a></li>
-						<li><a href="/pages/contact">Contact</a></li>
-					</ul>
-				</div>
+				<ul class="nav">
+					<li><a href="/">Accueil</a></li>
+					<li><a href="/pages/contact">Contact</a></li>
+				</ul>
+
 			</div>
 		</div>
 	</div>	
@@ -44,6 +43,18 @@
 
 	.icon-white {
 		background-image: url(<%= asset_path 'glyphicons-halflings-white.png' %>);
+	}
+
+	.center { 
+		float: none; margin-left: auto; margin-right: auto; 
+	}
+
+	.justify {
+		text-align: justify;
+	}
+
+	.lead {
+		font-size: 20px;
 	}
 	</style>
 
