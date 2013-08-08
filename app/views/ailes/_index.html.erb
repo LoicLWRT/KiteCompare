@@ -41,8 +41,12 @@
 			<%== "&nbsp;" * 15 %>
 
 			<% if not aile.prix_10m_sans_barre.nil? then %>
-			<%=='<small>10m² à </small>&nbsp;&nbsp;' + '<span class="label label-info">' + aile.prix_10m_sans_barre.to_s + ' €</span>'%>
+			<%=='<small>10m² à <strong>' + aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
 			<% end %>
+			
+			<center>
+			<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger"  %>
+			</center>
 		</p>
 
 	</div>
@@ -70,5 +74,9 @@
 
 .span4 {
 	width: 300px;
+}
+
+.btn-danger{
+	
 }
 </style>

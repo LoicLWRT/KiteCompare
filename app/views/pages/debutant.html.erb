@@ -32,9 +32,13 @@
 					<div class="titlewinggrand">
 						<h2 class="text-center"><%= @titre %><br/></h2>
 						<h3 class="text-center"><%=  Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>		
-						
-						<br>
 						<center>
+						<% if not @aile.prix_10m_sans_barre.nil? then %>
+						<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
+						<% end %>
+						
+						<br><br>
+						
 						<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
 						</center>
 						
