@@ -84,7 +84,7 @@ CritiqueAile.create(type_critique_id: 1, source: "Hanglos", lien: 'http://www.ha
 CritiqueAile.create(type_critique_id: 1, source: "Hanglos", lien: 'http://www.hanglos.fr/news/303686/news-kitesurf-test-hanglos.fr---slingshot-rally-2013--une-valeur-sure.html', contenu: "Redécollage assez facile.", aile_id: 20)
 CritiqueAile.create(type_critique_id: 1, source: "Hanglos", lien: 'http://www.hanglos.fr/news/303686/news-kitesurf-test-hanglos.fr---slingshot-rally-2013--une-valeur-sure.html', contenu: "L'aile est assez polyvalente.", aile_id: 20)
 CritiqueAile.create(type_critique_id: 3, source: "Flysurf", lien: 'http://www.flysurf.com/tests-matos/fiche/cabrinha-chaos-2013.htm?testmatosid=109', contenu: "Aile a ne mettre qu'entre les mains de riders confirmés !", aile_id: 21)
-CritiqueAile.create(type_critique_id: 2, source: "Flysurf", lien: 'http://www.flysurf.com/tests-matos/fiche/cabrinha-chaos-2013.htm?testmatosid=109', contenu: "La plage basse est très limitée.", aile_id: 17)
+CritiqueAile.create(type_critique_id: 2, source: "Flysurf", lien: 'http://www.flysurf.com/tests-matos/fiche/cabrinha-chaos-2013.htm?testmatosid=109', contenu: "La plage basse est très limitée.", aile_id: 21)
 
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 775.0, surface: 6, aile_id: 2)
@@ -304,4 +304,5 @@ PrixSurShop.create(nom_shop: "Kite-Spirit", lien_produit: 'http://www.kite-spiri
 PrixSurShop.create(nom_shop: "Kite-Spirit", lien_produit: 'http://www.kite-spirit.com/shop/fr/north/3501-aile-north-rebel-2014-nue.html', prix_sans_barre: 1419.0, surface: 12, aile_id: 17)
 PrixSurShop.create(nom_shop: "Kite-Spirit", lien_produit: 'http://www.kite-spirit.com/shop/fr/north/3501-aile-north-rebel-2014-nue.html', prix_sans_barre: 1489.0, surface: 13, aile_id: 17)
 PrixSurShop.create(nom_shop: "Kite-Spirit", lien_produit: 'http://www.kite-spirit.com/shop/fr/north/3501-aile-north-rebel-2014-nue.html', prix_sans_barre: 1549.0, surface: 14, aile_id: 17)
+PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
