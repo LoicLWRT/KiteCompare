@@ -1,14 +1,14 @@
 <%= render "shared/notcaroussel" %>
 
+<h1 class="text-center">Niveau débutant</h3>
+<br>
+<p class="lead">Avant d'acheter une aile, il faut savoir que la plupart du temps, il n'y a pas de changements majeurs entre 2 générations d'aile. Cependant dans certains cas, un kite peu beaucoup évoluer, si, par exemple, un défaut majeur a été corrigé.<br/>Attention à ne pas tomber dans les pièges marketing des marques.</p>
+<br>
+<br>
 <% 
 @ID=4 #ID de l'aide à changer 
 @aile = Aile.find(@ID)
 %>
-
-<h1 class="text-center">Niveau débutant</h3>
-
-<br>
-
 <div class="cadre">
 	  <h2 class="text-center">Polyvalente & Résistante<br/></h2>
 	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
