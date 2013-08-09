@@ -11,7 +11,7 @@
 <br>
 
 <div class="cadre">
-	  <h2 class="text-center">L'aile résistante<br/></h2>
+	  <h2 class="text-center">La résistance<br/></h2>
 	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
 	<div class="row-fluid">
 		<div class="span3">
@@ -22,7 +22,7 @@
 		</div>
 		<div class="span9">
 			<br/>
-			<p class="lead justify">La Evo est une aile polyvalente qui s'adapte à tous les domaines. Elle vous suivra tout au long de votre progression. Sa facilité au redécollage permet de tenter de nouveaux <i>moves</i>. De plus l'aile est  résistante aux chocs, ce qui présage d'une bonne durée de vie. Finalement son défaut reste son prix, élevé par rapport à la concurrence.</p>
+			<p class="lead justify">La Evo est une aile polyvalente qui s'adapte à tous les domaines. Elle devrait vous suivra quelque soit votre discipline. Sa facilité au redécollage permet de tenter de nouveaux <i>moves</i>. De plus l'aile est  résistante aux chocs, ce qui présage d'une bonne durée de vie. Finalement son principal défaut reste son prix, élevé par rapport à la concurrence.</p>
 		</div>
 	</div>
 </div>
@@ -35,7 +35,7 @@
 %>
 
 <div class="cadre">
-	  <h2 class="text-center">L'aile qualité/prix<br/></h2>
+	  <h2 class="text-center">Le rapport qualité/prix<br/></h2>
 	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
 	<div class="row-fluid">
 		<div class="span3">
@@ -61,7 +61,7 @@
 %>
 
 <div class="cadre">
-	  <h2 class="text-center">La surfeuse<br/></h2>
+	  <h2 class="text-center">La réactivité<br/></h2>
 	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
 	<div class="row-fluid">
 		<div class="span3">
@@ -72,11 +72,37 @@
 		</div>
 		<div class="span9">
 			<br/>
-			<p class="lead justify">La Neo possède un depower impressionnant qui est donc un grand atout en surf. L'aile est maniable et réactive, elle tient aussi très bien au zénith. Biensûr, cette voile est encore très chere pas rapport a la concurrence.</p>
+			<p class="lead justify">La Neo possède un depower impressionnant qui est donc un grand atout en surf. L'aile est maniable et réactive, elle tient aussi très bien au zénith. Sa résistance aux choques en fait une aile sure.Biensûr, cette voile est encore très chere pas rapport a la concurrence.</p>
 		</div>
 	</div>
 </div>
 <br>
+
+<% 
+@ID=2 #ID de l'aide à changer 
+@aile = Aile.find(@ID)
+%>
+
+<div class="cadre">
+	  <h2 class="text-center">La polyvalence<br/></h2>
+	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+	<div class="row-fluid">
+		<div class="span3">
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span9">
+			<br/>
+			<p class="lead justify">Cette année, la Bandit est encore plus polyvalente : le déhooké devient plus facile. Cependant elle reste toujours très bonne dans les vagues. Sa plage basse est irréprochable mais ça plage haute beaucoup moins bonne. Son prix est très raisonnable par rapport è la concurrence. Malgrés une grosse pression en bar, cela reste une aile de référence.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+
+
 <h2>Wakestyle</h2>
 <br>
 <% 
@@ -85,7 +111,7 @@
 %>
 
 <div class="cadre">
-	  <h2 class="text-center">La machine du déhooké<br/></h2>
+	  <h2 class="text-center">Un bon hangtime et un bon lift<br/></h2>
 	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
 	<div class="row-fluid">
 		<div class="span3">
@@ -97,6 +123,28 @@
 		<div class="span9">
 			<br/>
 			<p class="lead justify">La Vegas est "l'aile" dédiée au wakestyle/freestyle. Très réactive, un bon lift et un bon hangtime, de quoi se procurer de bonnes sensations en saut. Sa plage d'utilisation est par contre assez limitée. Son principal défaut reste, comme sur toute la gamme North son prix élevé.</p>
+		</div>
+	</div>
+</div>
+<br/>
+<% 
+@ID=21 #ID de l'aide à changer 
+@aile = Aile.find(@ID)
+%>
+
+<div class="cadre">
+	  <h2 class="text-center">Spécialisée<br/></h2>
+	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
+	<div class="row-fluid">
+		<div class="span3">
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span9">
+			<br/>
+			<p class="lead justify">La Chaos est une aile spécialisée pour le freestyle/wakestyle. Cependant, l'aile est réservée aux riders confirmés et présente une faible plage basse. Son prix reste dans le moyenne mais bien moins bas que la North Vegas.</p>
 		</div>
 	</div>
 </div>
