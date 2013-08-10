@@ -44,9 +44,10 @@
 			<%=='<small>10m² à <strong>' + aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
 			<% end %>
 			
-			<center>
-			<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger"  %>
-			</center>
+			<br/>
+			<br/>
+			<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
+
 		</p>
 
 	</div>
@@ -57,13 +58,16 @@
 
 
 <style>
-.border {
-	border: 1px solid #CECECE;
-	border-radius: 7px;
-	padding: 10px;
-}
+
 .thumbnails {
 	text-align: center;
+}
+.thumbnail {
+	display: inline-block;
+	margin: auto;
+	height: 370px;
+	width: 300px;
+
 }
 .thumbnails li {
 	float: none !important;

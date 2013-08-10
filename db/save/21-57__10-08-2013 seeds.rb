@@ -314,5 +314,3 @@ PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/fi
 PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-f-one-bandit-6-2013-nue.htm?sectionid=25&productid=3723&variationid=8576', prix_sans_barre: 1119.0, surface: 14, aile_id: 2)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
-PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-cabrinha-vector-ids-2013-nue.htm?sectionid=25&productid=3692&variationid=8484', prix_sans_barre: 749.0, surface: 9, aile_id: 19)
-PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
