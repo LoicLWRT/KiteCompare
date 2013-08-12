@@ -2,6 +2,7 @@
 
 <% 
 @ID=4 #ID de l'aide à changer 
+@titre="Résistance aux choques"
 @aile = Aile.find(@ID)
 %>
 
@@ -10,43 +11,77 @@
 <h2>Polyvalente</h2>
 <br>
 
-<div class="cadre">
-	  <h2 class="text-center">La résistance<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
-		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">La Evo est une aile polyvalente qui s'adapte à tous les domaines. Elle devrait vous suivra quelque soit votre discipline. Sa facilité au redécollage permet de tenter de nouveaux <i>moves</i>. De plus l'aile est  résistante aux chocs, ce qui présage d'une bonne durée de vie. Finalement son principal défaut reste son prix, élevé par rapport à la concurrence.</p>
-		</div>
-	</div>
-</div>
 
-<br>
 
-<% 
-@ID=14 #ID de l'aide à changer 
-@aile = Aile.find(@ID)
-%>
 
-<div class="cadre">
-	  <h2 class="text-center">Le rapport qualité/prix<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
+
+<div class="row-fluid">
+	<div class="containercadre">
+		<div class="span6">
+			<div class="cadre">
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
+							<center>
+								<% if not @aile.prix_10m_sans_barre.nil? then %>
+								<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>	
+								<% end %>			
+								<br><br>
+								<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+							</center>
+						</div>
+					</div>
+				</div>
+				<br>
+				<p class="lead justify">La Evo devrait vous suivra quelque soit votre discipline. Sa facilité au redécollage permet de tenter de nouveaux <i>moves</i>. De plus, l'aile est résistante aux chocs, ce qui présage d'une bonne durée de vie. Finalement son principal défaut reste son prix, élevé par rapport à la concurrence.</p>
+			</div>
 		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">La Park est l'aile polyvalente au meilleur rapport qualité/prix. Cependant, il n'y pas de grand changement comparé à l'année passée, il peut donc être plus intéressant d'acheter <a href="/ailes/13-naish-park-2012">la génération précédente.</a></p>
+		<div class="span6">
+
+			<% 
+			@ID=14 #ID de l'aide à changer 
+			@titre="Bon rapport qualité/prix"
+			@aile = Aile.find(@ID)
+			%>
+	
+			<div class="cadre">
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
+							<center>
+								<% if not @aile.prix_10m_sans_barre.nil? then %>
+								<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>	
+								<% end %>			
+								<br><br>
+								<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+							</center>
+							<br>
+						</div>
+					</div>
+				</div>
+				<p class="lead justify">La Park reste l'aile polyvalente avec le meilleur rapport qualité/prix. Dans l'ensemble, c'est une bonne aile qui devrait satisfaire beaucoup de personne. Cependant, il n'y pas de grand changement comparé à l'année passée, il peut donc être plus intéressant d'acheter <a href="/ailes/13-naish-park-2012">la génération précédente.</a></p>
+			</div>
 		</div>
 	</div>
 </div>
@@ -57,112 +92,223 @@
 <br>
 <% 
 @ID=12 #ID de l'aide à changer 
+@titre="Réactive"
 @aile = Aile.find(@ID)
 %>
-
-<div class="cadre">
-	  <h2 class="text-center">La réactivité<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
+<div class="row-fluid">
+	<div class="containercadre">
+		<div class="span6">
+			<div class="cadre">
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
+							<center>
+								<% if not @aile.prix_10m_sans_barre.nil? then %>
+								<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>	
+								<% end %>			
+								<br><br>
+								<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+							</center>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<p class="lead justify">La Neo possède un depower impressionnant qui est donc un grand atout en surf. L'aile est maniable et réactive, malgrés un mauvais hangtime. Sa plage de vent reste dans la moyenne. Elle tient aussi très bien au zénith. Sa résistance aux choques exemplaire en fait une aile sure. Cette voile est assez chere par rapport à la concurrence.</p>
+			</div>
 		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">La Neo possède un depower impressionnant qui est donc un grand atout en surf. L'aile est maniable et réactive, elle tient aussi très bien au zénith. Sa résistance aux choques en fait une aile sure.Biensûr, cette voile est encore très chere pas rapport a la concurrence.</p>
+	
+
+		<% 
+		@ID=2 #ID de l'aide à changer 
+		@titre="Bonne à tout"
+		@aile = Aile.find(@ID)
+		%>
+		
+		<div class="span6">
+			<div class="cadre">
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
+							<center>
+								<% if not @aile.prix_10m_sans_barre.nil? then %>
+								<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>	
+								<% end %>			
+								<br><br>
+								<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+							</center>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<p class="lead justify">Cette année, la Bandit est encore plus polyvalente : le déhooké devient plus facile. Cependant elle reste toujours très bonne dans les vagues. Sa plage basse est irréprochable mais ça plage haute beaucoup moins bonne. Son prix est très raisonnable par rapport à la concurrence. Malgrés une grosse pression en bar, cela reste une aile de référence.</p>
+			</div>
 		</div>
 	</div>
 </div>
-<br>
-
-<% 
-@ID=2 #ID de l'aide à changer 
-@aile = Aile.find(@ID)
-%>
-
-<div class="cadre">
-	  <h2 class="text-center">La polyvalence<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
-		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">Cette année, la Bandit est encore plus polyvalente : le déhooké devient plus facile. Cependant elle reste toujours très bonne dans les vagues. Sa plage basse est irréprochable mais ça plage haute beaucoup moins bonne. Son prix est très raisonnable par rapport è la concurrence. Malgrés une grosse pression en bar, cela reste une aile de référence.</p>
-		</div>
-	</div>
-</div>
-<br>
 
 
 
-<h2>Wakestyle</h2>
+
+
+
+
+
+<h2>Freestyle/Wakestyle</h2>
 <br>
 <% 
 @ID=3 #ID de l'aide à changer 
+@titre="Un bon hangtime"
 @aile = Aile.find(@ID)
 %>
 
-<div class="cadre">
-	  <h2 class="text-center">Un bon hangtime et un bon lift<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
+
+<div class="row-fluid">
+	<div class="containercadre">
+		<div class="span6">
+			<div class="cadre">
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
+							<center>
+								<% if not @aile.prix_10m_sans_barre.nil? then %>
+								<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>	
+								<% end %>			
+								<br><br>
+								<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+							</center>
+						</div>
+					</div>
+				</div>
+				<br>
+				<p class="lead justify">La Vegas est "l'aile" dédiée au wakestyle/freestyle. Très réactive, un bon lift et un bon hangtime, de quoi se procurer de bonnes sensations en saut. Sa plage d'utilisation est par contre assez limitée. Son principal défaut reste, comme sur toute la gamme North son prix élevé.</p>
+			</div>
 		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">La Vegas est "l'aile" dédiée au wakestyle/freestyle. Très réactive, un bon lift et un bon hangtime, de quoi se procurer de bonnes sensations en saut. Sa plage d'utilisation est par contre assez limitée. Son principal défaut reste, comme sur toute la gamme North son prix élevé.</p>
-		</div>
-	</div>
-</div>
-<br/>
 <% 
 @ID=21 #ID de l'aide à changer 
+@titre="Pour les pros"
 @aile = Aile.find(@ID)
 %>
-
-<div class="cadre">
-	  <h2 class="text-center">Spécialisée<br/></h2>
-	<h3 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
-	<div class="row-fluid">
-		<div class="span3">
-			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
-			<%= image_tag @image_url %>
-		</div>
-		<div class="span9">
-			<br/>
-			<p class="lead justify">La Chaos est une aile spécialisée pour le freestyle/wakestyle. Cependant, l'aile est réservée aux riders confirmés et présente une faible plage basse. Son prix reste dans le moyenne mais bien moins bas que la North Vegas.</p>
+		<div class="span6">
+			<div class="cadre">
+				<div class="row-fluid">
+					<div class="span6">
+						<center>
+							<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+							<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+							<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.jpg"  end%>
+							<%= image_tag @image_url %>
+						</center>
+					</div>
+					<div class="span6">
+						<div class="titlewing">
+							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
+							<center>
+								<% if not @aile.prix_10m_sans_barre.nil? then %>
+								<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>	
+								<% end %>			
+								<br><br>
+								<%= link_to "Prix et avis de l'aile",@aile,:class=>"btn btn-danger"  %>
+							</center>
+						</div>
+					</div>
+				</div>
+				<br>
+				<p class="lead justify">La Chaos est une aile spécialisée pour le freestyle/wakestyle. Cependant, l'aile est réservée aux riders confirmés et présente une faible plage basse. Le redécollage n'est pas super non plus. Son prix reste dans le moyenne mais bien moins bas que la North Vegas.</p>
+			</div>
 		</div>
 	</div>
 </div>
 
 
 <style>
+.span3 {
+	text-align: center;
+	margin:auto;
+}
+.justify {
+	text-align: justify;
+}
+
 .row {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.titlewing{
+	top:100%; 
+	height:100%; 
+	margin-top:12%;
+}
+
+.titlewinggrand{
+	top:100%; 
+	height:100%; 
+	margin-top:20%;
+}
+
+.containercadre{
+	margin-left: auto;
+	margin-right: auto;
+	max-width:1140px;
 }
 .cadre {
 	background-color:#ecf0f1;
 	border:1px solid #ecf0f1;
 	padding:20px;
-	padding-left:10px;
+	height: 100%;
 	border-radius:10px;
+	max-width:560px;
+	margin-bottom:20px;
 }
-.justify {
-text-align: justify;
+
+.cadregrand {
+	background-color:#ecf0f1;
+	border:1px solid #ecf0f1;
+	padding:20px;
+	border-radius:10px;
+	max-width:1100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:20px;
 }
+
+.lead {
+	font-size: 18px;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top:0px;
+}
+
 </style>
