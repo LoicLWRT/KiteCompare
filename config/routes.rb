@@ -18,7 +18,6 @@ KiteCompare::Application.routes.draw do
   
   resources :type_critiques
   resources :marques
-  
 
 
   

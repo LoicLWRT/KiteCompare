@@ -1,19 +1,14 @@
 <%= render "shared/notcaroussel" %>
 
+<h2 class="text-center">Niveau avancé <small>Les meilleures ailes de kitesurf</small></h2>
+<br>
+<h3>Polyvalentes</h3>
+
 <% 
 @ID=4 #ID de l'aide à changer 
-@titre="Résistance aux choques"
+@titre="Résistance aux chocs"
 @aile = Aile.find(@ID)
 %>
-
-<h1 class="text-center">Niveau avancé <small>Les meilleures ailes</small></h1>
-<br>
-<h2>Polyvalente</h2>
-<br>
-
-
-
-
 
 <div class="row-fluid">
 	<div class="containercadre">
@@ -30,7 +25,7 @@
 					</div>
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
 							<center>
 								<% if not @aile.prix_10m_sans_barre.nil? then %>
@@ -43,14 +38,14 @@
 					</div>
 				</div>
 				<br>
-				<p class="lead justify">La Evo devrait vous suivra quelque soit votre discipline. Sa facilité au redécollage permet de tenter de nouveaux <i>moves</i>. De plus, l'aile est résistante aux chocs, ce qui présage d'une bonne durée de vie. Finalement son principal défaut reste son prix, élevé par rapport à la concurrence.</p>
+				<p class="lead justify">L'Evo devrait vous suivre quel que soit votre discipline. Sa facilité au redécollage permet de tenter de nouvelles manoeuvres et figures. De plus, l'aile est résistante aux chocs, ce qui présage d'une bonne durée de vie. Finalement son principal défaut reste son prix, élevé par rapport à la concurrence.</p>
 			</div>
 		</div>
 		<div class="span6">
 
 			<% 
 			@ID=14 #ID de l'aide à changer 
-			@titre="Bon rapport qualité/prix"
+			@titre="Excellent rapport qualité/prix"
 			@aile = Aile.find(@ID)
 			%>
 	
@@ -67,7 +62,7 @@
 
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
 							<center>
 								<% if not @aile.prix_10m_sans_barre.nil? then %>
@@ -80,7 +75,7 @@
 						</div>
 					</div>
 				</div>
-				<p class="lead justify">La Park reste l'aile polyvalente avec le meilleur rapport qualité/prix. Dans l'ensemble, c'est une bonne aile qui devrait satisfaire beaucoup de personne. Cependant, il n'y pas de grand changement comparé à l'année passée, il peut donc être plus intéressant d'acheter <a href="/ailes/13-naish-park-2012">la génération précédente.</a></p>
+				<p class="lead justify">La Park reste l'aile polyvalente au meilleur rapport qualité/prix. Dans l'ensemble, c'est une bonne aile qui devrait satisfaire  le plus grand nombre. Cependant, il n'y pas de grand changement comparé à l'année précédente, il peut donc être plus intéressant d'acheter l'<a href="/ailes/13-naish-park-2012">ancienne génération</a>.</p>
 			</div>
 		</div>
 	</div>
@@ -88,8 +83,7 @@
 
 
 <br>
-<h2>Waveride</h2>
-<br>
+<h3>Waveride</h3>
 <% 
 @ID=12 #ID de l'aide à changer 
 @titre="Réactive"
@@ -110,7 +104,7 @@
 					</div>
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
 							<center>
 								<% if not @aile.prix_10m_sans_barre.nil? then %>
@@ -123,14 +117,14 @@
 					</div>
 				</div>
 				<br/>
-				<p class="lead justify">La Neo possède un depower impressionnant qui est donc un grand atout en surf. L'aile est maniable et réactive, malgrés un mauvais hangtime. Sa plage de vent reste dans la moyenne. Elle tient aussi très bien au zénith. Sa résistance aux choques exemplaire en fait une aile sure. Cette voile est assez chere par rapport à la concurrence.</p>
+				<p class="lead justify">La Neo possède un depower impressionnant ce qui est donc un grand atout en surf. L'aile est maniable et réactive, malgré un faible hangtime. Sa plage de vent reste dans la moyenne. Elle tient aussi très bien au zénith. Sa résistance aux chocs exemplaire en fait une aile sure. Finalement cette voile reste assez chère par rapport à la concurrence.</p>
 			</div>
 		</div>
 	
 
 		<% 
 		@ID=2 #ID de l'aide à changer 
-		@titre="Bonne à tout"
+		@titre="Polyvalence orientée waveride"
 		@aile = Aile.find(@ID)
 		%>
 		
@@ -147,7 +141,7 @@
 					</div>
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
 							<center>
 								<% if not @aile.prix_10m_sans_barre.nil? then %>
@@ -160,7 +154,7 @@
 					</div>
 				</div>
 				<br/>
-				<p class="lead justify">Cette année, la Bandit est encore plus polyvalente : le déhooké devient plus facile. Cependant elle reste toujours très bonne dans les vagues. Sa plage basse est irréprochable mais ça plage haute beaucoup moins bonne. Son prix est très raisonnable par rapport à la concurrence. Malgrés une grosse pression en bar, cela reste une aile de référence.</p>
+				<p class="lead justify">Cette année, la Bandit est encore plus polyvalente : le déhooké devient plus facile. Cependant elle reste toujours très bonne dans les vagues. Sa plage basse est irréprochable mais sa plage haute est beaucoup moins bonne. Son prix est très raisonnable par rapport à la concurrence. Malgré une grande pression sur la barre, elle reste une aile de référence.</p>
 			</div>
 		</div>
 	</div>
@@ -172,12 +166,11 @@
 
 
 
-
-<h2>Freestyle/Wakestyle</h2>
 <br>
+<h3>Freestyle & wakestyle</h3>
 <% 
 @ID=3 #ID de l'aide à changer 
-@titre="Un bon hangtime"
+@titre="De longs sauts"
 @aile = Aile.find(@ID)
 %>
 
@@ -197,7 +190,7 @@
 					</div>
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
 							<center>
 								<% if not @aile.prix_10m_sans_barre.nil? then %>
@@ -210,7 +203,7 @@
 					</div>
 				</div>
 				<br>
-				<p class="lead justify">La Vegas est "l'aile" dédiée au wakestyle/freestyle. Très réactive, un bon lift et un bon hangtime, de quoi se procurer de bonnes sensations en saut. Sa plage d'utilisation est par contre assez limitée. Son principal défaut reste, comme sur toute la gamme North son prix élevé.</p>
+				<p class="lead justify">La Vegas est l'aile dédiée au wakestyle/freestyle. Très réactive grâce à un bon lift (???) et un bon hangtime (???), de quoi se procurer de bonnes sensations en saut. Sa plage d'utilisation est par contre assez limitée. Son principal défaut reste, comme sur toute la gamme North, son prix élevé.</p>
 			</div>
 		</div>
 <% 
@@ -231,7 +224,7 @@
 					</div>
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>
 							<center>
 								<% if not @aile.prix_10m_sans_barre.nil? then %>
@@ -244,7 +237,7 @@
 					</div>
 				</div>
 				<br>
-				<p class="lead justify">La Chaos est une aile spécialisée pour le freestyle/wakestyle. Cependant, l'aile est réservée aux riders confirmés et présente une faible plage basse. Le redécollage n'est pas super non plus. Son prix reste dans le moyenne mais bien moins bas que la North Vegas.</p>
+				<p class="lead justify">La Chaos est une aile spécialisée pour le freestyle/wakestyle. Cependant, l'aile est réservée aux riders confirmés et présente une faible plage basse. Le redécollage n'est pas des plus facile non plus. Son prix reste dans le moyenne mais plus élevé que la North Vegas.</p>
 			</div>
 		</div>
 	</div>

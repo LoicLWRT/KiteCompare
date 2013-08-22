@@ -4,8 +4,15 @@
 <br>
 
 <div class="container-fluid">
-	<br/>
-	<h3>Les ailes suivantes devraient vous convenir à votre sortie de stage :</h3>
+	
+	
+	<div class="row-fluid">
+		<div class="span6 offset3 justify">
+			<p>Les ailes suivantes devraient vous convenir à votre sortie de stage.
+			À noter qu'il n'y a principalement pas de changements majeurs entre deux générations d'aile consécutives sauf dans certains cas que nous signalerons. Par exemple  lorsqu'un défaut majeur a pu être corrigé. Attention donc à ne pas tomber dans les charmes marketing des marques.</p>
+		</div>
+	</div>
+	
 	<br/>
 	<div class="row-fluid">
 		<!-- Première aile -->
@@ -29,8 +36,8 @@
 				
 				<div class="span4">
 					<div class="titlewinggrand">
-						<h2 class="text-center"><%= @titre %><br/></h2>
-						<h3 class="text-center"><%=  Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>		
+						<h3 class="text-center"><%= @titre %><br/></h3>
+						<h4 class="text-center"><%=  Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h4>		
 						<center>
 						<% if not @aile.prix_10m_sans_barre.nil? then %>
 						<%=='<small>10m² à <strong>' + @aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
@@ -48,7 +55,7 @@
 
 				<div class="span4">
 					<br/>
-					<p class="lead justify">Pour un prix assez abordable, la Rally est une aile plutôt polyvalente. Le redécollage est aussi assez facile et l'aile est plutôt réactive. Cependant, pas de gros changements avec l'année dernière, il peut donc être plus intéressant d'acheter la génération précédente.</a></p>
+					<p class="lead justify">Pour un prix abordable, la Rally est une aile polyvalente. Le redécollage est facile et l'aile est réactive. Cependant, il n'a pas de grands changements par rapport à l'année précédente.</a></p>
 				</div>
 				</div>
 			</div>
@@ -79,7 +86,7 @@
 					</div>
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
 						
 							<center>
@@ -95,7 +102,7 @@
 					</div>	
 				</div>
 				<br/>
-				<p class="lead justify">La Evo est une aile très polyvalente qui s'adapte à tous les domaines, que l'on soit débutant ou rider confirmé, elle vous suivra le long de votre progression. Le redécollage est facile de sorte à pouvoir essayer de nouvelles choses. L'aile est vraiment résistante aux chocs. Son prix reste très élevé par rapport a la concurrence.</p>
+				<p class="lead justify">L'Evo est une aile très polyvalente qui s'adapte à tous les domaines et qui vous suivra tout au long de votre progression. Sa facilité au redécollage permet de ne pas avoir peur lors des chutes de l'aile pour tenter de nouvelles manoeuvres. Finalement l'aile est plus résistante aux chocs que ses concurrentes même si son prix reste très élevé.</p>
 			</div>
 		</div>
 
@@ -119,7 +126,7 @@
 					</div>
 					<div class="span6">
 						<div class="titlewing">
-							<h2 class="text-center"><%= @titre %><br/></h2>
+							<h3 class="text-center"><%= @titre %><br/></h3>
 							<h4 class="text-center"><%= Marque.find(@aile.marque_id).name + " " + @aile.modele + " " + @aile.annee.to_s()%></h3>
 							<center>
 								<% if not @aile.prix_10m_sans_barre.nil? then %>
@@ -134,21 +141,13 @@
 					</div>	
 				</div>
 				<br/>
-				<p class="lead justify">La Park devrait vous satisfaire pour de la navigation simple et pour débuter le freestyle. Son prix bas et un grand atout pour ceux qui ne veulent pas dépenser beaucoup dans une aile. Néanmoins, l'aile n'a pas trop évolué depuis <a href="/ailes/13-naish-park-2012">l'année précédente.</a></p>
+				<p class="lead justify">La Park devrait vous satisfaire en navigation simple et pour débuter le freestyle. Son faible prix est un grand atout. Néanmoins, l'aile a peu évolué depuis l'<a href="/ailes/13-naish-park-2012">année précédente</a>.</p>
 				<br/>
 			</div>
 		</div>
 		</div>
 	</div> <!-- row-fluid -->
-
-
-
-	<br/>
-	<div class="row-fluid">
-		<div class="span6 offset3 justify">
-			<p>Avant d'acheter une aile, il faut savoir que la plupart du temps, il n'y a pas de changements majeurs entre 2 générations d'aile. Cependant dans certains cas, un kite peu beaucoup évoluer, si, par exemple, un défaut majeur a été corrigé. Attention donc à ne pas tomber dans les pièges marketing des marques.</p>
-		</div>
-	</div>
+	
 	<br/>
 
 </div>
