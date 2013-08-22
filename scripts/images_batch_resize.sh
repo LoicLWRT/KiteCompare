@@ -43,6 +43,8 @@ sips -Z 600 *-large.jpg
 #for file in *.png ; do mv $file `echo $file | sed 's/\(.*\.\)png/\1jpg/'` ; done
 
 sips -Z 200 *-small.png
+
+sips -p 200 200 *-small.png
 sips -Z 600 *-large.png
 
 
