@@ -4,6 +4,8 @@ KiteCompare::Application.routes.draw do
   get "pages/home"
   get "pages/contact"
   
+  get "/blog" => redirect("http://blog.comparekite.com"), :as => :blog
+  
   resources :ailes
   get 'ailesparprix', to: 'ailes#prix'
   get 'ailesparnote', to: 'ailes#note'
