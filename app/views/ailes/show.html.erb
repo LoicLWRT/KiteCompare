@@ -41,6 +41,7 @@
 		
 		
 		<div class="span12">
+			<br><br>
 			<h4>Les prix sur le net</h4>
 			<br>			
 			<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC') %>
