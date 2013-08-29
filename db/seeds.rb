@@ -93,6 +93,8 @@ CritiqueAile.create(type_critique_id: 3, source: "Epikoo", lien: 'http://epikoo.
 CritiqueAile.create(type_critique_id: 1, source: "Epikoo", lien: 'http://epikoo.com/kiteboarding/gear/kites/naish-torch-2012', contenu: "Le kite est très puissant.", aile_id: 15)
 CritiqueAile.create(type_critique_id: 1, source: "Epikoo", lien: 'http://epikoo.com/kiteboarding/gear/kites/north-fuse-2012', contenu: "Très bon comportement dans les vagues.", aile_id: 10)
 CritiqueAile.create(type_critique_id: 1, source: "Epikoo", lien: 'http://epikoo.com/kiteboarding/gear/kites/north-fuse-2012', contenu: "Le redécollage est assez facile.", aile_id: 10)
+CritiqueAile.create(type_critique_id: 3, source: "Forum Flysurf", lien: 'http://forum.flysurf.com/parlons-matos/retour-rebel-2014-et-vegas-2014-t68459-10.html?sid=e7f1abdf169dffb49f77ab9722e5c5ef', contenu: "Grosse évolution cette année au niveau du pivot de l'aile, elle tourne vraiment plus vite.", aile_id: 17)
+CritiqueAile.create(type_critique_id: 3, source: "Forum Flysurf", lien: 'http://forum.flysurf.com/parlons-matos/retour-rebel-2014-et-vegas-2014-t68459-10.html?sid=e7f1abdf169dffb49f77ab9722e5c5ef', contenu: "La 2014 est un mixte entre la 2012 et la 2013. ", aile_id: 17)
 
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 775.0, surface: 6, aile_id: 2)
@@ -294,3 +296,4 @@ PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/fi
 PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rally-2013-nue.htm?sectionid=25&productid=3730&variationid=8597', prix_sans_barre: 949.0, surface: 12, aile_id: 20)
 PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-north-evo-2012-nue.htm?sectionid=25&productid=2277&variationid=5427', prix_sans_barre: 519.0, surface: 4, aile_id: 7)
 PrixSurShop.create(nom_shop: "Flysurf", lien_produit: 'http://www.flysurf.com/ficheproduit-aile-cabrinha-vector-ids-2013-nue.htm?sectionid=25&productid=3692&variationid=8482', prix_sans_barre: 869.0, surface: 12, aile_id: 19)
+PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
