@@ -17,14 +17,15 @@
 <style>
 
 body {
-	padding-top: 350px;
+	padding-top: 0px;
 }
 
 .navbar {
-margin-bottom: 320px;
-margin-top: -350px;
+margin-bottom: 0px;
+margin-top: 0px;
 margin-right: -20px;
 margin-left: -20px;
+
 
 }
 
@@ -33,13 +34,18 @@ margin-left: -20px;
 	width: 100%;
 	background-size: cover;
 	background-image: url(<%= asset_path @image_background %>);
+
 }
 .carousel {
-	position: absolute;
-	top: 50px;
+	/* position: absolute; */
+	position: relative;
+	top: 0px;
 	left: 0px;
+	margin-left: -20px;
+	margin-right: -20px;
 	right: 0px;
 	overflow: hidden;
+
 }
 .carousel-caption {
 	color: #ffffff;
