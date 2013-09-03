@@ -15,7 +15,7 @@ class AilesController < ApplicationController
   end
   
   def prix
-    @ailes = Aile.all.order('prix_10m_sans_barre ASC')
+    @ailes = Aile.all.order('prix_10m_sans_barre ASC').where("prix_10m_sans_barre IS NOT NULL")
     @title = "Ailes"
   end
   

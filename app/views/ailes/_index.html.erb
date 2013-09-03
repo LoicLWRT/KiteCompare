@@ -38,22 +38,22 @@
 			<% end %>
 			<% end %>
 
-			
 
 			<% if not aile.prix_10m_sans_barre.nil? then %>
 			<%== "&nbsp;" * 15 %>
 			<%=='<small>10m² à <strong>' + aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
-			
-			
+			<br>
+			<br>
+			<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
+
+
 			<% else %>
 			<%== "&nbsp;" * 5 %>
 			<%== '<small class="text-error">Plus disponible.</small>' %>
+			<br>
+			<br>
+			<%= link_to "Accéder aux avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
 			<% end %>
-			
-			
-			<br/>
-			<br/>
-			<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
 
 		</p>
 
@@ -87,6 +87,6 @@
 }
 
 .btn-danger{
-	
+
 }
 </style>
