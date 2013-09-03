@@ -43,7 +43,13 @@
 			<% if not aile.prix_10m_sans_barre.nil? then %>
 			<%== "&nbsp;" * 15 %>
 			<%=='<small>10m² à <strong>' + aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
+			
+			
+			<% else %>
+			<%== "&nbsp;" * 5 %>
+			<%== '<small class="text-error">Plus disponible.</small>' %>
 			<% end %>
+			
 			
 			<br/>
 			<br/>
