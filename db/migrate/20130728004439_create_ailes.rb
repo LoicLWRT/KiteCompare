@@ -9,12 +9,12 @@ class CreateAiles < ActiveRecord::Migration
       
       t.text    :description
       
-      t.integer :score_relaunch
-      t.integer :score_highwind
-      t.integer :score_lowwind
-      t.integer :score_easyofuse
-      t.integer :score_wave
-      t.integer :score_unhooked
+      t.float :score_relaunch
+      t.float :score_highwind
+      t.float :score_lowwind
+      t.float :score_easyofuse
+      t.float :score_wave
+      t.float :score_unhooked
 
       t.timestamps
     end
