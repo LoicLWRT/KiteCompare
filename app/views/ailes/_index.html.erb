@@ -1,6 +1,19 @@
 <%= render "shared/notcaroussel" %>
 
+
+<script type="text/JavaScript" language="JavaScript"> 
+function testchecked() 
+{
+	//alert("You didn't check it! Let me check it for you.");
+	document.getElementById('mydiv').innerHTML = '<a href="/" class="btn btn-medium btn-primary">Comparer les ailes sélectionnées</h2>';
+};
+</script>
+
 <h1 class="text-center">Les ailes de kitesurf</h1>
+
+<div id="mydiv" class="mydiv"> </div>
+
+
 
 <div class="btn-group pull-right">
 	<a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">
@@ -54,6 +67,9 @@
 			<br>
 			<%= link_to "Accéder aux avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
 			<% end %>
+			
+			&nbsp;&nbsp;&nbsp;
+			<small class="btn btn-small btn-info">Comparer <input id="remember" name="remember" type="checkbox" onclick="testchecked()" /></small>
 
 		</p>
 
@@ -66,6 +82,12 @@
 
 <style>
 
+.mydiv {
+	position:fixed;
+	bottom:5%;
+	left:20px;
+	
+}
 .thumbnails {
 	text-align: center;
 }
@@ -86,7 +108,4 @@
 	width: 300px;
 }
 
-.btn-danger{
-
-}
 </style>

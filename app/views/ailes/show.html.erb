@@ -152,7 +152,7 @@
 				<%  if !(@aile.score_relaunch==-1) %>
 					<%== "<tr><td>Facilité au redécollage :</td><td>"%>
 					<%(@aile.score_relaunch/2).round(0).times do |n| %>
-						<%= image_tag "score/1.png" %>
+						<%= image_tag "score/hori/1.png" %>
 				
 					<%	end  %>
 				<%== "</td></tr>" %>	
@@ -162,7 +162,7 @@
 				<%  if !(@aile.score_highwind==-1) %>
 					<%== "<tr><td>Plage haute :</td><td>"%>
 					<%(@aile.score_highwind/2).round(0).times do |n| %>
-						<%= image_tag "score/2.png" %>
+						<%= image_tag "score/hori/2.png" %>
 				
 					<%	end  %>
 				<%== "</td></tr>" %>	
@@ -173,7 +173,7 @@
 				<%  if !(@aile.score_lowwind==-1) %>
 					<%== "<tr><td>Plage basse :</td><td>"%>
 					<%(@aile.score_lowwind/2).round(0).times do |n| %>
-						<%= image_tag "score/3.png" %>
+						<%= image_tag "score/hori/3.png" %>
 				
 					<%	end  %>
 				<%== "</td></tr>" %>	
@@ -183,7 +183,7 @@
 				<%  if !(@aile.score_easyofuse==-1) %>
 					<%== "<tr><td>Facilité d'utilisation :</td><td>"%>
 					<%(@aile.score_easyofuse/2).round(0).times do |n| %>
-						<%= image_tag "score/4.png" %>
+						<%= image_tag "score/hori/4.png" %>
 				
 					<%	end  %>
 				<%== "</td></tr>" %>	
@@ -194,7 +194,7 @@
 				<%  if !(@aile.score_wave==-1) %>
 					<%== "<tr><td>Comportement dans les vagues : &nbsp;</td><td>"%>
 					<%(@aile.score_wave/2).round(0).times do |n| %>
-						<%= image_tag "score/5.png" %>
+						<%= image_tag "score/hori/5.png" %>
 				
 					<%	end  %>
 				<%== "</td></tr>" %>	
@@ -204,7 +204,7 @@
 				<%  if !(@aile.score_unhooked==-1) %>
 					<%== "<tr><td>Comportement en déhooké :</td><td>"%>
 					<%(@aile.score_unhooked/2).round(0).times do |n| %>
-						<%= image_tag "score/6.png" %>
+						<%= image_tag "score/hori/6.png" %>
 				
 					<%	end  %>
 				<%== "</td></tr>" %>	
