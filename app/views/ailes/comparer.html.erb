@@ -1,0 +1,228 @@
+<%= render "shared/notcaroussel" %>
+
+<h2>Comparaison des ailes sélectionnées</h2>
+<br>
+
+<% ailes_params=Rack::Utils.parse_query URI(request.fullpath).query %>
+
+
+
+
+<%
+
+def set_link_to_aile(aile)
+	link_to "Détail",aile,:class=>"btn btn-small btn-danger text-center"
+end
+
+def set_image_per_score(aileid, score_type)
+	@aile = Aile.find(aileid)
+	
+	case score_type
+	when  "relaunch"
+		score = @aile[:score_relaunch]
+	when "highwind"
+		score = @aile[:score_highwind]
+	when "lowwind"
+		score = @aile[:score_lowwind]
+	when "easyofuse"
+		score = @aile[:score_easyofuse]
+	when "wave"
+		score = @aile[:score_wave]
+	when "unhooked"
+		score = @aile[:score_unhooked]
+	end	
+	
+	if score == -1 
+		-1
+	elsif score == nil
+		-1
+	else
+		(score/2).round(0)
+	end
+	
+end
+
+
+def print_image_per_score(score, scoreid)
+	if !(score==-1)
+		concat '<div class="serre">'.html_safe
+		(5-score).times do
+			concat image_tag "score/hori/4.png"
+			concat "<br>".html_safe
+		end
+		
+		score.times do
+			concat image_tag "score/hori/"+scoreid.to_s+".png"
+			concat "<br>".html_safe
+		end
+		concat '</div">'.html_safe
+	else
+		"Oups !"
+	end
+end
+
+
+
+def get_aile_infos(id)
+	@aile = Aile.find(id)
+	marque = Marque.find(@aile.marque_id).name
+	nom = marque + " " + @aile.modele + " " + @aile.annee.to_s
+	note = @aile.note
+	
+	image_url = marque + "_" + @aile.modele + "_" + @aile.annee.to_s()
+	image_url = "kites/" + image_url.downcase.delete(' ').delete('.') + "-small.png"
+	if  Rails.application.assets.find_asset(image_url).nil? then image_url="kites/base-small.png"  end
+		
+	note_image = ""
+	if not @aile.note.nil? then
+		(@aile.note).times do
+			note_image = note_image + '<i class="icon-star"></i>'
+		end
+		(5 - @aile.note).times do
+			note_image = note_image + '<i class="icon-star-empty"></i>'
+			end
+	end
+	
+	relaunch = set_image_per_score(id, "relaunch")
+	highwind = set_image_per_score(id, "highwind")
+	lowwind = set_image_per_score(id, "lowwind")
+	easyofuse = set_image_per_score(id, "easyofuse")
+	wave = set_image_per_score(id, "wave")
+	unhooked = set_image_per_score(id, "unhooked")
+	
+	if !@aile.prix_10m_sans_barre.nil?
+		price = @aile.prix_10m_sans_barre.to_s + " €"
+	end
+	
+	link = set_link_to_aile(@aile)
+	
+	
+   {:nom => nom, :note => note, :image_url =>image_url, :note_image => note_image, :price => price, :link => link, :relaunch => relaunch, :lowwind => lowwind, :highwind => highwind, :easyofuse => easyofuse, :wave => wave, :unhooked => unhooked}
+end
+
+def set_aile_nil()
+	{:nom => "", :image_url => "", :note_image => "", :relaunch => -1, :lowwind => -1, :highwind => -1, :easyofuse => -1, :wave => -1, :unhooked => -1, :link => ""}
+end
+
+def return_aile_if_param_valid(param)
+	if Aile.exists?(:id => [param.to_i])
+		get_aile_infos(param)
+	else
+		set_aile_nil()
+	end
+end
+
+%>
+
+
+<% "ID aile 1 : " + ailes_params["aile1"] %>
+
+
+<% aile1 = return_aile_if_param_valid(ailes_params["aile1"]) %>
+<% aile2 = return_aile_if_param_valid(ailes_params["aile2"]) %>
+<% aile3 = return_aile_if_param_valid(ailes_params["aile3"]) %>
+<% aile4 = return_aile_if_param_valid(ailes_params["aile4"]) %>
+
+
+
+<table class="table table-bordered">
+	<tr>
+		<th> </th>
+		<th><%= aile1[:nom] %></th>
+		<th><%= aile2[:nom] %></th>
+		<th><%= aile3[:nom] %></th>
+		<th><%= aile4[:nom] %></th>
+	</tr>
+	
+	<tr>
+		<td> </td>
+		<td><%= image_tag aile1[:image_url] %></td>
+		<td><%= image_tag aile2[:image_url] %></td>
+		<td><%= image_tag aile3[:image_url] %></td>
+		<td><%= image_tag aile4[:image_url] %></td>
+	</tr>
+	
+	<tr>
+		<td>Note</td>
+		<td><%== aile1[:note_image] %></td>
+		<td><%== aile2[:note_image] %></td>
+		<td><%== aile3[:note_image] %></td>
+		<td><%== aile4[:note_image] %></td>
+	</tr>
+	
+	<tr>
+		<td>Facilité au redécollage</td>
+		<td><% print_image_per_score(aile1[:relaunch], 1) %></td>
+		<td><% print_image_per_score(aile2[:relaunch], 1) %></td>
+		<td><% print_image_per_score(aile3[:relaunch], 1) %></td>
+		<td><% print_image_per_score(aile4[:relaunch], 1) %></td>	
+	</tr>
+	
+	<tr>
+		<td>Plage haute</td>
+		<td><% print_image_per_score(aile1[:highwind], 2) %></td>
+		<td><% print_image_per_score(aile2[:highwind], 2) %></td>
+		<td><% print_image_per_score(aile3[:highwind], 2) %></td>
+		<td><% print_image_per_score(aile4[:highwind], 2) %></td>
+	</tr>
+	
+	<tr>
+		<td>Plage basse</td>
+		<td><% print_image_per_score(aile1[:lowwind], 3) %></td>
+		<td><% print_image_per_score(aile2[:lowwind], 3) %></td>
+		<td><% print_image_per_score(aile3[:lowwind], 3) %></td>
+		<td><% print_image_per_score(aile4[:lowwind], 3) %></td>
+	</tr>
+	
+	<tr>
+		<td>Facilité d'utilisation</td>
+		<td><% print_image_per_score(aile1[:easyofuse], 5) %></td>
+		<td><% print_image_per_score(aile2[:easyofuse], 5) %></td>
+		<td><% print_image_per_score(aile3[:easyofuse], 5) %></td>
+		<td><% print_image_per_score(aile4[:easyofuse], 5) %></td>
+	</tr>
+	
+	<tr>
+		<td>Comportement dans les vagues</td>
+		<td><% print_image_per_score(aile1[:wave], 6) %></td>
+		<td><% print_image_per_score(aile2[:wave], 6) %></td>
+		<td><% print_image_per_score(aile3[:wave], 6) %></td>
+		<td><% print_image_per_score(aile4[:wave], 6) %></td>
+	</tr>
+	
+	<tr>
+		<td>Comportement en déhooké</td>
+		<td><% print_image_per_score(aile1[:unhooked], 1) %></td>
+		<td><% print_image_per_score(aile2[:unhooked], 1) %></td>
+		<td><% print_image_per_score(aile3[:unhooked], 1) %></td>
+		<td><% print_image_per_score(aile4[:unhooked], 1) %></td>
+	</tr>
+	
+	<tr>
+		<td>Prix pour une 10m²</td>
+		<td><%= aile1[:price] %></td>
+		<td><%= aile2[:price] %></td>
+		<td><%= aile3[:price] %></td>
+		<td><%= aile4[:price] %></td>
+	</tr>
+	
+	<tr>
+		<td>Détail des prix et critiques</td>
+		<td><%= aile1[:link] %></td>
+		<td><%= aile2[:link] %></td>
+		<td><%= aile3[:link] %></td>
+		<td><%= aile4[:link] %></td>
+	</tr>
+	
+</table>
+
+<style>
+.table th, .table td  {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.serre {
+  line-height: 10px;
+}
+</style>

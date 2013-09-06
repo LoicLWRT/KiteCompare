@@ -1,6 +1,11 @@
 <%= render "shared/notcaroussel" %>
 
+
 <h1 class="text-center">Les ailes de kitesurf</h1>
+
+<div id="mydiv" class="mydiv"> </div>
+
+
 
 <div class="btn-group pull-right">
 	<a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">
@@ -54,6 +59,9 @@
 			<br>
 			<%= link_to "Accéder aux avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
 			<% end %>
+			
+			&nbsp;&nbsp;&nbsp;
+			<small class="btn btn-small btn-info">Comparer <input id="aile" name="<%= aile.id %>" type="checkbox" onclick="testchecked(this)" /></small>
 
 		</p>
 
@@ -66,6 +74,12 @@
 
 <style>
 
+.mydiv {
+	position:fixed;
+	bottom:5%;
+	left:20px;
+	
+}
 .thumbnails {
 	text-align: center;
 }
@@ -86,7 +100,4 @@
 	width: 300px;
 }
 
-.btn-danger{
-
-}
 </style>

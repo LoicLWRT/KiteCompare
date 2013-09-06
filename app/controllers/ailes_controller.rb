@@ -2,7 +2,7 @@ require 'digest'
 
 class AilesController < ApplicationController
   
-  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show, :prix, :note]
+  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show, :prix, :note, :comparer]
   
   before_action :set_aile, only: [:show, :edit, :update, :destroy]
   
