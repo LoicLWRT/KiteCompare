@@ -1,3 +1,58 @@
 // Place all the styles related to the Ailes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.alert{
+	margin-bottom: 0px;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+.mydiv {
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	
+	padding-left: 20px;
+	padding-right: 20px;
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	border-top-style: solid;
+	border-color: #000000;
+	border-width:1px;
+	
+	
+	background-position: center top;
+
+	background: #ffffff;
+	color: #000000;
+	
+	text-align:center;
+
+	
+}
+.thumbnails {
+	text-align: center;
+}
+.thumbnail {
+	display: inline-block;
+	margin: auto;
+	width: 300px;
+
+}
+.thumbnails li {
+	float: none !important;
+	display: inline-block;
+	*display: inline; /* ie7 support */
+	zoom: 1;
+}
+
+.serre {
+  line-height: 10px;
+}
+
+.span4 {
+	width: 300px;
+}
