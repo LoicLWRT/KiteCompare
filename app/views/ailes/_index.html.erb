@@ -3,8 +3,8 @@
 
 <h1 class="text-center">Les ailes de kitesurf</h1>
 
-<div id="mydiv" class="mydiv"> </div>
 
+<div id="mycont"> </div>
 
 
 <div class="btn-group pull-right">
@@ -54,14 +54,14 @@
 
 			<% else %>
 			<%== "&nbsp;" * 5 %>
-			<%== '<small class="text-error">Plus disponible en neuf.</small>' %>
+			<%== '<small class="text-error">Non disponible en neuf.</small>' %>
 			<br>
 			<br>
 			<%= link_to "Accéder aux avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
 			<% end %>
 			
 			&nbsp;&nbsp;&nbsp;
-			<small class="btn btn-small btn-info">Comparer <input id="aile" name="<%= aile.id %>" type="checkbox" onclick="testchecked(this)" /></small>
+			<small class="btn btn-small btn-info" onclick="check_box(<%= aile.id %>)">Comparer <input id="aile" name="<%= aile.id %>" type="checkbox" onclick="hack_click(this)" /></small>
 
 		</p>
 
@@ -73,11 +73,35 @@
 
 
 <style>
-
+.alert{
+	margin-bottom: 0px;
+	margin-left: 20%;
+	margin-right: 20%;
+}
 .mydiv {
 	position:fixed;
-	bottom:5%;
-	left:20px;
+	bottom:0;
+	left:0;
+	right:0;
+	
+	padding-left: 20px;
+	padding-right: 20px;
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	border-top-style: solid;
+	border-color: #000000;
+	border-width:1px;
+	
+	
+	background-position: center top;
+
+	background: #ffffff;
+	color: #000000;
+	
+	text-align:center;
+
 	
 }
 .thumbnails {
