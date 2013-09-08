@@ -2,6 +2,11 @@
 
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Vote', vote_path, :method => :post %>
+
+<p> Nombre de vote(s) : <%= @votes = Vote.where(aile_id: @aile.id).count %> </p>
+
+
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span6">
@@ -25,9 +30,13 @@
 			</p>
 
 			<br><br>
-			<h4>Critiques</h4>
+			
 			<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
-
+			
+			<% if !@critiques.count==0 %>
+			<%== "<h4>Critiques</h4>" %>
+			<% end %>
+			
 			<% @critiques.each do |critique| %>
 			<blockquote>
 				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>

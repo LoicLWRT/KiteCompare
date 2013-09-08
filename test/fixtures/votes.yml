@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ip_address: MyString
+  user_agent: MyString
+  unixtime: 1
+
+two:
+  ip_address: MyString
+  user_agent: MyString
+  unixtime: 1

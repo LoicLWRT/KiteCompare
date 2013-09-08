@@ -8,6 +8,9 @@ KiteCompare::Application.routes.draw do
   
   resources :ailes
   
+  match "votes/:aile_id" => "votes#create", :as => :vote, via: [:get, :post]
+  
+  
   get 'ailesparprix', to: 'ailes#prix'
   get 'ailesparnote', to: 'ailes#note'
   get 'comparer_ailes',      to: 'ailes#comparer'

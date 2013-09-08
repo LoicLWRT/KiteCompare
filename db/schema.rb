@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130728010444) do
+ActiveRecord::Schema.define(version: 20130908135820) do
 
   create_table "ailes", force: true do |t|
     t.string   "modele"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 20130728010444) do
 
   create_table "type_critiques", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "aile_id"
+    t.string   "ip_address"
+    t.string   "user_agent"
+    t.integer  "unixtime"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
