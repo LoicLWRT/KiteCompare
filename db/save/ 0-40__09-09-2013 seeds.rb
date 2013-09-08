@@ -39,7 +39,6 @@ Ce spi à apporté surtout une meilleure résistance au kite dans l'ensemble.", 
 Aile.create(modele: 'Origin V2', marque_id: 7, annee: 2012, note: 4, description: "", score_relaunch: -1.0, score_highwind: -1.0, score_lowwind: -1.0, score_easyofuse: -1.0, score_wave: -1.0, score_unhooked: -1.0)
 Aile.create(modele: 'Hydra V5', marque_id: 7, annee: 2011, note: 4, description: "La Genetrix Hydra V5 détient le record du monde de vitesse, c'est donc une aile idéale pour du race..", score_relaunch: -1.0, score_highwind: -1.0, score_lowwind: -1.0, score_easyofuse: -1.0, score_wave: -1.0, score_unhooked: -1.0)
 Aile.create(modele: 'Rally', marque_id: 10, annee: 2014, note: 4, description: "", score_relaunch: 9.0, score_highwind: -1.0, score_lowwind: 8.0, score_easyofuse: 10.0, score_wave: -1.0, score_unhooked: 6.0)
-Aile.create(modele: 'Switchblade', marque_id: 12, annee: 2012, note: 4, description: "", score_relaunch: 7.0, score_highwind: -1.0, score_lowwind: -1.0, score_easyofuse: -1.0, score_wave: -1.0, score_unhooked: 6.0)
 
 Marque.create(name: 'Naish')
 Marque.create(name: 'F.One')
@@ -108,11 +107,10 @@ CritiqueAile.create(type_critique_id: 2, source: "Epikoo", lien: 'http://epikoo.
 CritiqueAile.create(type_critique_id: 2, source: "Forum Flysurf", lien: 'http://forum.flysurf.com/parlons-matos/bandit-4-en-11m-ou-naish-park-2012-en-11-ou-12-m-t68409.html', contenu: "L'aile manque de puissance dans sa plage basse.", aile_id: 13)
 CritiqueAile.create(type_critique_id: 1, source: "Epikoo", lien: 'http://epikoo.com/kiteboarding/gear/kites/cabrinha-drifter-2013', contenu: "Très bon comportement dans les vagues.", aile_id: 29)
 CritiqueAile.create(type_critique_id: 1, source: "Forum Flysurf", lien: 'http://forum.flysurf.com/parlons-matos/retour-rebel-2014-et-vegas-2014-t68459-10.html', contenu: "Une des améliorations principale cette année est le pivot de l'aile : elle tourne vraiment plus vite.", aile_id: 17)
-CritiqueAile.create(type_critique_id: 1, source: "YouRide", lien: 'http://www.youride.fr/blog/test-express-de-la-slingshot-rally-2014/', contenu: "L'ail reste très stable.", aile_id: 33)
-CritiqueAile.create(type_critique_id: 2, source: "YouRide", lien: 'http://www.youride.fr/blog/test-express-de-la-slingshot-rally-2014/', contenu: "Le déhooké n'est pas son fort, même si vous pourrez commencer à faire des figures de bases.", aile_id: 33)
+CritiqueAile.create(type_critique_id: 1, source: "YouRide", lien: 'http://www.youride.fr/blog/test-express-de-la-slingshot-rally-2014/', contenu: "L'ail reste très stable.", aile_id: 34)
+CritiqueAile.create(type_critique_id: 2, source: "YouRide", lien: 'http://www.youride.fr/blog/test-express-de-la-slingshot-rally-2014/', contenu: "Le déhooké n'est pas son fort, même si vous pourrez commencer à faire des figures de bases.", aile_id: 34)
 CritiqueAile.create(type_critique_id: 3, source: "Forum Kite-Spirit", lien: 'http://www.kite-spirit.com/forum/viewtopic.php?id=2793', contenu: "La plage haute est très bonne, et la plage basse correcte.", aile_id: 12)
 CritiqueAile.create(type_critique_id: 2, source: "Vincent de CompareKite", lien: '#', contenu: "Sur le trim, si on ne sert pas assez, la corde peut se défaire du clam-cleat lors d'une rafale.", aile_id: 1)
-CritiqueAile.create(type_critique_id: 2, source: "Forum Kitesurf", lien: 'http://www.kitesurf.fr/viewtopic_23950.html', contenu: "Redécolle moins bien qu'une Bandit ou qu'une Rally par exemple, car elle est moins courbée.", aile_id: 34)
 
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 735.0, surface: 5, aile_id: 2)
 PrixSurShop.create(nom_shop: "Freeride Attitude", lien_produit: 'http://www.freeride-attitude.com/fone-bandit-6-2013,19829.html', prix_sans_barre: 775.0, surface: 6, aile_id: 2)
