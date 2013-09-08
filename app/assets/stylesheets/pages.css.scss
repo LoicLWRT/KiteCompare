@@ -3,6 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+a.white {
+	color: #1c2e40;
+	font-weight:bold;
+	line-height: 25px;
+}
+
+.section {
+	background-attachment: scroll;
+	background-position: center top;
+	margin-left: -20px;
+	margin-right: -20px;
+	position: relative;
+	padding: 0px 15% 15%;
+	/* background: #1abc9c; */
+	background: #24e3be;
+	color: #ffffff;
+	padding-bottom: 20px;
+}
+
+h3.white {
+	text-shadow: 0 2px 2px rgba(0,0,0,.5);
+}
+
+
+
+
+
+
+
+
 .span3 {
 	text-align: center;
 	margin:auto;
