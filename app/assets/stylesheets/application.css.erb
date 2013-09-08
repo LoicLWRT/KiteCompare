@@ -16,7 +16,6 @@
  */
 
 body {
-	padding-top: 70px;
 	padding-bottom: 40px;
 	padding-left:20px;
 	padding-right:20px;
@@ -65,4 +64,39 @@ body {
 	line-height: 24px;
 	}
 	
+}
+
+
+.navbar {
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-right: -20px;
+	margin-left: -20px;
+}
+
+<% @image_background = "backgrounds/" + (1 + rand(5)).to_s() + ".jpg" %>
+
+.image_resize{
+	height: 300px;
+	width: 100%;
+	background-size: cover;
+	background-image: url(<%= asset_path @image_background %>);
+
+}
+.carousel {
+	/* position: absolute; */
+	position: relative;
+	top: 0px;
+	left: 0px;
+	margin-left: -20px;
+	margin-right: -20px;
+	right: 0px;
+	overflow: hidden;
+
+}
+.carousel-caption {
+	color: #ffffff;
+	text-shadow: 0 2px 2px rgba(0,0,0,.8);
+	background: rgba(0, 0, 0, 0.5);
+	padding: 5px;
 }
