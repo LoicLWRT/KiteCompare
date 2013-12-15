@@ -1,7 +1,10 @@
 <div id="myCarousel" class="carousel">
 	<div class="carousel-inner">
 		<div class="item active">
-			<%#= image_tag @image_background, :class => "image_resize" %>
+
+
+
+
 			<div class="image_resize"></div>
 			<div class="container">
 				<div class="carousel-caption">
@@ -11,3 +14,16 @@
 		</div>
 	</div>
 </div>
+
+
+<style type="text/css">
+ <% @image_background = "backgrounds/" + (1 + rand(5)).to_s() + ".jpg" %>
+
+.image_resize{
+	height: 300px;
+	width: 100%;
+	background-size: cover;
+	background-image: url(<%= asset_path @image_background %>);
+
+}
+  </style>
