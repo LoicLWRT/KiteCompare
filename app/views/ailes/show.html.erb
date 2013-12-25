@@ -36,11 +36,12 @@
 		
 
 			<br><br>
-			
+			<h4>Avis d'utilisateurs</h4>
+			</br>
 			<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
 			
-			<% if !@critiques.count==0 %>
-			<%== "<h4>Critiques</h4>" %>
+			<% if (@critiques.count==0) %>
+			<%= "Désolé, aucun avis d'utilisateur n'est disponible pour cette aile." %>
 			<% end %>
 			
 			<% @critiques.each do |critique| %>
@@ -57,11 +58,14 @@
 		
 		<div class="span12">
 			<br><br>
-			<h4>Les prix sur le net</h4>
+			<h4>Les prix dans les shops</h4>
 			<br>			
 			<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC') %>
 
-
+			<% if @prixs == [] %>
+			<%= "Désolé, aucun prix n'est disponible pour cette aile."%>
+			<% end %>
+			
 			<% 
 			all_surfaces=Array["5m²" ,"6m²" ,"7m²","8m²" ,"9m²" ,"10m²","11m²","12m²","13m²","14m²"] 
 			c = Array.new
@@ -158,9 +162,13 @@
 			</div> <!-- span12 -->
 			
 			
-			<br><br>
+			<br>
 			<div class="span6">
 			<h4>Particularités de l'aile</h4>
+			</br>
+			<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
+			<%= "Désolé, aucun détail n'est disponible pour cette aile." %>
+			<% end %>
 			
 			<table>
 			
@@ -227,8 +235,27 @@
 			
 			
 			</table>
-			
+			</br></br>
 			</div>
+			<center>
+			<div class="span6">
+				
+				<div class="goleft">
+				<h4>Description officielle</h4>
+				</br>
+				
+				<% if @aile.description == "" %>
+				<%= "Désolé, aucune description n'est disponible pour cette aile." %>
+				<% end %>
+				
+				<blockquote>
+					<%= @aile.description %>
+
+				</blockquote>
+				</go>
+
+			</div>
+			</center>
 		</div>
 	</div>
 
