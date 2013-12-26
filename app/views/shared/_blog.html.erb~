@@ -6,7 +6,7 @@
 
 		<div class="span2 offset2">
 			<p>
-				<a class="white" href="http://blog.comparekite.com/post/acheter-son-aile-de-kitesurf-doccasion-a-quoi-faire">
+				<a class="white" href="http://blog.comparekite.com/post/60174714295/acheter-son-aile-de-kitesurf-doccasion-a-quoi-faire">
 					<%= image_tag "arrow_left.png" %>
 					Acheter son aile de kitesurf d’occasion, à quoi faire attention ?
 				</a>
@@ -16,7 +16,7 @@
 
 		<div class="span2 offset1">
 			<p>
-				<a class="white" href="http://blog.comparekite.com/post/le-lexique-simplifie-du-kitesurf">
+				<a class="white" href="http://blog.comparekite.com/post/60160220190/le-lexique-simplifie-du-kitesurf">
 					<%= image_tag "arrow_left.png" %>
 					Le lexique simplifié du kitesurf
 				</a>
@@ -26,9 +26,9 @@
 
 		<div class="span2 offset1">
 			<p>
-				<a class="white" href="http://blog.comparekite.com/post/test-de-la-barre-universelle-kiteattitude-2014">
+				<a class="white" href="http://blog.comparekite.com/post/59183695443/les-clips-des-nouveautes-kitesurf-2014">
 					<%= image_tag "arrow_left.png" %>
-					Test de la barre universelle KiteAttitude 2014
+					Les clips des nouveautés kitesurf 2014
 				</a>
 			</p>
 		</div>
