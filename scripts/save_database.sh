@@ -11,8 +11,8 @@ rake database:save > db/seeds.rb
 echo "Creating db/seeds.rb with the DB"
 
 echo "Now resetting"
-rake db:drop
-rake db:migrate
-rake db:seed
-rake ailes:prix
+rake db:drop -v
+rake db:migrate -v
+rake db:seed -v
+rake ailes:prix -v
 echo "Reset complete"
