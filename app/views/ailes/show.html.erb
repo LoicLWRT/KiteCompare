@@ -36,23 +36,104 @@
 		
 
 			<br><br>
-			<h4>Avis d'utilisateurs</h4>
+
+
+
+
+			<h4>Particularités de l'aile</h4>
 			</br>
-			<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
-			
-			<% if (@critiques.count==0) %>
-			<%= "Désolé, aucun avis d'utilisateur n'est disponible pour cette aile." %>
+			<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
+			<%= "Désolé, aucun détail n'est disponible pour cette aile." %>
 			<% end %>
 			
-			<% @critiques.each do |critique| %>
-			<blockquote>
-				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
-				<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
-				<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
-				<p><%= critique.contenu %></p>
-				<small><%= critique.source %></small>
-			</blockquote>
-			<% end %>
+			<table>
+			
+				<%  if !(@aile.score_relaunch==-1) %>
+					<%== "<tr><td>Facilité au redécollage :</td><td>"%>
+					<%(@aile.score_relaunch/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/1.png" %>
+					<%	end  %>
+					
+					<%(4.999 - @aile.score_relaunch/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+				
+				
+				<%  if !(@aile.score_highwind==-1) %>
+					<%== "<tr><td>Plage haute :</td><td>"%>
+					<%(@aile.score_highwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/2.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_highwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+				
+			
+			
+				<%  if !(@aile.score_lowwind==-1) %>
+					<%== "<tr><td>Plage basse :</td><td>"%>
+					<%(@aile.score_lowwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/3.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_lowwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+				
+				
+				<%  if !(@aile.score_easyofuse==-1) %>
+					<%== "<tr><td>Facilité d'utilisation :</td><td>"%>
+					<%(@aile.score_easyofuse/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/4.png" %>
+					<%	end  %>
+					
+					<%(4.999 - @aile.score_easyofuse/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+			
+			
+			
+				<%  if !(@aile.score_wave==-1) %>
+					<%== "<tr><td>Comportement dans les vagues : &nbsp;</td><td>"%>
+					<%(@aile.score_wave/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/5.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_wave/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+			
+			
+				<%  if !(@aile.score_unhooked==-1) %>
+					<%== "<tr><td>Comportement en déhooké :</td><td>"%>
+					<%(@aile.score_unhooked/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/6.png" %>
+					<%	end  %>
+					
+					<%(4.999 - @aile.score_unhooked/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+			
+			
+			</table>
+			</br></br>
+
+
+
+
+
 		</div>
 		
 		
@@ -158,108 +239,44 @@
 					end 
 					%>
 				</table>
+			</br></br>
+			</div> <!-- span12 pour les prix-->
 
-			</div> <!-- span12 -->
-			
-			
-			<br>
-			
+
 			
 			<div class="span6">
-			<h4>Particularités de l'aile</h4>
+			<h4>Avis d'utilisateurs</h4>
 			</br>
-			<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
-			<%= "Désolé, aucun détail n'est disponible pour cette aile." %>
+			<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
+			
+			<% if (@critiques.count==0) %>
+			<%= "Désolé, aucun avis d'utilisateur n'est disponible pour cette aile." %>
 			<% end %>
 			
-			<table>
+			<% @critiques.each do |critique| %>
+			<blockquote>
+				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
+				<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
+				<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
+				<p><%= critique.contenu %></p>
+				<small><%= critique.source %></small>
+			</blockquote>
+			<% end %>
+			</div> <!-- avis -->
 			
-				<%  if !(@aile.score_relaunch==-1) %>
-					<%== "<tr><td>Facilité au redécollage :</td><td>"%>
-					<%(@aile.score_relaunch/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/1.png" %>
-				
-					<%	end  %>
-				<%== "</td></tr>" %>	
-				<%	end	  %>
-				
-				
-				<%  if !(@aile.score_highwind==-1) %>
-					<%== "<tr><td>Plage haute :</td><td>"%>
-					<%(@aile.score_highwind/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/2.png" %>
-				
-					<%	end  %>
-				<%== "</td></tr>" %>	
-				<%	end	  %>
-				
-			
-			
-				<%  if !(@aile.score_lowwind==-1) %>
-					<%== "<tr><td>Plage basse :</td><td>"%>
-					<%(@aile.score_lowwind/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/3.png" %>
-				
-					<%	end  %>
-				<%== "</td></tr>" %>	
-				<%	end	  %>
-				
-				
-				<%  if !(@aile.score_easyofuse==-1) %>
-					<%== "<tr><td>Facilité d'utilisation :</td><td>"%>
-					<%(@aile.score_easyofuse/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/4.png" %>
-				
-					<%	end  %>
-				<%== "</td></tr>" %>	
-				<%	end	  %>
-			
-			
-			
-				<%  if !(@aile.score_wave==-1) %>
-					<%== "<tr><td>Comportement dans les vagues : &nbsp;</td><td>"%>
-					<%(@aile.score_wave/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/5.png" %>
-				
-					<%	end  %>
-				<%== "</td></tr>" %>	
-				<%	end	  %>
-			
-			
-				<%  if !(@aile.score_unhooked==-1) %>
-					<%== "<tr><td>Comportement en déhooké :</td><td>"%>
-					<%(@aile.score_unhooked/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/6.png" %>
-				
-					<%	end  %>
-				<%== "</td></tr>" %>	
-				<%	end	  %>
-			
-			
-			</table>
-			</br></br>
-			</div> <!-- particularité de l'aide -->
 			
 			
 			<center>
 			<div class="span6">
-				
-				<div class="goleft">
 				<h4>Description officielle</h4>
 				</br>
 				
 				<% if @aile.description == "" %>
 				<%= "Désolé, aucune description n'est disponible pour cette aile." %>
 				<% end %>
-				
-				<blockquote style="font-size=5px;">
-				
+				<div class="desc_officielle">
 					<%= simple_format @aile.description.gsub("\n","\n \n") %>
-				
-				</blockquote>
-				</go>
-
-			</div>
+				</div>
 			</center>
 		</div>
 	</div>
