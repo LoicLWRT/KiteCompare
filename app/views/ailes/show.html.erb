@@ -163,6 +163,8 @@
 			
 			
 			<br>
+			
+			
 			<div class="span6">
 			<h4>Particularités de l'aile</h4>
 			</br>
@@ -236,7 +238,9 @@
 			
 			</table>
 			</br></br>
-			</div>
+			</div> <!-- particularité de l'aide -->
+			
+			
 			<center>
 			<div class="span6">
 				
@@ -248,9 +252,10 @@
 				<%= "Désolé, aucune description n'est disponible pour cette aile." %>
 				<% end %>
 				
-				<blockquote>
-					<%= @aile.description %>
-
+				<blockquote style="font-size=5px;">
+				
+					<%= simple_format @aile.description.gsub("\n","\n \n") %>
+				
 				</blockquote>
 				</go>
 
