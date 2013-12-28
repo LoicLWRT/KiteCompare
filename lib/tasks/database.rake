@@ -44,7 +44,7 @@ namespace :database do
 
     @prixssurshop = PrixSurShop.all
     @prixssurshop.each do |prixsurshop|
-      puts %&PrixSurShop.create(nom_shop: "#{prixsurshop.nom_shop}", lien_produit: '#{prixsurshop.lien_produit}', prix_sans_barre: #{prixsurshop.prix_sans_barre}, surface: #{prixsurshop.surface}, aile_id: #{prixsurshop.aile_id}, manual: #{prixsurshop.manual} )&
+      puts %&PrixSurShop.create(nom_shop: "#{prixsurshop.nom_shop}", lien_produit: '#{prixsurshop.lien_produit}', prix_sans_barre: #{prixsurshop.prix_sans_barre}, surface: #{prixsurshop.surface}, aile_id: #{prixsurshop.aile_id} )&
     end
 
   end

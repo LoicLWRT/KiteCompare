@@ -87,6 +87,6 @@ class AilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def aile_params
-      params.require(:aile).permit(:modele, :marque_id, :annee, :note, :prix_10m_sans_barre, :description, :score_relaunch, :score_highwind, :score_lowwind, :score_easyofuse, :score_wave, :score_unhooked)
+      params.require(:aile).permit(:modele, :marque_id, :annee, :note, :prix_10m_sans_barre, :description, :score_relaunch, :score_highwind, :score_lowwind, :score_easyofuse, :score_wave, :score_unhooked, :url_flysurf, :url_youride, :url_freeride, :url_freerideattitude)
     end
 end
