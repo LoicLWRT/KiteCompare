@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20130908135820) do
     t.float    "prix_sans_barre"
     t.integer  "surface"
     t.integer  "aile_id"
-    t.integer  "manual"
+    t.integer  "auto"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -71,6 +71,6 @@ class PrixSurShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prix_sur_shop_params
-      params.require(:prix_sur_shop).permit(:nom_shop, :lien_produit, :prix_avec_barre, :prix_sans_barre, :surface, :aile_id)
+      params.require(:prix_sur_shop).permit(:nom_shop, :lien_produit, :prix_avec_barre, :prix_sans_barre, :surface, :aile_id, :auto)
     end
 end
