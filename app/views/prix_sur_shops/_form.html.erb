@@ -34,6 +34,12 @@
   <div class="field">
     <%= f.select(:aile_id, Aile.find(:all).collect {|u| [u.modele.to_s + " " + u.annee.to_s, u.id]}, :prompt => 'Select aile') %>
   </div>
+
+  <div class="field">
+    <%= f.label :manual %><br>
+    <%= f.number_field :manual %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
