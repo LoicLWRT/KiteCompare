@@ -5,7 +5,7 @@
 <h3>Polyvalentes</h3>
 
 <% 
-@ID=36 #ID de l'aide à changer 
+@ID=4 #ID de l'aide à changer 
 @titre="Résistance aux chocs"
 @aile = Aile.find(@ID)
 %>
