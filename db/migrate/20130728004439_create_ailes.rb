@@ -16,6 +16,10 @@ class CreateAiles < ActiveRecord::Migration
       t.float :score_wave
       t.float :score_unhooked
 
+      t.string : url_flysurf
+      t.string : url_youride
+      t.string : url_freerideattitude
+      
       t.timestamps
     end
   end

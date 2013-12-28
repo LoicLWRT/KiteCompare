@@ -7,6 +7,7 @@ class CreatePrixSurShops < ActiveRecord::Migration
       t.float :prix_sans_barre
       t.integer :surface
       t.integer :aile_id
+      t.integer :manual
 
       t.timestamps
     end
