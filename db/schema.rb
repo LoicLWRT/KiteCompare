@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20130908135820) do
     t.float    "score_easyofuse"
     t.float    "score_wave"
     t.float    "score_unhooked"
+    t.string   "url_flysurf"
+    t.string   "url_youride"
+    t.string   "url_freerideattitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,6 +56,7 @@ ActiveRecord::Schema.define(version: 20130908135820) do
     t.float    "prix_sans_barre"
     t.integer  "surface"
     t.integer  "aile_id"
+    t.integer  "manual"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
