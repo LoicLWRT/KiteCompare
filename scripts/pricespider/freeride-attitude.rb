@@ -1,5 +1,5 @@
 # encoding: UTF-8
-puts "Getting some prices.."
+puts "Getting some prices for Freeride Attitude"
 
 require 'rubygems'
 require 'watir-webdriver'
