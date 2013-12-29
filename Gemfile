@@ -47,6 +47,7 @@ end
 gem 'execjs'
 gem 'therubyracer'
 gem 'nokogiri'
+gem 'watir'
 
 group :production do
 	gem 'mysql2'
