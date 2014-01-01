@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20130908135820) do
     t.float    "score_wave"
     t.float    "score_unhooked"
     t.string   "url_flysurf"
-    t.string   "url_youride"
+    t.text     "url_vagueetvent"
     t.string   "url_freerideattitude"
     t.datetime "created_at"
     t.datetime "updated_at"

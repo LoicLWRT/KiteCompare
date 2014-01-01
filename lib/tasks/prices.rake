@@ -18,7 +18,7 @@ namespace :prices do
         @prix.destroy
       end
     end
-    
+
     puts "Deleted " + i.to_s + " automated prices"
   end
 
@@ -83,8 +83,48 @@ namespace :prices do
 
   end
 
-  desc "Recherche les prix de YouRide"
-  task youride: :environment do
+  desc "Recherche les prix de Vague et vent"
+  task vagueetvent: :environment do
+    Aile.find_each do |aile|
+
+      if(!(aile.url_vagueetvent.blank?))
+        puts "------------- " + aile.modele + " " + aile.annee.to_s + "  -------------"
+
+        all_surfaces = aile.url_vagueetvent.split("\r\n")
+
+        all_surfaces.each do |line|
+          surface_url = line.split(';')
+
+          surface = surface_url[0].to_i
+          url = surface_url[1]
+
+          #puts "On ouvre le lien pour : " + surface.to_s
+          prix=0
+      
+          doc = Nokogiri::HTML(open(url))
+          doc.encoding = 'utf-8'
+          
+          prix = doc.at_css('.prix > span:nth-child(1)').to_s
+          prix=prix.gsub('<span itemprop="price">','').gsub('</span>','').gsub('.00 €','').to_i
+
+          if (surface<16 && surface>4 && prix<2500 && prix>200)
+            @prixsurshop = PrixSurShop.new(
+              :nom_shop => 'Vague et vent',
+              :lien_produit => aile.url_vagueetvent,
+              :prix_sans_barre => prix,
+              :surface => surface,
+              :aile_id => aile.id,
+              :auto => 1
+            )
+            @prixsurshop.save
+            
+            puts "Prix sauvegardé pour " + aile.modele + " en " + surface.to_s + "m : " + prix.to_s
+          end
+
+        end
+
+      end
+    end
 
   end
 
