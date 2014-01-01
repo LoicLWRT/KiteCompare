@@ -24,13 +24,19 @@
 				<% end %>
 				<% end %>
 			</p>
-			
+			<p class="text-center">
+				<% tags = @aile.tags.split(',') %>
+				<span class="label label-warning"><%= tags[0] %></span>
+				<% tags[1..-1].each do |riding_type| %>
+					<span class="label label-info"><%= riding_type.titleize %></span>
+				<% end %>
+			</p>
 			
 			<table align="center">
 			    <tr>
 			        <td><h5 class="text-center"> <%= @votes = Vote.where(aile_id: @aile.id).count %> &nbsp;<%= image_tag("heart_32.png") %></h5></td>
 			
-			        <td><p class="text-center" style="margin: 0;">&nbsp;<%= link_to "vous l'aimez aussi ?", vote_path(@aile.id), :method => :post %></p></td>
+			        <td><p class="text-center" style="margin: 0;">&nbsp;<%= link_to "Vous l'aimez aussi ?", vote_path(@aile.id), :method => :post %></p></td>
 			    </tr>
 			</table>
 		

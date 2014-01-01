@@ -15,7 +15,8 @@ namespace :database do
       if aile.score_wave.blank? then aile.score_wave = -1 end
       if aile.score_unhooked.blank? then aile.score_unhooked = -1 end
         
-      puts %&Aile.create(modele: '#{aile.modele}', marque_id: #{aile.marque_id}, annee: #{aile.annee}, note: #{aile.note}, description: %Q[#{aile.description}], score_relaunch: #{aile.score_relaunch}, score_highwind: #{aile.score_highwind}, score_lowwind: #{aile.score_lowwind}, score_easyofuse: #{aile.score_easyofuse}, score_wave: #{aile.score_wave}, score_unhooked: #{aile.score_unhooked} ,url_flysurf: '#{aile.url_flysurf}' ,url_vagueetvent: '#{aile.url_vagueetvent}' ,url_freerideattitude: '#{aile.url_freerideattitude}' )&
+<<<<<<< HEAD
+      puts %&Aile.create(modele: '#{aile.modele}', marque_id: #{aile.marque_id}, annee: #{aile.annee}, note: #{aile.note}, description: %Q[#{aile.description}], score_relaunch: #{aile.score_relaunch}, score_highwind: #{aile.score_highwind}, score_lowwind: #{aile.score_lowwind}, score_easyofuse: #{aile.score_easyofuse}, score_wave: #{aile.score_wave}, score_unhooked: #{aile.score_unhooked} ,url_flysurf: '#{aile.url_flysurf}' ,url_vagueetvent: '#{aile.url_vagueetvent}' ,url_freerideattitude: '#{aile.url_freerideattitude}', tags: '#{aile.tags}')&
       
     end
 
