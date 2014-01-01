@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130908135820) do
     t.integer  "annee"
     t.integer  "note"
     t.integer  "prix_10m_sans_barre"
+    t.text     "tags"
     t.text     "description"
     t.float    "score_relaunch"
     t.float    "score_highwind"
