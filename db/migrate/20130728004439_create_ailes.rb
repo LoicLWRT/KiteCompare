@@ -17,10 +17,11 @@ class CreateAiles < ActiveRecord::Migration
 	t.float :score_unhooked
 
 	t.string :url_flysurf
-	t.string :url_youride
+  t.text :url_vagueetvent
 	t.string :url_freerideattitude
 
 	t.timestamps
+
     end
   end
 end
