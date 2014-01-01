@@ -27,7 +27,12 @@
 			<p class="text-center">
 				<% tags = @aile.tags.split(',') %>
 				<% if (! tags.empty?) %>
-					<span class="label label-warning"><%= tags[0] %></span>
+					<span class="label label-warning" data-toggle="tooltip" title="La cinquième ligne sur un kite permet de pouvoir faire perdre instantanément la puissance au kite et de le faire tomber lors d’un largage.
+
+Cela permet aussi de faire redécoller l’aile facilement si on sais comment faire, même si ça peut paraître difficile pour un débutant.
+
+Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, il est plus intéressant d’acheter une aile avec 4 lignes pour éviter que le kite s’enroule autour de la cinquième ligne et se déchire.
+"><%= tags[0] %></span>
 					<% tags[1..-1].each do |riding_type| %>
 						<span class="label label-info"><%= riding_type.titleize %></span>
 					<% end %>
