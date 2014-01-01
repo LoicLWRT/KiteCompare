@@ -26,9 +26,11 @@
 			</p>
 			<p class="text-center">
 				<% tags = @aile.tags.split(',') %>
-				<span class="label label-warning"><%= tags[0] %></span>
-				<% tags[1..-1].each do |riding_type| %>
-					<span class="label label-info"><%= riding_type.titleize %></span>
+				<% if (! tags.empty?) %>
+					<span class="label label-warning"><%= tags[0] %></span>
+					<% tags[1..-1].each do |riding_type| %>
+						<span class="label label-info"><%= riding_type.titleize %></span>
+					<% end %>
 				<% end %>
 			</p>
 			
