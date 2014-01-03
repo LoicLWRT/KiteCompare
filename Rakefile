@@ -5,3 +5,4 @@
 require File.expand_path('../config/application', __FILE__)
 
 KiteCompare::Application.load_tasks
+require 'sitemap_generator/tasks'

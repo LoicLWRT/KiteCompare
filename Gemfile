@@ -48,6 +48,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'nokogiri'
 gem 'watir'
+gem 'sitemap_generator'
 
 group :production do
 	gem 'mysql2'

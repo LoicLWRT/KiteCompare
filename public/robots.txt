@@ -1,0 +1,6 @@
+Sitemap: http://comparekite.com/sitemap.xml.gz
+Sitemap: http://blog.comparekite.com/sitemap1.xml
+
+User-agent: *
+Allow: /
+
