@@ -57,6 +57,8 @@ namespace :prices do
 
     #On recherche le prix avec l'URL
     Aile.find_each do |aile|
+	#To test a specifi aile, uncomment next line
+     #if(aile.id==26 || aile.id==21)
 
       if(!(aile.url_flysurf.blank?))
         puts "------------- " + aile.id.to_s + " " + aile.modele + " " + aile.annee.to_s + "  -------------"
@@ -95,6 +97,8 @@ namespace :prices do
         end
       end
     end
+	#To test a specific aile, uncomment next line
+	#end
 
 
   end
@@ -115,7 +119,7 @@ namespace :prices do
           surface = surface_url[0].to_i
           url = surface_url[1]
           p url
-          url=url.to_s
+  	  url=url.to_s
 
           puts "On ouvre le lien pour : " + surface.to_s
           prix=0
@@ -170,7 +174,7 @@ namespace :prices do
     #On recherche le prix avec l'URL
     Aile.find_each do |aile|
       #To test a specific aile uncomment next line
-      #if(aile.id==17)
+      #if(aile.id==26 || aile.id==21)
 
       if(!(aile.url_freerideattitude.blank?))
         puts "------------- " + aile.id.to_s + " " + aile.modele + " " + aile.annee.to_s + "  -------------"
