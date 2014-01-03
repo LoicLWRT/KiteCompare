@@ -1,4 +1,7 @@
 # encoding: utf-8
+require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
 
 namespace :ailes do
   desc "TODO"
@@ -25,6 +28,56 @@ namespace :ailes do
       end
       
     end
-    
   end
+
+	desc "Recherche des tags Kitefinder"
+	task :tags => :environment do
+		puts 'Parsing tags from KiteFinder.com ...'
+		`wget --quiet http://www.kitefinder.com/en/sitemap`
+		@sitemap=Nokogiri::HTML(File.open("sitemap"))
+		Aile.find_each do |aile|
+			marque = case aile.marque_id.to_s
+				when "1" then "Naish"
+				when "2" then "F-One"
+				when "3" then "North"
+				when "4" then "Airush"
+				when "5" then "Best"
+				when "6" then "Royal"
+				when "7" then "Genetrix"
+				when "8" then "Nobile"
+				when "9" then "Gaastra"
+				when "10" then "Slingshot"
+				when "11" then "Ozone"
+				when "12" then "Cabrinha"
+				when "13" then "Storm"
+				else "Unknown"
+			end
+			totalM=marque + " " + aile.modele + " " + aile.annee.to_s
+			total=totalM.downcase.gsub("f-One ","f-one").gsub("bandit ","bandit")
+			#puts totalM
+			
+			
+			@sitemap.xpath("//ul//li//ul//li//ul//li//a").each do |link|
+				if ((link.text)==totalM)
+					@url=link['href']
+					#puts @url+' is the url for the '+totalM
+					download="wget --quiet #{@url}"
+					system(download)
+
+					page_aile=Nokogiri::HTML(File.open(total.gsub(' ','-')))
+
+					tags=page_aile.css("div div div div table tr[12] td").first.text.gsub(' ','').gsub('lines',' lignes').gsub('and','/')+','+page_aile.css("div div div div table tr[1] td").first.text.gsub(' ','').gsub('/',',')+','+page_aile.css("div div div div table tr[5] td").first.text.gsub(' ','')
+					tags=tags.gsub("\n","")
+					puts totalM+" : "+tags
+					aile.tags=tags
+					aile.save
+					File.delete(total.gsub(' ','-'))
+					
+				end
+			end
+		end
+		File.delete("sitemap")
+	end
+
+  
 end

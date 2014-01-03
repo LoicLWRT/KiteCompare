@@ -33,9 +33,10 @@ Cela permet aussi de faire redécoller l’aile facilement si on sais comment fa
 
 Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, il est plus intéressant d’acheter une aile avec 4 lignes pour éviter que le kite s’enroule autour de la cinquième ligne et se déchire.
 "><%= tags[0] %></span>
-					<% tags[1..-1].each do |riding_type| %>
+					<% tags[1..-2].each do |riding_type| %>
 						<span class="label label-info"><%= riding_type.titleize %></span>
 					<% end %>
+					<span class="label label-important"><%= tags[3] %></span>
 				<% end %>
 			</p>
 			
