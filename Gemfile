@@ -46,9 +46,15 @@ end
 
 gem 'execjs'
 gem 'therubyracer'
+
+#For automated prices acquisition
 gem 'nokogiri'
 gem 'watir'
+
+#For SEO and SERP
 gem 'sitemap_generator'
+gem 'metamagic'
+
 
 group :production do
 	gem 'mysql2'
