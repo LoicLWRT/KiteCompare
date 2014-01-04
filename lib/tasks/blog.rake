@@ -31,19 +31,19 @@ namespace :blog do
           puts rowfluid_debut
           puts article_debut_1er
           #
-          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png" %>' + title
+          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png", :size => "24x24" %>' + title
           puts article_fin_1er
         end
         if count==1
           puts article_debut_2ou3
           #
-          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png" %>' + title
+          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png", :size => "24x24" %>' + title
           puts article_fin_2ou3
         end
         if count==2
           puts article_debut_2ou3
           #
-          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png" %>' + title
+          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png", :size => "24x24" %>' + title
           puts article_fin_2ou3
           puts rowfluid_fin
         end
@@ -51,19 +51,19 @@ namespace :blog do
           puts rowfluid_debut
           puts article_debut_1er
           #
-          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png" %>' + title
+          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png", :size => "24x24" %>' + title
           puts article_fin_1er
         end
         if count==4
           puts article_debut_2ou3
           #
-          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png" %>' + title
+          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png", :size => "24x24" %>' + title
           puts article_fin_2ou3
         end
         if count==5
           puts article_debut_2ou3
           #
-          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png" %>' + title
+          puts '<a class="white" href="' + url + '"><%= image_tag "arrow_left.png", :size => "24x24" %>' + title
           puts article_fin_2ou3
           puts rowfluid_fin
           puts fin_code
