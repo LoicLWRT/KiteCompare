@@ -19,4 +19,4 @@ echo "New data loaded into KiteCompare ;)"
 sudo /etc/init.d/apache2 restart
 echo "Apache restarted"
 
-rake sitemap:refresh
+rake sitemap:refresh RAILS_ENV=production
