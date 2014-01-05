@@ -10,21 +10,13 @@ meta :description => "Comparatif de toutes les ailes de kitesurf, prix, avis d'u
 
 <div id="mycont"> </div>
 
-
-<div class="btn-group pull-right">
-	<a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">
-		Trier par&nbsp;
-		<span class="caret"></span>
-	</a>
-	<ul class="dropdown-menu">
-		<li><a href="/ailesparprix">Prix</a></li>
-		<li><a href="/ailesparnote">Note</a></li>
-	</ul>
+<div class="pull-right" style="padding-right:5%">
+<a class="btn btn-small" href="/ailesparprix">Trier par prix</a>
+<a class="btn btn-small" href="/ailesparnote">Trier par note</a>
 </div>
-<br>
 
 
-<br>
+<br><br>
 <ul class="thumbnails" >
 
 <% @ailes.each do |aile| %>

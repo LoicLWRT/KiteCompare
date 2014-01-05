@@ -3,9 +3,10 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="container-fluid">
+<div class="container-fluid showaile">
 	<div class="row-fluid">
-		<div class="span6">
+		<div class="span6 bigimage">
+			
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
 			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.png" %>
 			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.png"  end%>
@@ -151,7 +152,7 @@ Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, 
 		</div>
 		
 		
-		<div class="span12">
+		<div class="span12 showprix">
 			<br><br>
 			<h4>Les prix dans les shops</h4>
 			<br>			
