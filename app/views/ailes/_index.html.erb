@@ -30,6 +30,10 @@ meta :description => "Comparatif de toutes les ailes de kitesurf, prix, avis d'u
 <% @ailes.each do |aile| %>
 <li class="span4">
 	<div class="thumbnail">
+		<div class="love"><small>
+					<%= rand(100)%></small>
+					<%= image_tag "heart_16.png" %>
+				</div>
 
 		<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
 		<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
