@@ -8,6 +8,7 @@ meta :description => "Comparatif de toutes les ailes de kitesurf, prix, avis d'u
 <h1 class="text-center">Les ailes de kitesurf</h1>
 
 
+
 <div id="mycont"> </div>
 
 <div class="pull-right" style="padding-right:5%">
@@ -18,14 +19,15 @@ meta :description => "Comparatif de toutes les ailes de kitesurf, prix, avis d'u
 
 <br><br>
 <ul class="thumbnails" >
+<p id="notice"><%= notice %></p>
 
 <% @ailes.each do |aile| %>
 <li class="span4">
 	<div class="thumbnail">
-		<div class="love"><small>
-					<%= rand(100)%></small>
-					<%= image_tag "heart_16.png" %>
-				</div>
+		<div class="love">
+			<small>	<%= aile.vote.to_s %></small>
+			<%= link_to (image_tag "heart_16.png"), vote_path(aile.id), :method => :post %>
+		</div>
 
 		<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
 		<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>

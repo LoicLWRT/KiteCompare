@@ -1,8 +1,5 @@
 <%= render "shared/notcaroussel" %>
 
-<p id="notice"><%= notice %></p>
-
-
 <div class="container-fluid showaile">
 	<div class="row-fluid">
 		<div class="span6 bigimage">
@@ -25,6 +22,7 @@
 				<% end %>
 				<% end %>
 			</p>
+			
 			<p class="text-center">
 				<% tags = @aile.tags.split(',') %>
 				<% if (! tags.empty?) %>
@@ -39,6 +37,7 @@ Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, 
 					<% end %>
 					<span class="label label-important"><%= tags[3].gsub("SLE","Hybride") %></span>
 				<% end %>
+				
 			</p>
 			
 			<table align="center">
@@ -48,6 +47,7 @@ Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, 
 			        <td><p class="text-center" style="margin: 0;">&nbsp;<%= link_to "Vous l'aimez aussi ?", vote_path(@aile.id), :method => :post %></p></td>
 			    </tr>
 			</table>
+			<p id="notice" class="text-center"><%= notice %></p>
 		
 
 			<br><br>
