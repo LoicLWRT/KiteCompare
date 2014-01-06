@@ -5,6 +5,7 @@ class CreateAiles < ActiveRecord::Migration
 	t.integer :marque_id
 	t.integer :annee
 	t.integer :note
+	t.integer :vote
 	t.integer :prix_10m_sans_barre
 	t.text    :tags
 	t.text    :description

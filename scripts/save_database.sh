@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd ../db/
-now=$(date +"%k-%M__%d-%m-%Y") 
+now=$(date +"%Y-%m-%d_%k-%M") 
 filename="$now seeds.rb"
 echo "Saving DB at db/save/ $filename"
 cp seeds.rb save/"$filename"
