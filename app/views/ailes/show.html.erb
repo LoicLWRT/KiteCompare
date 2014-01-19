@@ -42,7 +42,7 @@ Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, 
 			
 			<table align="center">
 			    <tr>
-			        <td><h5 class="text-center"> <%= @votes = Vote.where(aile_id: @aile.id).count %> &nbsp;<%= image_tag("heart_32.png") %></h5></td>
+			        <td><h5 class="text-center"> <%= @aile.vote.to_s %> &nbsp;<%= image_tag("heart_32.png") %></h5></td>
 			
 			        <td><p class="text-center" style="margin: 0;">&nbsp;<%= link_to "Vous l'aimez aussi ?", vote_path(@aile.id), :method => :post %></p></td>
 			    </tr>
