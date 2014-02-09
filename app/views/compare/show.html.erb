@@ -1,6 +1,12 @@
 <%= render "shared/notcaroussel" %>
 
 <style>
+.vs {
+	position:absolute;
+	margin-left:47.5%;
+	margin-top:-50px;	
+}
+
 .showaile{
 	margin-left: 5%;
 	margin-right: 5%;
@@ -26,11 +32,20 @@
 		}
 }
 </style>
+<br>
 
+<div id="col1">
+	<% nom = Marque.find(@aile1.marque_id).name + " " + @aile1.modele + " " + @aile1.annee.to_s()%>
+	<h3 class="text-center"><%= nom %></h3>
 
-<h3 class="text-center"><%= "Comparaison de la " + @title %></h3>
-<br><br><br>
-
+</div><div id="col2">
+	<% nom = Marque.find(@aile2.marque_id).name + " " + @aile2.modele + " " + @aile2.annee.to_s()%>
+	<h3 class="text-center"><%= nom %></h3>
+</div>
+<h1 class="text-center vs">VS</h3>
+<hr>
+<br>
+<br>
 <div id="col1">
 	<% @aile = @aile1 %>
 	<%= render "ailes/show" %>
