@@ -58,22 +58,24 @@ namespace :ailes do
 			
 			
 			@sitemap.xpath("//ul//li//ul//li//ul//li//a").each do |link|
-				if ((link.text)==totalM)
-					@url=link['href']
-					#puts @url+' is the url for the '+totalM
-					download="wget --quiet #{@url}"
-					system(download)
+				if ((totalM)!="Cabrinha Switchblade 2014")
+					if ((link.text)==totalM)
+						@url=link['href']
+						#puts @url+' is the url for the '+totalM
+						system("wget --quiet #{@url}")
 
-					page_aile=Nokogiri::HTML(File.open(total.gsub(' ','-')))
+						page_aile=Nokogiri::HTML(File.open(total.gsub(' ','-')))
 
-					tags=page_aile.css("div div div div table tr[12] td").first.text.gsub(' ','').gsub('lines',' lignes').gsub('and','/')+','+page_aile.css("div div div div table tr[1] td").first.text.gsub(' ','').gsub('/',',')+','+page_aile.css("div div div div table tr[5] td").first.text.gsub(' ','')
-					tags=tags.gsub("\n","")
-					puts totalM+" : "+tags
-					aile.tags=tags
-					aile.save
-					File.delete(total.gsub(' ','-'))
+						tags=page_aile.css("div div div div table tr[12] td").first.text.gsub(' ','').gsub('lines',' lignes').gsub('and','/')+','+page_aile.css("div div div div table tr[1] td").first.text.gsub(' ','').gsub('/',',')+','+page_aile.css("div div div div table tr[5] td").first.text.gsub(' ','')
+						tags=tags.gsub("\n","")
+						puts totalM+" : "+tags
+						aile.tags=tags
+						aile.save
+						File.delete(total.gsub(' ','-'))
 					
+					end
 				end
+				
 			end
 		end
 		File.delete("sitemap")
