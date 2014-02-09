@@ -8,6 +8,13 @@ KiteCompare::Application.routes.draw do
   
   resources :ailes
   
+  get '/compare/:un/:deux', to: 'compare#show'
+  
+  resources :compare do
+    resources :compare
+  end
+  
+  
   match "votes/:aile_id" => "votes#create", :as => :vote, via: [:get, :post]
   
   

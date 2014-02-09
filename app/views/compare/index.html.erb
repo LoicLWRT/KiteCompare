@@ -1,0 +1,27 @@
+<%= render "shared/notcaroussel" %>
+
+<h1 class="text-center">Comparaison des ailes de kites</h1>
+
+<br><br>
+<ul class="thumbnails" >
+
+<% cache do %>
+
+<% @ailes.each do |ailea| %>
+	<% @ailes.each do |aileb| %>
+		<% if (ailea != aileb) %>
+		<li class="span4">
+			<div class="thumbnail">
+
+				<% nom = Marque.find(ailea.marque_id).name + " " + ailea.modele + " " + ailea.annee.to_s() + " versus " + Marque.find(aileb.marque_id).name + " " + aileb.modele + " " + aileb.annee.to_s()%>
+				
+		
+				<%= link_to nom, '/compare/show?un=' + ailea.id.to_s + '&deux=' + aileb.id.to_s %>				
+
+			</div>
+		</li>
+		<% end %>
+		<% end %>
+		<% end %>
+	</ul>
+<% end %>

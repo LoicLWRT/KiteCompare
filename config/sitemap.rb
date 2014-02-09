@@ -7,6 +7,7 @@ SitemapGenerator::Sitemap.create do
   add '/pages/contact', :changefreq => 'weekly'
   add '/pages/debutant', :changefreq => 'weekly', :priority => 0.9
   add '/pages/avance', :changefreq => 'weekly', :priority => 0.9
+  add '/compare', :changefreq => 'weekly'
   
   Aile.find_each do |aile|
       add aile_path(aile), :lastmod => aile.updated_at

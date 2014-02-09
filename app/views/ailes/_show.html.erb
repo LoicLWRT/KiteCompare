@@ -1,0 +1,301 @@
+
+
+<div class="container-fluid showaile">
+	<div class="row-fluid">
+		<div class="span6 bigimage">
+			
+			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
+			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.png" %>
+			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.png"  end%>
+			<%= image_tag @image_url %>
+		</div>
+		<div class="span5">
+			<h1 class="text-center"> <%= Marque.find(@aile.marque_id).name + " " + @aile.modele %> </h1>
+			<h3 class="text-center"> <%=@aile.annee.to_s() %> </h3>
+			<p class="text-center">
+				<% if not @aile.note.nil? then %>
+				<% (@aile.note).times do %>
+				<%= image_tag "full_star_32.png" %>
+				<% end %>
+				<% (5 - @aile.note).times do %>
+				<%= image_tag "empty_star_32.png" %>
+				<% end %>
+				<% end %>
+			</p>
+			
+			<p class="text-center">
+				<% tags = @aile.tags.split(',') %>
+				<% if (! tags.empty?) %>
+					<span class="label label-warning" data-toggle="tooltip" title="La cinquième ligne sur un kite permet de pouvoir faire perdre instantanément la puissance au kite et de le faire tomber lors d’un largage.
+
+Cela permet aussi de faire redécoller l’aile facilement si on sais comment faire, même si ça peut paraître difficile pour un débutant.
+
+Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, il est plus intéressant d’acheter une aile avec 4 lignes pour éviter que le kite s’enroule autour de la cinquième ligne et se déchire.
+"><%= tags[0] %></span>
+					<% tags[1..-2].each do |riding_type| %>
+						<span class="label label-info"><%= riding_type.titleize %></span>
+					<% end %>
+					<span class="label label-important"><%= tags[3].gsub("SLE","Hybride") %></span>
+				<% end %>
+				
+			</p>
+			
+			<table align="center">
+			    <tr>
+			        <td><h5 class="text-center"> <%= @aile.vote.to_s %> &nbsp;<%= image_tag("heart_32.png") %></h5></td>
+			
+			        <td><p class="text-center" style="margin: 0;">&nbsp;<%= link_to "Vous l'aimez aussi ?", vote_path(@aile.id), :method => :post %></p></td>
+			    </tr>
+			</table>
+			<p id="notice" class="text-center"><%= notice %></p>
+		
+
+			<br><br>
+
+
+
+
+			<h4>Particularités de l'aile</h4>
+			</br>
+			<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
+			<%= "Désolé, aucun détail n'est disponible pour cette aile." %>
+			<% end %>
+			
+			<table>
+			
+				<%  if !(@aile.score_relaunch==-1) %>
+					<%== "<tr><td>Facilité au redécollage :</td><td>"%>
+					<%(@aile.score_relaunch/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/1.png" %>
+					<%	end  %>
+					
+					<%(4.999 - @aile.score_relaunch/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+				
+				
+				<%  if !(@aile.score_highwind==-1) %>
+					<%== "<tr><td>Plage haute :</td><td>"%>
+					<%(@aile.score_highwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/2.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_highwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+				
+			
+			
+				<%  if !(@aile.score_lowwind==-1) %>
+					<%== "<tr><td>Plage basse :</td><td>"%>
+					<%(@aile.score_lowwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/3.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_lowwind/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+				
+				
+				<%  if !(@aile.score_easyofuse==-1) %>
+					<%== "<tr><td>Facilité d'utilisation :</td><td>"%>
+					<%(@aile.score_easyofuse/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/4.png" %>
+					<%	end  %>
+					
+					<%(4.999 - @aile.score_easyofuse/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+			
+			
+			
+				<%  if !(@aile.score_wave==-1) %>
+					<%== "<tr><td>Comportement dans les vagues : &nbsp;</td><td>"%>
+					<%(@aile.score_wave/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/5.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_wave/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+			
+			
+				<%  if !(@aile.score_unhooked==-1) %>
+					<%== "<tr><td>Comportement en déhooké :</td><td>"%>
+					<%(@aile.score_unhooked/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/6.png" %>
+					<%	end  %>
+					
+					<%(4.999 - @aile.score_unhooked/2).round(0).times do |n| %>
+						<%= image_tag "score/hori/0.png" %>
+						<%	end  %>
+				<%== "</td></tr>" %>	
+				<%	end	  %>
+			
+			
+			</table>
+			</br></br>
+
+
+
+
+
+		</div>
+		
+		
+		<div class="span12 showprix">
+			<br><br>
+			<h4>Les prix dans les shops</h4>
+			<br>			
+			<% @prixs = PrixSurShop.where(aile_id: @aile.id).order('prix_sur_shops.prix_sans_barre ASC') %>
+
+			<% if @prixs == [] %>
+			<%= "Désolé, aucun prix n'est disponible pour cette aile."%>
+			<% end %>
+			
+			<% 
+			all_surfaces=Array["5m²" ,"6m²" ,"7m²","8m²" ,"9m²" ,"10m²","11m²","12m²","13m²","14m²"] 
+			c = Array.new
+			all_surfaces.each do |surface|
+				c << [surface] + Array.new(8){Array.new(3)}
+			end
+			%>
+
+			<%
+			i = 0
+			j = 0
+			all_surfaces.each do |one_surface|
+				@prixs.each do |prix|
+					if prix.surface.to_s() + "m²" == one_surface.to_s() 
+					then	
+						c[i][j+1] = [prix.prix_sans_barre, prix.nom_shop, prix.lien_produit]
+						j=j+1
+					end
+				end
+				j=0
+				i=i+1
+			end
+			%>
+
+
+			<%
+			#Calcul du nombre max de prix pour une surface 
+			i=0
+			j=0
+			nombre_max_prix_par_surface=0
+			c.each do |element| 
+				c[i].each do |prix|
+					if not prix[0].nil? then
+						j=j+1
+						nombre_max_prix_par_surface = [j,nombre_max_prix_par_surface].max
+					end
+				end
+				j=0
+				i=i+1
+			end
+ nombre_max_prix_par_surface=nombre_max_prix_par_surface-1 %>
+
+
+
+			<%			
+			to_del=Array.new
+			0.upto(20) do |i|	
+				if not c.transpose[1][i].nil? then
+					if c.transpose[1][i][0].nil? then
+						to_del.push(i)
+					end
+				end
+			end
+			%>
+
+			<%
+			to_del.reverse.each do |i| %>
+			<%	c.delete_at(i) %>
+			<%end %>
+
+			<% c= c.transpose.slice!(0,nombre_max_prix_par_surface+1).transpose %>
+
+
+			<table class="table table-bordered table-striped" align="center">
+				<TR> 
+					<% 
+					if not c.transpose[0].nil? then
+						c.transpose[0].each do |one_surface| %>
+						<%== "<TH>" + one_surface.to_s + "</TH>" %>
+						<% end
+					end %>
+				</TR>
+				<% 
+				i=0
+				c.transpose.each do |element| 
+					if i>0 then
+						%>
+						<TR>
+							<% c.transpose[i].each do |prix| %>
+							<% if not prix[0].nil? then %>
+							<%== '<TD><a href="'+ prix[2].to_s + '"TARGET="_blank"> <span class="label label-info">' + prix[0].to_s + "€" + '</span>' + '<small> chez ' + prix[1].to_s + '</small></a></TD>' %>
+							<% else %> 	
+							<%== "<TD><p class=text-center> - <p></TD>"%>
+								<% end %>
+								<%end%>
+							</TR>
+							<% 
+						end
+						i=i+1
+					end 
+					%>
+				</table>
+			</br></br>
+			</div> <!-- span12 pour les prix-->
+
+
+			
+			<div class="span6">
+			<h4>Avis d'utilisateurs</h4>
+			</br>
+			<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
+			
+			<% if (@critiques.count==0) %>
+			<%= "Désolé, aucun avis d'utilisateur n'est disponible pour cette aile." %>
+			<% end %>
+			
+			<% @critiques.each do |critique| %>
+			<blockquote>
+				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
+				<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
+				<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
+				<p><%= critique.contenu %></p>
+				<small><%= critique.source %></small>
+			</blockquote>
+			<% end %>
+			</br></br>
+			</div> <!-- avis -->
+			
+			
+			
+			<center>
+			<div class="span6">
+				<h4>Description officielle</h4>
+				</br>
+				
+				<% if @aile.description == "" %>
+				<%= "Désolé, aucune description n'est disponible pour cette aile." %>
+				<% end %>
+				<div class="desc_officielle">
+					<%= simple_format @aile.description.gsub("\n","\n \n") %>
+				</div>
+			</center>
+		</div>
+	</div>
+
+
+
