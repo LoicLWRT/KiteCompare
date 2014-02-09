@@ -4,6 +4,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'watir-webdriver'
 require "watir-webdriver/wait"
+#require 'headless'
 
 
 
@@ -57,8 +58,8 @@ namespace :prices do
 
     #On recherche le prix avec l'URL
     Aile.find_each do |aile|
-	#To test a specifi aile, uncomment next line
-     #if(aile.id==26 || aile.id==21)
+      #To test a specifi aile, uncomment next line
+      #if(aile.id==26 || aile.id==21)
 
       if(!(aile.url_flysurf.blank?))
         puts "------------- " + aile.id.to_s + " " + aile.modele + " " + aile.annee.to_s + "  -------------"
@@ -97,8 +98,8 @@ namespace :prices do
         end
       end
     end
-	#To test a specific aile, uncomment next line
-	#end
+    #To test a specific aile, uncomment next line
+    #end
 
 
   end
@@ -106,42 +107,47 @@ namespace :prices do
   desc "Recherche les prix de Vague et vent"
   task vagueetvent: :environment do
     Aile.find_each do |aile|
-
       if(!(aile.url_vagueetvent.blank?))
         puts "------------- " + aile.id.to_s + " " + aile.modele + " " + aile.annee.to_s + "  -------------"
 
 
         all_surfaces = aile.url_vagueetvent.gsub("\r","").split("\n")
 
-        all_surfaces.each do |line|
+        all_surfaces.each do |line|          
           surface_url = line.split(';')
 
           surface = surface_url[0].to_i
           url = surface_url[1]
-          p url
-  	  url=url.to_s
+          #p url
+          url=url.to_s
 
           puts "On ouvre le lien pour : " + surface.to_s
           prix=0
 
-          doc = Nokogiri::HTML(open(url))
-          doc.encoding = 'utf-8'
+          begin
 
-          prix = doc.at_css('.prix > span:nth-child(1)').to_s
-          prix=prix.gsub('<span itemprop="price">','').gsub('</span>','').gsub('.00 €','').to_i
+            doc = Nokogiri::HTML(open(url))
+            doc.encoding = 'utf-8'
 
-          if (surface<16 && surface>4 && prix<2500 && prix>200)
-            @prixsurshop = PrixSurShop.new(
-            :nom_shop => 'Vague et Vent',
-            :lien_produit => url,
-            :prix_sans_barre => prix,
-            :surface => surface,
-            :aile_id => aile.id,
-            :auto => 1
-            )
-            @prixsurshop.save
+            prix = doc.at_css('.prix > span:nth-child(1)').to_s
+            prix=prix.gsub('<span itemprop="price">','').gsub('</span>','').gsub('.00 €','').to_i
 
-            puts "Prix sauvegardé pour " + aile.modele + " en " + surface.to_s + "m : " + prix.to_s
+            if (surface<16 && surface>4 && prix<2500 && prix>200)
+              @prixsurshop = PrixSurShop.new(
+              :nom_shop => 'Vague et Vent',
+              :lien_produit => url,
+              :prix_sans_barre => prix,
+              :surface => surface,
+              :aile_id => aile.id,
+              :auto => 1
+              )
+              @prixsurshop.save
+
+              puts "Prix sauvegardé pour " + aile.modele + " en " + surface.to_s + "m : " + prix.to_s
+
+            end
+          rescue StandardError=>e
+            puts "Erreur d'URL ? | Ligne : " + line
           end
 
         end
@@ -166,6 +172,10 @@ namespace :prices do
     ]
 
     #Launch Firefox with no image option
+
+    #headless = Headless.new
+    #headless.start
+
     profile = Selenium::WebDriver::Firefox::Profile.new
     profile['permissions.default.image'] = 2
     browser = Watir::Browser.new :firefox, :profile => profile
@@ -299,5 +309,7 @@ namespace :prices do
     #To test a specific aile uncomment next line
     #end 
     browser.close
+
+    #headless.destroy
   end
 end

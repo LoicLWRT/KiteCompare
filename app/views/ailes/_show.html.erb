@@ -35,7 +35,9 @@ Cependant, pour ceux naviguant dans les vagues ou dans un lieu à fort courant, 
 					<% tags[1..-2].each do |riding_type| %>
 						<span class="label label-info"><%= riding_type.titleize %></span>
 					<% end %>
-					<span class="label label-important"><%= tags[3].gsub("SLE","Hybride") %></span>
+					<% if !tags[3].nil?%>
+					<%= '<span class="label label-important">' + tags[3].gsub("SLE","Hybride") + '</span>'%>
+					<% end %>
 				<% end %>
 				
 			</p>

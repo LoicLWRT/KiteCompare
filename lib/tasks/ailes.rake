@@ -23,7 +23,33 @@ namespace :ailes do
           aile.save
           puts "Aile ID " + aile.id.to_s + " : " +  "Aile modifiée avec prix en 11m"
         else
+          
+          @prixs = PrixSurShop.where(aile_id: aile.id, surface: 12).order('prix_sur_shops.prix_sans_barre ASC').first
+          if not @prixs.nil? then
+            aile.prix_10m_sans_barre = @prixs.prix_sans_barre.round
+            aile.save
+            puts "Aile ID " + aile.id.to_s + " : " +  "Aile modifiée avec prix en 12m"
+          else
+            
+            @prixs = PrixSurShop.where(aile_id: aile.id, surface: 13).order('prix_sur_shops.prix_sans_barre ASC').first
+            if not @prixs.nil? then
+              aile.prix_10m_sans_barre = @prixs.prix_sans_barre.round
+              aile.save
+              puts "Aile ID " + aile.id.to_s + " : " +  "Aile modifiée avec prix en 13m"
+            else
+              
+              @prixs = PrixSurShop.where(aile_id: aile.id, surface: 9).order('prix_sur_shops.prix_sans_barre ASC').first
+              if not @prixs.nil? then
+                aile.prix_10m_sans_barre = @prixs.prix_sans_barre.round
+                aile.save
+                puts "Aile ID " + aile.id.to_s + " : " +  "Aile modifiée avec prix en 9m"
+              else
+          
+          
           puts "Aile ID " + aile.id.to_s + " : " +  "Pas de prix pour cette aile !"
+        end
+        end
+        end
         end
       end
       
