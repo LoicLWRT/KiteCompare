@@ -151,6 +151,7 @@
 					</div>	
 
 					<% c = tableFromPrix(@aile.id) %>
+					<% if !(c==0) %>
 					<% c1 = c.slice(0,c.length/3) %>
 					<% c2 = c.slice(c.length/3,c.length/3) %>
 					<% c3 = c.slice((2*c.length)/3,10) %>
@@ -161,7 +162,7 @@
 						<div class="span4"><%== generateTableHTML(c3) %></div>		
 					</div>	
 
-
+					<% end %>
 					<% end %>
 
 				</br></br>
@@ -207,6 +208,8 @@
 				</div>
 			</center>
 		</div>
+		
+	</div>
 	</div>
 
 

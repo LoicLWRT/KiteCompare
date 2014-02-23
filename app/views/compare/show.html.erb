@@ -4,7 +4,7 @@
 .vs {
 	position:absolute;
 	margin-left:47.5%;
-	margin-top:-50px;	
+	margin-top:-30px;	
 }
 
 .showaile{
@@ -33,16 +33,14 @@
 }
 </style>
 <br>
-
 <div id="col1">
 	<% nom = Marque.find(@aile1.marque_id).name + " " + @aile1.modele + " " + @aile1.annee.to_s()%>
 	<h3 class="text-center"><%= nom %></h3>
-
 </div><div id="col2">
 	<% nom = Marque.find(@aile2.marque_id).name + " " + @aile2.modele + " " + @aile2.annee.to_s()%>
 	<h3 class="text-center"><%= nom %></h3>
 </div>
-<h1 class="text-center vs">VS</h3>
+<h1 class="text-center vs">VS</h1>
 <hr>
 <br>
 <br>
