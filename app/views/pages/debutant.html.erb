@@ -1,15 +1,31 @@
 <%= render "shared/notcaroussel" %>
+<style>
+.justify.center {
+	margin: 0 auto !important;
+	float: none !important;
+}
 
-<h2 class="text-center">Niveau débutant <small>Les meilleures ailes de kitesurf</small></h2>
+@media (max-width:767px) {
+	.center {
+		margin: 0 auto !important;
+		float: none !important;
+		width:92% !important;
+	}
+}
+
+
+</style>
+
+<h2 class="text-center">Recommandations</h3>
+<h3 class="text-center">Niveau Débutant</h3>
 <br>
 
-<div class="container-fluid">
+<div class="container">
 	
 	
 	<div class="row-fluid">
-		<div class="span6 offset3 justify">
-			<p>Les ailes suivantes devraient vous convenir à votre sortie de stage.
-			À noter qu'il n'y a principalement pas de changements majeurs entre deux générations d'aile consécutives sauf dans certains cas que nous signalerons. Par exemple  lorsqu'un défaut majeur a pu être corrigé. Attention donc à ne pas tomber dans les charmes marketing des marques.</p>
+		<div class="span6 offset3 justify center">
+			<p>Les ailes suivantes devraient vous convenir à votre sortie de stage. À noter qu'il n'y a principalement pas de changements majeurs entre deux générations d'aile consécutives sauf dans certains cas que nous signalerons. Par exemple  lorsqu'un défaut majeur a pu être corrigé. Attention donc à ne pas tomber dans les charmes marketing des marques.</p>
 		</div>
 	</div>
 	
@@ -17,7 +33,7 @@
 	<div class="row-fluid">
 		<!-- Première aile -->
 
-		<div class="span12">
+		<div class="span12 center">
 			<% 
 			@ID=35 #ID de l'aide à changer 
 			@titre="Economique"
@@ -68,7 +84,7 @@
 		
 		<div class="containercadre">
 			
-		<div class="span6">
+		<div class="span6 center">
 			<% 
 			@ID=36 #ID de l'aide à changer 
 			@titre="Résistante"
@@ -108,7 +124,7 @@
 
 
 		<!-- Deuxième aile -->
-		<div class="span6">
+		<div class="span6 center">
 			<% 
 			@ID=20 #ID de l'aide à changer 
 			@titre="Abordable"
@@ -141,8 +157,8 @@
 					</div>	
 				</div>
 				<br/>
-				<p class="lead_guide justify">Pour un prix abordable, la Rally est une aile polyvalente. Le redécollage est facile et l'aile est réactive. Cependant, il n'a pas de grands changements par rapport à l'année précédente.</p>
-				<br/>
+				<p class="lead_guide justify">Pour un prix abordable, la Rally est une aile polyvalente. Le redécollage est facile et l'aile est réactive. La qualité est au rendez-vous, et vous apprécierez sa grande plage de vent. Cependant, il n'a pas de grands changements par rapport à l'année précédente, il serait donc plus judicieux de choisir le modèle 2012. </p>
+				
 			</div>
 		</div>
 		</div>

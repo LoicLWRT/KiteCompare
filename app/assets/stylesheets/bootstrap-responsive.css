@@ -5670,36 +5670,36 @@ a.badge:focus {
   cursor: pointer;
 }
 **/
-/**.label-important,
+.label-important,
 .badge-important {
   background-color: #e74c3c;
 }
-**/
-/**.label-important[href],
+
+.label-important[href],
 .badge-important[href] {
   background-color: #d62c1a;
 }
-**/
-/**.label-warning,
+
+.label-warning,
 .badge-warning {
   background-color: #f39c12;
 }
-**/
-/**.label-warning[href],
+
+.label-warning[href],
 .badge-warning[href] {
   background-color: #c87f0a;
 }
-**/
-/**.label-success,
+
+.label-success,
 .badge-success {
   background-color: #18bc9c;
 }
-**/
-/**.label-success[href],
+
+.label-success[href],
 .badge-success[href] {
   background-color: #128f76;
 }
-**/
+
 .label-info/**,
 .badge-info**/ {
   background-color: #3498db;
