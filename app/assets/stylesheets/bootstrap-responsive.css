@@ -328,18 +328,18 @@ a:focus {
   width: 300px;
 }
 
-/**.span3 {
+.span3 {
   width: 220px;
 }
-**/
+
 .span2 {
   width: 140px;
 }
 
-/**.span1 {
+.span1 {
   width: 60px;
 }
-**/
+
 /**.offset12 {
   margin-left: 980px;
 }
