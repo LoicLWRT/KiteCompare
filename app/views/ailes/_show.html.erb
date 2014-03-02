@@ -27,16 +27,15 @@
 			<p class="text-center">
 				<% tags = @aile.tags.split(',') %>
 				<% if (! tags.empty?) %>
-				<span class="label label-warning"><%= tags[0] %></span>
-
-				<span class="label label-info"><%=tags[1].titleize %></span>
+				<span class="label label-warning resetbouton"><%= tags[0] %></span>
+				<span class="label label-info resetbouton"><%=tags[1].titleize %></span>
 				
 				<% if !tags[2].nil? %>
-				<%== '<span class="label label-important">' + tags[2].gsub("SLE","Hybride") + '</span>'%>
+				<%== '<span class="label label-important resetbouton">' + tags[2] + '</span>'%>
 				<% end %>
 				<% end %>
-
 			</p>
+			
 
 			<table align="center">
 				<tr>
