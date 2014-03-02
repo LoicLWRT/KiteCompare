@@ -20,6 +20,11 @@ KiteCompare::Application.routes.draw do
   
   get 'ailesparprix', to: 'ailes#prix'
   get 'ailesparnote', to: 'ailes#note'
+  get 'ailes-allround', to: 'ailes#allround'
+  get 'ailes-wave', to: 'ailes#wave'
+  get 'ailes-race', to: 'ailes#race'
+  get 'ailes-wakestyle', to: 'ailes#wakestyle'
+  
   get 'comparer_ailes',      to: 'ailes#comparer'
   
   get "pages/debutant"

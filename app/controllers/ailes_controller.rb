@@ -3,7 +3,7 @@ require 'digest'
 
 class AilesController < ApplicationController
   
-  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show, :prix, :note, :comparer]
+  http_basic_authenticate_with :name => "", :password => "les3petitscochons", :except => [:index, :show, :prix, :note, :comparer, :allround, :wave, :race, :wakestyle]
   
   before_action :set_aile, only: [:show, :edit, :update, :destroy]
   
@@ -24,6 +24,27 @@ class AilesController < ApplicationController
     @ailes = Aile.all.order('note DESC')
     @title = "Ailes"
   end
+  
+  def allround
+    @ailes = Aile.all.where("tags LIKE '%allround%'")
+    @title = "Ailes"
+  end
+
+  def wave
+    @ailes = Aile.all.where("tags LIKE '%wave%'")
+    @title = "Ailes"
+  end
+  
+  def race
+    @ailes = Aile.all.where("tags LIKE '%race%'")
+    @title = "Ailes"
+  end
+  
+  def wakestyle
+    @ailes = Aile.all.where("tags LIKE '%wakestyle%'")
+    @title = "Ailes"
+  end
+
 
   # GET /ailes/1
   # GET /ailes/1.json

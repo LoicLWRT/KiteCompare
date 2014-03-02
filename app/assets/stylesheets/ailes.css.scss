@@ -50,17 +50,23 @@
 
 }
 .thumbnails li {
-	float: none !important;
+	/*float: none !important;*/
+	float: none;
 	display: inline-block;
 	*display: inline; /* ie7 support */
 	zoom: 1;
 }
 
+@media screen and (max-width: 768px) {
+	[class*="span"], .uneditable-input[class*="span"], .row-fluid [class*="span"] {
+		float: left;
+	}
+
+}
+
 .serre {
   line-height: 10px;
 }
-
-
 
 .plusdemarge {
 	padding-left: 3%;
@@ -83,12 +89,12 @@
 }
 
 .love{
-display: inline-block;
-position: absolute;
-top: 10px;
-right: 15px;
-font-size: 13px;
-color: #880000;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 13px;
+	color: #880000;
 }
 
 .bigimage{
@@ -111,4 +117,41 @@ color: #880000;
 
 .showprix{
 	padding-right:40px;
+}
+
+.smallmargin{
+	margin-left: 10px;
+	margin-right: 10px;	
+	padding:5px;
+	padding-left: 10px;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06);
+	background-color: #ffffff;
+
+}
+
+.boutonsgauche{
+	margin:5px;
+	width: 79px;
+	/*padding: 2px 6px; */
+	background-color: #94CBEF;
+}
+
+.extrasmall{
+	font-size: 9px;
+}
+
+@media screen and (min-width: 968px) {
+	.smallmargin{
+		width: 95%;
+		max-width: 125px;
+		}
+}
+
+@media screen and (max-width: 968px) {
+	.span-modified-stack{
+		width: 95% !important;
+		}
 }

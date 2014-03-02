@@ -1,26 +1,26 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
 
- *= require bootstrap-responsive
- *= require_tree .
- *= require_self
+*= require bootstrap-responsive
+*= require_tree .
+*= require_self
 
- */
+*/
 
 body {
 	padding-bottom: 40px;
 	padding-left:0px;
 	padding-right:0px;
 
-	
+
 	background-image:url(<%= asset_path 'bg.png' %>);
 	background-repeat:repeat; 
 	background-color: #f6f6f6;
@@ -60,25 +60,6 @@ body {
 	margin-right : 5%;
 }
 
-@media screen and (max-width: 420px) {
-	a.btn.btn-large.lead {
-		font-size: 17px;
-	}
-	a.btn.btn-large {
-		padding: 9px 18px;
-	}
-	
-	.navbar .nav > li > a {
-	padding: 15px 5px 5px;
-	}
-	
-	h1 {
-	font-size: 30px;
-	line-height: 24px;
-	}
-	
-}
-
 
 .navbar {
 	margin-bottom: 0px;
@@ -91,17 +72,6 @@ body {
 	padding-left: 20px;
 }
 
-/*
-<% @image_background = "backgrounds/" + (1 + rand(5)).to_s() + ".jpg" %>
-
-.image_resize{
-	height: 300px;
-	width: 100%;
-	background-size: cover;
-	background-image: url(<%= asset_path @image_background %>);
-
-}
-*/
 .carousel {
 	/* position: absolute; */
 	position: relative;
@@ -121,5 +91,138 @@ body {
 }
 
 .container-fluid {
-padding-left: 0px;
+	padding-left: 0px;
 }
+
+.image_resize{
+	height: 300px;
+	width: 100%;
+	background-size: cover;
+}
+
+@media screen and (max-width: 420px) {
+	a.btn.btn-large.lead {
+		font-size: 17px;
+	}
+	a.btn.btn-large {
+		padding: 9px 18px;
+	}
+
+	.navbar .nav > li > a {
+		padding: 15px 5px 5px;
+	}
+
+	h1 {
+		font-size: 30px;
+		line-height: 24px;
+	}
+
+	.navbar-inner {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.image_resize {
+		height: 100px;
+	}
+
+	.textintro {
+		padding: 5px;
+	}
+}
+
+
+/* Tooltip */
+
+/*
+#info
+{
+	width: 15px;
+	height: 15px;	
+	background-color: rgba( 0, 0, 0, .05 );	
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	padding: 3px;
+	margin-left: -10px;
+	display: inline-block;
+	vertical-align:middle;
+}
+#info:hover
+{
+	background-color: rgba( 0, 0, 0, .1 );
+}
+#info abbr
+{
+	height: 100%;
+	font-style:italic;
+	line-height: 1.4;
+	text-align: center;
+	text-shadow: 0 1px rgba( 0, 0, 0, .25 );
+	color: #fff;
+	background: #84e100;
+	background: -webkit-gradient( linear, left top, left bottom, from( #84e100 ), to( #6fbc00 ) );
+	background: -webkit-linear-gradient( top, #84e100, #6fbc00 );
+	background: -moz-linear-gradient( top, #84e100, #6fbc00 );
+	background: -ms-radial-gradient( top, #84e100, #6fbc00 );
+	background: -o-linear-gradient( top, #84e100, #6fbc00 );
+	background: linear-gradient( top, #84e100, #6fbc00 );
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: none;
+	cursor: help;
+	display: block;
+}
+#info
+{
+	text-decoration: none;
+}
+*/
+
+#tooltip
+{
+	text-align: center;
+	color: #fff;
+	background: #111;
+	position: absolute;
+	z-index: 100;
+	padding: 10px;
+	font-size: 12px;
+}
+
+#tooltip:after /* triangle decoration */
+{
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #111;
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -10px;
+	margin-left: -10px;
+}
+
+#tooltip.top:after
+{
+	border-top-color: transparent;
+	border-bottom: 10px solid #111;
+	top: -20px;
+	bottom: auto;
+}
+
+#tooltip.left:after
+{
+	left: 10px;
+	margin: 0;
+}
+
+#tooltip.right:after
+{
+	right: 10px;
+	left: auto;
+	margin: 0;
+}
+/* End Tooltip */

@@ -16,9 +16,6 @@
  	<% @image_background = "backgrounds/" + (1 + rand(5)).to_s() + ".jpg" %>
 
 	.image_resize{
-		height: 300px;
-		width: 100%;
-		background-size: cover;
 		background-image: url(<%= asset_path @image_background %>);
 
 	}
