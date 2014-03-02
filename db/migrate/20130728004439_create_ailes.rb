@@ -9,6 +9,7 @@ class CreateAiles < ActiveRecord::Migration
 	t.integer :prix_10m_sans_barre
 	t.text    :tags
 	t.text    :description
+	t.text    :test_link
 
 	t.float :score_relaunch
 	t.float :score_highwind
