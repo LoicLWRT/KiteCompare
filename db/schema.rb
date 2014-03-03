@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908135820) do
+ActiveRecord::Schema.define(version: 20140303110510) do
 
   create_table "ailes", force: true do |t|
     t.string   "modele"
@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(version: 20130908135820) do
     t.string   "lien"
     t.text     "contenu"
     t.integer  "aile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groupe_ailes", force: true do |t|
+    t.string   "titre"
+    t.string   "idailes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

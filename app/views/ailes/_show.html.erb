@@ -219,6 +219,23 @@
 			</div> <!-- reviews -->
 
 			<div class="span6">
+				<h4>Dans le même genre</h4>
+				<%  @groupeaile = GroupeAile.all.where("idailes LIKE '% " + @aile.id.to_s + " %'") %>
+				<% @groupeaile.each do |groupe| %>
+					<% @ids = groupe.idailes.split(";") %>
+					<% @ids.each do |id_aile| %>
+					<% id_aile = id_aile.gsub(" ","").gsub(" ","")%>
+					<%= id_aile %>
+					
+					<% end %>
+				<% end %>
+				
+				<center>
+				</br>
+				</center>
+			</div> <!-- autre ailes -->
+
+			<div class="span6">
 				<h4>Description officielle</h4>
 				<center>
 				</br>

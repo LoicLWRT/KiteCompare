@@ -1,5 +1,7 @@
 KiteCompare::Application.routes.draw do
   
+  resources :groupe_ailes
+
   root :to => 'pages#home'
   get "pages/home"
   get "pages/contact"

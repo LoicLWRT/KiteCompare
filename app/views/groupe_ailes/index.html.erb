@@ -1,0 +1,29 @@
+<h1>Listing groupe_ailes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Idailes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groupe_ailes.each do |groupe_aile| %>
+      <tr>
+        <td><%= groupe_aile.titre %></td>
+        <td><%= groupe_aile.idailes %></td>
+        <td><%= link_to 'Show', groupe_aile %></td>
+        <td><%= link_to 'Edit', edit_groupe_aile_path(groupe_aile) %></td>
+        <td><%= link_to 'Destroy', groupe_aile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Groupe aile', new_groupe_aile_path %>
