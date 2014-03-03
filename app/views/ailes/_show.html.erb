@@ -171,7 +171,7 @@
 				<div class="row-fluid">
 					<div class="span12"></div>							
 					<div class="span5">
-						<h4>Avis d'utilisateurs</h4>
+						<h4>Extraits d'avis d'utilisateurs</h4>
 					</br>
 					<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
 
@@ -194,7 +194,7 @@
 
 
 			<div class="span6">
-				<h4>Liens vers des tests et reviews de l'aile</h4>
+				<h4>Liens vers des tests et reviews</h4>
 				<% if @aile.test_link == "" %>
 					<%= "Oups, aucun test n'est disponible pour cette aile." %>
 				<% else %>
@@ -217,6 +217,20 @@
 				
 				</br></br>
 			</div> <!-- reviews -->
+
+			<div class="span6">
+				<h4>Description officielle</h4>
+				<center>
+				</br>
+
+				<% if @aile.description == "" %>
+				<%= "Oups, aucune description n'est disponible pour cette aile." %>
+				<% end %>
+				<div class="desc_officielle">
+					<%= simple_format @aile.description.gsub("\n","\n \n") %>
+				</div>
+				</center>
+			</div> <!-- description officielle -->
 
 			<div class="span6">
 				<h4>Ailes semblables</h4>
@@ -242,27 +256,23 @@
 				</br>
 				</center>
 			</div> <!-- autre ailes -->
-
-			<div class="span6">
-				<h4>Description officielle</h4>
-				<center>
-				</br>
-
-				<% if @aile.description == "" %>
-				<%= "Oups, aucune description n'est disponible pour cette aile." %>
-				<% end %>
-				<div class="desc_officielle">
-					<%= simple_format @aile.description.gsub("\n","\n \n") %>
-				</div>
-				</center>
-			</div> <!-- description officielle -->
 			
 
 		
 	</div>
 	</div>
 
+	<script type="text/javascript">
+	    $(document).ready(function() {
 
+	        $(".desc_officielle").shorten({
+			   "showChars" : 400,
+			    "moreText"  : "Plus",
+			    "lessText"  : "Moins",
+	});
+
+	    });
+	</script>
 
 
 
