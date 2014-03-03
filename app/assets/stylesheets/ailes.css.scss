@@ -173,7 +173,7 @@
 
 @media screen and (max-width: 767px){
 [class*="span"], .row-fluid [class*="span"] {
-margin-left: 3%;
+margin-left: 3% !important;
 }
 }
 

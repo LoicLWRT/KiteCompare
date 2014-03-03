@@ -218,7 +218,7 @@
 			<% c2 = c.slice(c.length/3,c.length/3) %>
 			<% c3 = c.slice((2*c.length)/3,10) %>
 
-			<div class="row">
+			<div class="row-fluid">
 				<% if !(@prixs == []) %>
 				<div class="span4"><%== generateTableHTML(c1) %></div>						
 				<div class="span4"><%== generateTableHTML(c2) %></div>	
@@ -233,14 +233,14 @@
 
 
 		<div class="row-fluid">
-
+			<div class="span7 plusdemarge">
 			<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
 			<% if !(@groupeaile.empty?) %>
 
 			
 				<h4>Ailes semblables</h4>
 				<% @groupeaile.each do |groupe| %>
-				<div class="cadretypeailes">
+
 					<h5><%= groupe.titre %></h5>
 					<% @ailes = Array.new %>
 					<% @ids = groupe.idailes.split(";") %>
@@ -252,7 +252,7 @@
 
 					<% end %>
 					<% @light=1 %>
-					<%= render 'thumbnails' %>
+					<%= render 'ailes/thumbnails' %>
 		
 					<% end %>
 				</br>
@@ -261,7 +261,7 @@
 
 
 		<% if !(@aile.description == "") %>
-		<div class="span6 plusdemarge">
+		<div class="span5 plusdemarge">
 			<h4>Description officielle</h4>
 			<center>
 			</br>
