@@ -47,6 +47,13 @@ namespace :database do
     @prixssurshop.each do |prixsurshop|
       puts %&PrixSurShop.create(nom_shop: "#{prixsurshop.nom_shop}", lien_produit: '#{prixsurshop.lien_produit}', prix_sans_barre: #{prixsurshop.prix_sans_barre}, surface: #{prixsurshop.surface}, aile_id: #{prixsurshop.aile_id}, auto: '#{prixsurshop.auto}' )&
     end
+    
+    @groupeaile = GroupeAile.all
+    @groupeaile.each do |groupeaile|
+      puts "GroupeAile.create(titre: %Q[#{groupeaile.titre}], idailes: '#{groupeaile.idailes}' )"
+    end
+
+    puts ""
 
   end
 
