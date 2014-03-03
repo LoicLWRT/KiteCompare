@@ -61,7 +61,7 @@
 		<table>
 
 			<%  if !(@aile.score_relaunch==-1) %>
-			<%== '<tr><td>Facilité au redécollage :</td><td>'%>
+			<%== '<tr><td>Redécollage :</td><td>'%>
 				<%(@aile.score_relaunch/2).round(0).times do |n| %>
 				<%= image_tag "score/hori/1.png" %>
 				<%	end  %>
@@ -115,7 +115,7 @@
 
 
 							<%  if !(@aile.score_wave==-1) %>
-							<%== "<tr><td>Comportement dans les vagues : &nbsp;</td><td>"%>
+							<%== "<tr><td>Vagues : &nbsp;</td><td>"%>
 								<%(@aile.score_wave/2).round(0).times do |n| %>
 								<%= image_tag "score/hori/5.png" %>
 								<%	end  %>
@@ -127,7 +127,7 @@
 
 
 								<%  if !(@aile.score_unhooked==-1) %>
-								<%== "<tr><td>Comportement en déhooké :</td><td>"%>
+								<%== "<tr><td>Déhooké :</td><td>"%>
 									<%(@aile.score_unhooked/2).round(0).times do |n| %>
 									<%= image_tag "score/hori/6.png" %>
 									<%	end  %>
