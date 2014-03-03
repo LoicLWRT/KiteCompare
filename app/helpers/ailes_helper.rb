@@ -20,7 +20,7 @@ module AilesHelper
         content += '<TR>'
         c.transpose[i].each do |prix|
           if not prix[0].nil? then
-            content += '<TD><a href="'+ prix[2].to_s + '"target="_blank"> <span class="label label-info">' + prix[0].to_s + "€" + '</span>' + '<small> chez ' + prix[1].to_s + '</small></a></TD>'
+            content += '<TD><a href="'+ prix[2].to_s + '"target="_blank" rel="nofollow"> <span class="label label-info">' + prix[0].to_s + "€" + '</span>' + '<small> chez ' + prix[1].to_s + '</small></a></TD>'
           else
             content += "<TD><p class=text-center> - <p></TD>"
           end
