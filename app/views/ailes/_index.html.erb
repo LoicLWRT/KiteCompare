@@ -1,64 +1,95 @@
 
-<% %>	
-	
-	
+<% if @light == 1 %>
+<style>
+.thumbnail {
+width: 200px;
+}
+	.thumbnail > img {
+	max-width: 65%;
+}
+
+
+</style>
+<% end %>	
+
+
 	<ul class="thumbnails" >
-	<p id="notice"><%= notice %></p>
+		<p id="notice"><%= notice %></p>
 
-	<% @ailes.each do |aile| %>
-	<li class="span4" style="width: 300px;">
-		<div class="thumbnail">
-			<div class="love">
-				<small>	<%= link_to aile.vote.to_s, vote_path(aile.id), :method => :post %></small>			
-				<%= link_to (image_tag "heart_16.png"), vote_path(aile.id), :method => :post %>
-			</div>
+		<% @ailes.each do |aile| %>
+		
+			<% if @light == 0 %>
+			<li class="span4" style="width: 300px;">
+			<% else %>
+			<li class="span4" style="width: 200px;">
+			<% end %>
+			
+			
+			<div class="thumbnail">
+				<div class="love">
+					<small>	<%= link_to aile.vote.to_s, vote_path(aile.id), :method => :post %></small>			
+					<%= link_to (image_tag "heart_16.png"), vote_path(aile.id), :method => :post %>
+				</div>
 
-			<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.png"  end%>
-			<%= image_tag @image_url %>
+				<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
+				<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
+				<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.png"  end%>
+				<%= image_tag @image_url %>
 
-			<h4 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h4>
-			<p class="text-center">
-				<% if not aile.note.nil? then %>
-				<% (aile.note).times do %>
-				<%== '<i class="icon-star"></i>' %>
-				<% end %>
-				<% (5 - aile.note).times do %>
-				<%== '<i class="icon-star-empty"></i>' %>
-				<% end %>
-				<% end %>
-
-
-				<% if not aile.prix_10m_sans_barre.nil? then %>
-				<%== "&nbsp;" * 15 %>
-				<%=='<small>10m² à <strong>' + aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
-				<br>
-				<br>
-				<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
-
-
+				<% if @light == 0 %>
+				<h4 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h4>
 				<% else %>
-				<%== "&nbsp;" * 5 %>
-				<%== '<small class="text-error">Non disponible en neuf.</small>' %>
-				<br>
-				<br>
-				<%= link_to "Accéder aux avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
+				<h6 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h6>
 				<% end %>
+				
+				<% if @light == 0 %>
 
-				&nbsp;&nbsp;&nbsp;
-				<small class="btn btn-small" onclick="check_box(<%= aile.id %>)">Comparer <input name="<%= aile.id %>" type="checkbox" onclick="hack_click(this)" /></small>
+				<p class="text-center">
+					<% if not aile.note.nil? then %>
+					<% (aile.note).times do %>
+					<%== '<i class="icon-star"></i>' %>
+					<% end %>
+					<% (5 - aile.note).times do %>
+					<%== '<i class="icon-star-empty"></i>' %>
+					<% end %>
+					<% end %>
 
-			</p>
 
-		</div>
-	</li>
-	<% end %>
+					<% if not aile.prix_10m_sans_barre.nil? %>
+					<%== "&nbsp;" * 15 %>
+					<%=='<small>10m² à <strong>' + aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
+
+					
+					<br>
+					<br>
+					<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
+			
+
+					<% else %>
+					<%== "&nbsp;" * 5 %>
+					<%== '<small class="text-error">Non disponible en neuf.</small>' %>
+			
+					<br>
+					<br>
+					<%= link_to "Accéder aux avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
+		
+					<% end %>
+
+			
+					&nbsp;&nbsp;&nbsp;
+					<small class="btn btn-small" onclick="check_box(<%= aile.id %>)">Comparer <input name="<%= aile.id %>" type="checkbox" onclick="hack_click(this)" /></small>
+
+				</p>
+								<% end %>
+
+			</div>
+		</li>
+		<% end %>
 	</ul>
-	
-	
-	
-	
+
+
+
+
 
 
 
