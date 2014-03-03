@@ -140,37 +140,18 @@
 								</table>
 							</br></br>
 						</div>
-
-
-						<div class="span12 showprix">
-							<br><br>
-							<h4>Les prix dans les shops</h4>
-							<br>	
-						</div> <!-- span12 pour les prix-->
+						
 					</div>	
 
-					<% c = tableFromPrix(@aile.id) %>
-					<% if !(c==0) %>
-					<% c1 = c.slice(0,c.length/3) %>
-					<% c2 = c.slice(c.length/3,c.length/3) %>
-					<% c3 = c.slice((2*c.length)/3,10) %>
-					<div class="row">
-						<% if !(@prixs == []) %>
-						<div class="span4"><%== generateTableHTML(c1) %></div>						
-						<div class="span4"><%== generateTableHTML(c2) %></div>	
-						<div class="span4"><%== generateTableHTML(c3) %></div>		
-					</div>	
-
-					<% end %>
-					<% end %>
-
-				</br></br>
 
 
 
 				<div class="row-fluid">
-					<div class="span12"></div>							
-					<div class="span5">
+					<div class="span12"></div>	
+				</div>	
+				
+				<div class="row-fluid">					
+					<div class="span6 plusdemarge">
 						<h4>Extraits d'avis d'utilisateurs</h4>
 					</br>
 					<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
@@ -193,7 +174,7 @@
 			</div> <!-- avis simples -->
 
 
-			<div class="span6">
+			<div class="span6 plusdemarge">
 				<h4>Liens vers des tests et reviews</h4>
 				<% if @aile.test_link == "" %>
 					<%= "Oups, aucun test n'est disponible pour cette aile." %>
@@ -217,24 +198,49 @@
 				
 				</br></br>
 			</div> <!-- reviews -->
+			</div>
 
-			<div class="span6">
-				<h4>Description officielle</h4>
-				<center>
-				</br>
 
-				<% if @aile.description == "" %>
-				<%= "Oups, aucune description n'est disponible pour cette aile." %>
-				<% end %>
-				<div class="desc_officielle">
-					<%= simple_format @aile.description.gsub("\n","\n \n") %>
-				</div>
-				</center>
-			</div> <!-- description officielle -->
 
-			<div class="span6">
+
+
+						<% c = tableFromPrix(@aile.id) %>
+						<% if !(c==0) %>
+						<div class="row-fluid">
+						<div class="span12 showprix plusdemarge">
+							<br><br>
+							<h4>Les prix dans les shops</h4>
+							<br>	
+						</div> <!-- span12 pour les prix-->
+						</div>
+
+						<% c1 = c.slice(0,c.length/3) %>
+						<% c2 = c.slice(c.length/3,c.length/3) %>
+						<% c3 = c.slice((2*c.length)/3,10) %>
+
+						<div class="row">
+							<% if !(@prixs == []) %>
+							<div class="span4"><%== generateTableHTML(c1) %></div>						
+							<div class="span4"><%== generateTableHTML(c2) %></div>	
+							<div class="span4"><%== generateTableHTML(c3) %></div>		
+						</div>	
+
+						<% end %>
+						<% end %>
+
+					</br></br>
+
+
+
+<div class="row-fluid">
+
+
+---->			<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
+----->			<% if !(@groupeaile.nil?) %>
+			
+			<div class="span6 plusdemarge">
 				<h4>Ailes semblables</h4>
-				<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
+				
 				<% @groupeaile.each do |groupe| %>
 					<h5><%= groupe.titre %></h5>
 					<% @ailes = Array.new %>
@@ -248,7 +254,7 @@
 					
 					<% end %>
 					<% @light=1 %>
-					<%= render 'index' %>
+					<%= render 'thumbnails' %>
 				<% end %>
 				
 				
@@ -256,6 +262,21 @@
 				</br>
 				</center>
 			</div> <!-- autre ailes -->
+	------>		<%end%>
+			
+			<div class="span6 plusdemarge">
+				<h4>Description officielle</h4>
+				<center>
+				</br>
+
+				<% if @aile.description == "" %>
+				<%= "Oups, aucune description n'est disponible pour cette aile." %>
+				<% end %>
+				<div class="desc_officielle">
+					<%= simple_format @aile.description.gsub("\n","\n \n") %>
+				</div>
+				</center>
+			</div> <!-- description officielle -->
 			
 
 		
