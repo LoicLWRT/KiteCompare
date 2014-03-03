@@ -185,7 +185,7 @@
 						<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
 						<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
 						<p><%= critique.contenu %></p>
-						<small><%= link_to critique.source, critique.lien%></small>
+						<small><%= link_to critique.source, critique.lien, :rel => 'nofollow'%></small>
 						<%=  %>
 					</blockquote>
 					<% end %>
@@ -208,7 +208,7 @@
 						@url_test = one_test[2].to_s
 						%>
 						
-						<%= link_to  @name_test, @url_test, :class=>"btn btn-small btn-success boutonstests" %> 
+						<%= link_to  @name_test, @url_test, :class=>"btn btn-small btn-success boutonstests", :rel => 'nofollow' %> 
 						<%= image_tag @lang.downcase + ".png" %>
 						<br>
 						
