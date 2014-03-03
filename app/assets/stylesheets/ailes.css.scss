@@ -155,6 +155,7 @@
 }
 
 
+
 @media screen and (min-width: 968px) {
 	.smallmargin{
 		width: 95%;
@@ -166,4 +167,21 @@
 	.span-modified-stack{
 		width: 95% !important;
 		}
+}
+
+
+
+@media screen and (max-width: 767px){
+[class*="span"], .row-fluid [class*="span"] {
+margin-left: 3%;
+}
+}
+
+/* Mobile Optimization */
+
+@media screen and (max-width: 500px) {
+.showaile {
+	margin:0px;
+	padding:0;
+}
 }

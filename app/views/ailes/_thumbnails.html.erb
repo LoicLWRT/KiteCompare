@@ -37,7 +37,14 @@ width: 200px;
 				<%= image_tag @image_url %>
 
 				<% if @light == 0 %>
-				<h4 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h4>
+				
+				<% if (Marque.find(aile.marque_id).name + " " + aile.modele).size>19 %>
+				<h4 class="text-center" style="font-size: 20px;">
+				<% else %>
+				<h4 class="text-center">
+				<% end %>
+				<%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %>
+				</h4>
 				<% else %>
 				<h6 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h6>
 				<% end %>

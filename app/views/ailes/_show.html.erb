@@ -237,22 +237,24 @@
 			<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
 			<% if !(@groupeaile.empty?) %>
 
-			<div class="span6 plusdemarge">
+			
 				<h4>Ailes semblables</h4>
 				<% @groupeaile.each do |groupe| %>
-				<h5><%= groupe.titre %></h5>
-				<% @ailes = Array.new %>
-				<% @ids = groupe.idailes.split(";") %>
-				<% @ids.each do |id_aile| %>
-				<% id_aile = id_aile.gsub(" ","").gsub(" ","")%>
-				<% if !(id_aile.to_i == @aile.id.to_i) && (id_aile.to_i > 0) %>
-				<% @ailes.push(Aile.find(id_aile)) %>
-				<% end %>
+				<div class="cadretypeailes">
+					<h5><%= groupe.titre %></h5>
+					<% @ailes = Array.new %>
+					<% @ids = groupe.idailes.split(";") %>
+					<% @ids.each do |id_aile| %>
+					<% id_aile = id_aile.gsub(" ","").gsub(" ","")%>
+					<% if !(id_aile.to_i == @aile.id.to_i) && (id_aile.to_i > 0) %>
+					<% @ailes.push(Aile.find(id_aile)) %>
+					<% end %>
 
-				<% end %>
-				<% @light=1 %>
-				<%= render 'thumbnails' %>
-				<% end %>
+					<% end %>
+					<% @light=1 %>
+					<%= render 'thumbnails' %>
+		
+					<% end %>
 				</br>
 		</div> <!-- autre ailes -->
 		<%end%>
