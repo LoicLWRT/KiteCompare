@@ -220,15 +220,22 @@
 
 			<div class="span6">
 				<h4>Dans le même genre</h4>
-				<%  @groupeaile = GroupeAile.all.where("idailes LIKE '% " + @aile.id.to_s + " %'") %>
+				<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
 				<% @groupeaile.each do |groupe| %>
+					<h5><%= groupe.titre %></h5>
+					<% @ailes = Array.new %>
 					<% @ids = groupe.idailes.split(";") %>
 					<% @ids.each do |id_aile| %>
 					<% id_aile = id_aile.gsub(" ","").gsub(" ","")%>
-					<%= id_aile %>
+					<% if !(id_aile.to_i == @aile.id.to_i) && (id_aile.to_i > 0) %>
+					<% @ailes.push(Aile.find(id_aile)) %>
+					<% end %>
+					
 					
 					<% end %>
+					<%= render 'index' %>
 				<% end %>
+				
 				
 				<center>
 				</br>
