@@ -176,7 +176,7 @@
 					<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
 
 					<% if (@critiques.count==0) %>
-					<%= "Désolé, aucun avis d'utilisateur n'est disponible pour cette aile." %>
+					<%= "Oups, aucun avis d'utilisateur n'est disponible pour cette aile." %>
 					<% end %>
 
 					<% @critiques.each do |critique| %>
@@ -185,14 +185,38 @@
 						<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
 						<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
 						<p><%= critique.contenu %></p>
-						<small><%= critique.source %></small>
+						<small><%= link_to critique.source, critique.lien%></small>
+						<%=  %>
 					</blockquote>
 					<% end %>
 				</br></br>
-			</div> <!-- avis -->
+			</div> <!-- avis simples -->
 
 
-
+			<div class="span6">
+				<h4>Liens vers des tests et reviews de l'aile</h4>
+				<% if @aile.test_link == "" %>
+					<%= "Oups, aucun test n'est disponible pour cette aile." %>
+				<% else %>
+				
+					<% 
+					@all_tests = @aile.test_link.split("\n")
+					@all_tests.each do |line|          
+						one_test = line.split(';')
+						@lang = one_test[0].to_s
+						@name_test = one_test[1].to_s
+						@url_test = one_test[2].to_s
+						%>
+						
+						<%= link_to  @name_test, @url_test, :class=>"btn btn-small btn-success boutonstests" %> 
+						<%= image_tag @lang.downcase + ".png" %>
+						<br>
+						
+						<% end	%>
+					<% end %>
+				
+				</br></br>
+			</div> <!-- reviews -->
 
 			<div class="span6">
 				<h4>Description officielle</h4>
@@ -200,13 +224,15 @@
 				</br>
 
 				<% if @aile.description == "" %>
-				<%= "Désolé, aucune description n'est disponible pour cette aile." %>
+				<%= "Oups, aucune description n'est disponible pour cette aile." %>
 				<% end %>
 				<div class="desc_officielle">
 					<%= simple_format @aile.description.gsub("\n","\n \n") %>
 				</div>
-			</center>
-		</div>
+				</center>
+			</div> <!-- description officielle -->
+			
+
 		
 	</div>
 	</div>
