@@ -1,65 +1,45 @@
 
-<% %>	
-	
-	
-	<ul class="thumbnails" >
-	<p id="notice"><%= notice %></p>
 
-	<% @ailes.each do |aile| %>
-	<li class="span4" style="width: 300px;">
-		<div class="thumbnail">
-			<div class="love">
-				<small>	<%= link_to aile.vote.to_s, vote_path(aile.id), :method => :post %></small>			
-				<%= link_to (image_tag "heart_16.png"), vote_path(aile.id), :method => :post %>
-			</div>
+<%= render "shared/notcaroussel" %>
 
-			<% @image_url = Marque.find(aile.marque_id).name + "_" + aile.modele + "_" + aile.annee.to_s() %>
-			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-small.png" %>
-			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-small.png"  end%>
-			<%= image_tag @image_url %>
+<%
+meta :description => "Comparatif de toutes les ailes de kitesurf, prix, avis d'utilisateurs et qualités/défauts",
+:keywords => %w(kitesurf ailes comparatif avis défauts)
+%>
 
-			<h4 class="text-center"><%= link_to Marque.find(aile.marque_id).name + " " + aile.modele + " " + aile.annee.to_s(), aile  %></h4>
-			<p class="text-center">
-				<% if not aile.note.nil? then %>
-				<% (aile.note).times do %>
-				<%== '<i class="icon-star"></i>' %>
-				<% end %>
-				<% (5 - aile.note).times do %>
-				<%== '<i class="icon-star-empty"></i>' %>
-				<% end %>
-				<% end %>
+<h1 class="text-center">Les ailes de kitesurf</h1>
+
+<div id="mycont"> </div>
 
 
-				<% if not aile.prix_10m_sans_barre.nil? then %>
-				<%== "&nbsp;" * 15 %>
-				<%=='<small>10m² à <strong>' + aile.prix_10m_sans_barre.to_s + ' €</strong></small>'%>
-				<br>
-				<br>
-				<%= link_to "Accéder aux prix et avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
+<br><br>
+<div class="countainer-fluid">
+	<div class="row-fluid">
+		<div class="span2 span-modified-stack">
+			<div class="smallmargin">
+				<h6>Tri</h6>
+				<!-- 	<div class="pull-right" style="padding-right:5%"> -->
 
+					<a class="btn btn-small btn-info boutonsgauche" href="/ailesparprix">Trier par prix</a>
 
-				<% else %>
-				<%== "&nbsp;" * 5 %>
-				<%== '<small class="text-error">Non disponible en neuf.</small>' %>
-				<br>
-				<br>
-				<%= link_to "Accéder aux avis",aile,:class=>"btn btn-small btn-danger text-center"  %>
-				<% end %>
+					<a class="btn btn-small btn-info boutonsgauche" href="/ailesparnote">Trier par note</a>
+					<h6>Affichage</h6>
+					<abbr rel="tooltip" title="Ailes polyvalentes."><a class="btn btn-small btn-info boutonsgauche" href="/ailes-allround">Allround</a></abbr>
+					<abbr rel="tooltip" title="Ailes spécialisées dans la navigation en vague : Réactives afin d’être envoyée facilement d’une demi-fenêtre de vol à l’autre, capacité de reculer dans la fenêtre tout en gardant de la tension dans les lignes, redécollage facile et un bon depower pour couper la traction de l’aile lors des virages."><a class="btn btn-small btn-info boutonsgauche" href="/ailes-wave">Wave</a></abbr>
+					<abbr rel="tooltip" title="Ailes de course : profils élancés pour réduire au maximum la trainée, facilité pour remonter au vent et vitesse maximale au grand largue vent arrière. Ces ailes sont maniables et réactives pour être relancées dans le vent irrégulier."><a class="btn btn-small btn-info boutonsgauche" href="/ailes-race">Race</a></abbr>
+					<abbr rel="tooltip" title="Les ailes de wakestyle sont souvent de purs C-shape à quatre ou cinq lignes.  Ces ailes sont associées aux figures new-school. Les ailes de wakestyle offrent une réactivité moyenne afin de se naviguer en décroché du harnais (déhooké)."><a class="btn btn-small btn-info boutonsgauche" href="/ailes-wakestyle">Wakestyle</a></abbr>
 
-				&nbsp;&nbsp;&nbsp;
-				<small class="btn btn-small" onclick="check_box(<%= aile.id %>)">Comparer <input name="<%= aile.id %>" type="checkbox" onclick="hack_click(this)" /></small>
-
-			</p>
-
-		</div>
-	</li>
-	<% end %>
-	</ul>
-	
-	
-	
-	
+<!--	</div> -->
+</div>
+</div>
+<div class="span10 span-modified-stack">
 
 
 
+<% @light=0 %>
+<%= render 'thumbnails' %>
 
+
+</div> <!-- span10 -->
+</div>
+</div>

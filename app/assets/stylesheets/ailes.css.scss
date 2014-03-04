@@ -69,7 +69,7 @@
 }
 
 .plusdemarge {
-	padding-left: 3%;
+	padding-left: 2%;
 }
 
 .goleft{
@@ -150,9 +150,10 @@
 }
 
 .boutonstests{
- 	margin:5px 15px 5px 15px;
-	width: 180px;
+ 	margin:5px 5px 5px 15px;
+	width: 170px;
 }
+
 
 
 @media screen and (min-width: 968px) {
@@ -166,4 +167,21 @@
 	.span-modified-stack{
 		width: 95% !important;
 		}
+}
+
+
+
+@media screen and (max-width: 767px){
+[class*="span"], .row-fluid [class*="span"] {
+margin-left: 3% !important;
+}
+}
+
+/* Mobile Optimization */
+
+@media screen and (max-width: 500px) {
+.showaile {
+	margin:0px;
+	padding:0;
+}
 }

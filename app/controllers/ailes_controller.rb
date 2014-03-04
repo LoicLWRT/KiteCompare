@@ -11,7 +11,36 @@ class AilesController < ApplicationController
   # GET /ailes
   # GET /ailes.json
   def index
-    @ailes = Aile.all.order('annee DESC')
+    @debug = ""
+    @ailes = Array.new
+    @ailes_1 = Array.new
+    @ailes_2 = Array.new
+    @ailes_3 = Array.new        
+    Aile.order('annee DESC').where('test_link IS NOT ""').each do |aile|
+        @critiques = CritiqueAile.all.where("aile_id IS " + aile.id.to_s)
+      if !(@critiques.empty?)
+        #On ajoute les ailes avec des avis et des liens vers les tests
+        @ailes.push(aile)
+      else
+        @ailes_2.push(aile)
+      end
+    end
+    
+    #On ajoute ensuite les ailes sans avis
+    @ailes_2.each do |aile|
+          @ailes.push(aile)    
+    end
+    
+    #On ajoute enfin les ailes sans rien 
+    Aile.order('annee DESC').where('test_link IS ""').each do |aile|
+       @ailes.push(aile)   
+    end
+    
+    
+    
+
+    
+    
     @title = "Ailes"
   end
   

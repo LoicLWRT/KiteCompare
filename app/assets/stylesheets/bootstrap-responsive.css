@@ -2777,10 +2777,10 @@ table th[class*="span"],
   background-position: -72px -144px;
 }
 **/
-/**.icon-thumbs-up {
+.icon-thumbs-up {
   background-position: -96px -144px;
 }
-**/
+
 .icon-thumbs-down {
   background-position: -120px -144px;
 }
