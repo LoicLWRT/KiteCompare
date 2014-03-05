@@ -27,11 +27,11 @@
 			<p class="text-center">
 				<% tags = @aile.tags.split(',') %>
 				<% if (! tags.empty?) %>
-				<span class="label label-warning resetbouton"><%= tags[0] %></span>
-				<span class="label label-info resetbouton"><%=tags[1].titleize %></span>
+				<span class="label resetbouton"><%= tags[0] %></span>
+				<span class="label resetbouton"><%=tags[1].titleize %></span>
 
 				<% if !tags[2].nil? %>
-				<%== '<span class="label label-important resetbouton">' + tags[2] + '</span>'%>
+				<%== '<span class="label resetbouton">' + tags[2] + '</span>'%>
 				<% end %>
 				<% end %>
 			</p>
@@ -101,7 +101,7 @@
 
 
 						<%  if !(@aile.score_easyofuse==-1) %>
-						<%== "<tr><td>Facilité d'utilisation :</td><td>"%>
+						<%== "<tr><td>Débutant :</td><td>"%>
 							<%(@aile.score_easyofuse/2).round(0).times do |n| %>
 							<%= image_tag "score/hori/4.png" %>
 							<%	end  %>
@@ -187,8 +187,8 @@
 						@url_test = one_test[2].to_s
 						%>
 
-						<%= link_to  @name_test, @url_test, :class=>"btn btn-small btn-success boutonstests", :rel => 'nofollow' %> 
-						<%= image_tag @lang.downcase + ".png" %>
+						<div class="btn btn-small btn-success boutonstests"><%= image_tag @lang.downcase + ".png", :class=>"flag" %> <%= link_to  @name_test, @url_test, :style=>"color:white;text-align:center;", :rel => 'nofollow' %></div>
+						
 						<br>
 
 						<% end	%>

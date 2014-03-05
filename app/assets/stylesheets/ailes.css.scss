@@ -151,10 +151,16 @@
 
 .boutonstests{
  	margin:5px 5px 5px 15px;
-	width: 170px;
+	width: 180px;
+	text-align:left;
 }
 
-
+.flag {
+	text-align:left;
+	margin-top:-3px;
+	margin-left:-2px;
+	padding-right:2px;
+}
 
 @media screen and (min-width: 968px) {
 	.smallmargin{
