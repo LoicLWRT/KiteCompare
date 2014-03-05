@@ -32,7 +32,7 @@ class AilesController < ApplicationController
     end
     
     #On ajoute enfin les ailes sans rien 
-    Aile.order('annee DESC').where("test_link IS ''").each do |aile|
+    Aile.order('annee DESC').where("test_link = ''").each do |aile|
        @ailes.push(aile)   
     end
     
