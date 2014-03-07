@@ -232,7 +232,7 @@
 
 
 
-		<div class="row-fluid">
+	<div class="row-fluid">
 			<div class="span7 plusdemarge">
 			<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
 			<% if !(@groupeaile.empty?) %>
@@ -256,9 +256,10 @@
 		
 					<% end %>
 				</br>
-		</div> <!-- autre ailes -->
+		
 		<%end%>
-
+		</div> <!-- span autre ailes -->
+		
 
 		<% if !(@aile.description == "") %>
 		<div class="span5 plusdemarge">
@@ -269,7 +270,7 @@
 				<%= simple_format @aile.description.gsub("\n","\n \n") %>
 			</div>
 		</center>
-	</div> <!-- description officielle -->
+	</div> <!-- span description officielle -->
 	<% end %>
 
 
