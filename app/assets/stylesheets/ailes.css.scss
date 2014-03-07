@@ -65,7 +65,7 @@
 }
 
 .serre {
-  line-height: 10px;
+	line-height: 10px;
 }
 
 .plusdemarge {
@@ -151,37 +151,52 @@
 
 .boutonstests{
  	margin:5px 5px 5px 15px;
-	width: 170px;
+	width: 180px;
+	text-align:left;
 }
 
-
+.flag {
+	text-align:left;
+	margin-top:-3px;
+	margin-left:-2px;
+	padding-right:2px;
+}
 
 @media screen and (min-width: 968px) {
 	.smallmargin{
 		width: 95%;
 		max-width: 125px;
-		}
+	}
 }
 
 @media screen and (max-width: 968px) {
 	.span-modified-stack{
 		width: 95% !important;
-		}
+	}
+}
+
+.table_padding {
+	padding-right:15px;
 }
 
 
-
-@media screen and (max-width: 767px){
-[class*="span"], .row-fluid [class*="span"] {
-margin-left: 3% !important;
-}
+@media screen and (max-width: 550px){
+	.mobile {
+		margin-left: 0% !important;
+		margin: 0 auto; 
+		text-align: center;
+	}
+	table {
+		margin: 0 auto;
+	}
 }
 
 /* Mobile Optimization */
 
 @media screen and (max-width: 500px) {
-.showaile {
-	margin:0px;
-	padding:0;
+	.showaile {
+		margin:0px;
+		padding:0;
+	}
 }
-}
+

@@ -1,13 +1,13 @@
 <div class="container-fluid showaile">
 	<div class="row-fluid">
-		<div class="span6 bigimage">
+		<div class="span6 bigimage mobile">
 
 			<% @image_url = Marque.find(@aile.marque_id).name + "_" + @aile.modele + "_" + @aile.annee.to_s() %>
 			<% @image_url = "kites/" + @image_url.downcase.delete(' ').delete('.') + "-large.png" %>
 			<% if  Rails.application.assets.find_asset(@image_url).nil? then @image_url="kites/base-large.png"  end%>
 			<%= image_tag @image_url %>
 		</div>
-		<div class="span5 plusdemarge">
+		<div class="span5 plusdemarge mobile">
 			<h1 class="text-center"> <%= Marque.find(@aile.marque_id).name + " " + @aile.modele %> </h1>
 			<h3 class="text-center"> <%=@aile.annee.to_s() %> </h3>
 			<p class="text-center">
@@ -27,11 +27,11 @@
 			<p class="text-center">
 				<% tags = @aile.tags.split(',') %>
 				<% if (! tags.empty?) %>
-				<span class="label label-warning resetbouton"><%= tags[0] %></span>
-				<span class="label label-info resetbouton"><%=tags[1].titleize %></span>
+				<span class="label resetbouton"><%= tags[0] %></span>
+				<span class="label resetbouton"><%=tags[1].titleize %></span>
 
 				<% if !tags[2].nil? %>
-				<%== '<span class="label label-important resetbouton">' + tags[2] + '</span>'%>
+				<%== '<span class="label resetbouton">' + tags[2] + '</span>'%>
 				<% end %>
 				<% end %>
 			</p>
@@ -44,6 +44,7 @@
 					<td><p class="text-center" style="margin: 0;">&nbsp;<%= link_to "Vous l'aimez aussi ?", vote_path(@aile.id), :method => :post %></p></td>
 				</tr>
 			</table>
+
 			<p id="notice" class="text-center"><%= notice %></p>
 
 
@@ -52,30 +53,31 @@
 
 
 
-			<h4>Particularités de l'aile</h4>
-		</br>
-		<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
-		<%= "Désolé, aucun détail n'est disponible pour cette aile." %>
-		<% end %>
+			<h4>Particularités</h4>
+			
+			</br>
+			<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
+			<%= "Oops, aucun détail n'est disponible pour cette aile." %>
+			<% end %>
+			
+			<table style="text-align:left !important;">
 
-		<table>
+				<%  if !(@aile.score_relaunch==-1) %>
+				<%== '<tr><td class=\"table_padding\">Redécollage :</td><td>'%>
+					<%(@aile.score_relaunch/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/1.png" %>
+					<%	end  %>
 
-			<%  if !(@aile.score_relaunch==-1) %>
-			<%== '<tr><td>Redécollage :</td><td>'%>
-				<%(@aile.score_relaunch/2).round(0).times do |n| %>
-				<%= image_tag "score/hori/1.png" %>
-				<%	end  %>
+					<%(4.999 - @aile.score_relaunch/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
 
-				<%(4.999 - @aile.score_relaunch/2).round(0).times do |n| %>
-				<%= image_tag "score/hori/0.png" %>
-				<%	end  %>
-
-				<%== "</td></tr>" %>	
-				<%	end	  %>
+					<%== "</td></tr>" %>	
+					<%	end	  %>
 
 
 				<%  if !(@aile.score_highwind==-1) %>
-				<%== "<tr><td>Plage haute :</td><td>"%>
+				<%== "<tr><td class=\"table_padding\">Plage haute :</td><td>"%>
 					<%(@aile.score_highwind/2).round(0).times do |n| %>
 					<%= image_tag "score/hori/2.png" %>
 					<%	end  %>
@@ -88,192 +90,179 @@
 
 
 
-					<%  if !(@aile.score_lowwind==-1) %>
-					<%== "<tr><td>Plage basse :</td><td>"%>
-						<%(@aile.score_lowwind/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/3.png" %>
-						<%	end  %>
-						<%(4.999 - @aile.score_lowwind/2).round(0).times do |n| %>
-						<%= image_tag "score/hori/0.png" %>
-						<%	end  %>
-						<%== "</td></tr>" %>	
-						<%	end	  %>
+				<%  if !(@aile.score_lowwind==-1) %>
+				<%== "<tr><td class=\"table_padding\">Plage basse :</td><td>"%>
+					<%(@aile.score_lowwind/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/3.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_lowwind/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					<%== "</td></tr>" %>	
+					<%	end	  %>
 
 
-						<%  if !(@aile.score_easyofuse==-1) %>
-						<%== "<tr><td>Facilité d'utilisation :</td><td>"%>
-							<%(@aile.score_easyofuse/2).round(0).times do |n| %>
-							<%= image_tag "score/hori/4.png" %>
-							<%	end  %>
+				<%  if !(@aile.score_easyofuse==-1) %>
+				<%== "<tr><td class=\"table_padding\">Débutant :</td><td>"%>
+					<%(@aile.score_easyofuse/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/4.png" %>
+					<%	end  %>
 
-							<%(4.999 - @aile.score_easyofuse/2).round(0).times do |n| %>
-							<%= image_tag "score/hori/0.png" %>
-							<%	end  %>
-							<%== "</td></tr>" %>	
-							<%	end	  %>
-
-
-
-							<%  if !(@aile.score_wave==-1) %>
-							<%== "<tr><td>Vagues : &nbsp;</td><td>"%>
-								<%(@aile.score_wave/2).round(0).times do |n| %>
-								<%= image_tag "score/hori/5.png" %>
-								<%	end  %>
-								<%(4.999 - @aile.score_wave/2).round(0).times do |n| %>
-								<%= image_tag "score/hori/0.png" %>
-								<%	end  %>
-								<%== "</td></tr>" %>	
-								<%	end	  %>
-
-
-								<%  if !(@aile.score_unhooked==-1) %>
-								<%== "<tr><td>Déhooké :</td><td>"%>
-									<%(@aile.score_unhooked/2).round(0).times do |n| %>
-									<%= image_tag "score/hori/6.png" %>
-									<%	end  %>
-
-									<%(4.999 - @aile.score_unhooked/2).round(0).times do |n| %>
-									<%= image_tag "score/hori/0.png" %>
-									<%	end  %>
-									<%== "</td></tr>" %>	
-									<%	end	  %>
-								</table>
-							</br></br>
-						</div>
-
-					</div>	
+					<%(4.999 - @aile.score_easyofuse/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					<%== "</td></tr>" %>	
+					<%	end	  %>
 
 
 
+				<%  if !(@aile.score_wave==-1) %>
+				<%== "<tr><td class=\"table_padding\">Vagues : &nbsp;</td><td>"%>
+					<%(@aile.score_wave/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/5.png" %>
+					<%	end  %>
+					<%(4.999 - @aile.score_wave/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					<%== "</td></tr>" %>	
+					<%	end	  %>
 
-					<div class="row-fluid">
-						<div class="span12"></div>	
-					</div>	
 
-					<div class="row-fluid">
-							
-						<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
-						<% if !(@critiques.count==0) %>	
-									
-						<div class="span6 plusdemarge">
-							<h4>Extraits d'avis d'utilisateurs</h4>
-						</br>
+				<%  if !(@aile.score_unhooked==-1) %>
+				<%== "<tr><td class=\"table_padding\">Déhooké :</td><td>"%>
+					<%(@aile.score_unhooked/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/6.png" %>
+					<%	end  %>
+
+					<%(4.999 - @aile.score_unhooked/2).round(0).times do |n| %>
+					<%= image_tag "score/hori/0.png" %>
+					<%	end  %>
+					<%== "</td></tr>" %>	
+					<%	end	  %>
+			</table>
 			
-						<% @critiques.each do |critique| %>
-						<blockquote>
-							<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
-							<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
-							<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
-							<p><%= critique.contenu %></p>
-							<small><%= link_to critique.source, critique.lien, :rel => 'nofollow'%></small>
-							<%=  %>
-						</blockquote>
-						<% end %>
-					</br></br>
-				</div> <!-- extraits avis -->
-				<% end %>
+			</br></br>
+		</div>
+	</div>	
+
+
+	<div class="row-fluid">
+			
+		<% @critiques = CritiqueAile.where(aile_id: @aile.id)%>
+		<% if !(@critiques.count==0) %>	
+					
+		<div class="span6 plusdemarge mobile">
+			<h4>Avis d'utilisateurs</h4>
+			</br>
+
+			<% @critiques.each do |critique| %>
+			<blockquote style="text-align:left !important;">
+				<%== if critique.type_critique_id==1 then '<i class="icon-thumbs-up"></i>' end %>
+				<%== if critique.type_critique_id==2 then '<i class="icon-thumbs-down"></i>' end %>
+				<%== if critique.type_critique_id==3 then '<i class="icon-pencil"></i>' end %>
+				<p><%= critique.contenu %></p>
+				<small><%= link_to critique.source, critique.lien, :rel => 'nofollow'%></small>
+			</blockquote>
+			<% end %>
+			</br></br>
+		</div> <!-- extraits avis -->
+		<% end %>
 				
 
-				<% if !(@aile.test_link == "") %>
-				<div class="span6 plusdemarge">
-					<h4>Liens vers des tests et reviews</h4>
+		<% if !(@aile.test_link == "") %>
+		<div class="span6 plusdemarge mobile">
+		<h4>Liens vers des tests</h4>
+		</br>
+			<% 
+			@all_tests = @aile.test_link.split("\n")
+			@all_tests.each do |line|          
+				one_test = line.split(';')
+				@lang = one_test[0].to_s
+				@name_test = one_test[1].to_s
+				@url_test = one_test[2].to_s
+				%>
 
-					<% 
-					@all_tests = @aile.test_link.split("\n")
-					@all_tests.each do |line|          
-						one_test = line.split(';')
-						@lang = one_test[0].to_s
-						@name_test = one_test[1].to_s
-						@url_test = one_test[2].to_s
-						%>
-
-						<%= link_to  @name_test, @url_test, :class=>"btn btn-small btn-success boutonstests", :rel => 'nofollow' %> 
-						<%= image_tag @lang.downcase + ".png" %>
-						<br>
-
-						<% end	%>
-						
-
-					</br></br>
-				</div> <!-- reviews -->
-				<% end %>
+				<div class="btn btn-small btn-success boutonstests"><%= image_tag @lang.downcase + ".png", :class=>"flag" %> <%= link_to  @name_test, @url_test, :style=>"color:white;text-align:center;", :rel => 'nofollow' %></div>
 				
-			</div>
+				<br>
+
+			<% end	%>
+			
+
+			</br></br>
+		</div> <!-- reviews -->
+		<% end %>
+				
+	</div>
 
 
 
 
 
-			<% c = tableFromPrix(@aile.id) %>
-			<% if !(c==0) %>
-			<div class="row-fluid">
-				<div class="span12 showprix plusdemarge">
-					<br><br>
-					<h4>Les prix dans les shops</h4>
-					<br>	
-				</div> <!-- span12 pour les prix-->
-			</div>
+	<% c = tableFromPrix(@aile.id) %>
+	<% if !(c==0) %>
+	
+	<h4>Les prix sur le net</h4>
+	</br>
 
-			<% c1 = c.slice(0,c.length/3) %>
-			<% c2 = c.slice(c.length/3,c.length/3) %>
-			<% c3 = c.slice((2*c.length)/3,10) %>
+	<% c1 = c.slice(0,c.length/3) %>
+	<% c2 = c.slice(c.length/3,c.length/3) %>
+	<% c3 = c.slice((2*c.length)/3,10) %>
 
-			<div class="row-fluid">
-				<% if !(@prixs == []) %>
-				<div class="span4"><%== generateTableHTML(c1) %></div>						
-				<div class="span4"><%== generateTableHTML(c2) %></div>	
-				<div class="span4"><%== generateTableHTML(c3) %></div>		
-			</div>	
+	<div class="row-fluid">
+		<% if !(@prixs == []) %>
+		<div class="span4"><%== generateTableHTML(c1) %></div>						
+		<div class="span4"><%== generateTableHTML(c2) %></div>	
+		<div class="span4"><%== generateTableHTML(c3) %></div>		
+	</div>	
 
-			<% end %>
-			<% end %>
+	<% end %>
+	<% end %>
 
-		</br></br>
+	</br></br>
 
 
 
 	<div class="row-fluid">
-			<div class="span7 plusdemarge">
-			<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
-			<% if !(@groupeaile.empty?) %>
 
-			
-				<h4>Ailes semblables</h4>
-				<% @groupeaile.each do |groupe| %>
-
-					<h5><%= groupe.titre %></h5>
-					<% @ailes = Array.new %>
-					<% @ids = groupe.idailes.split(";") %>
-					<% @ids.each do |id_aile| %>
-					<% id_aile = id_aile.gsub(" ","").gsub(" ","")%>
-					<% if !(id_aile.to_i == @aile.id.to_i) && (id_aile.to_i > 0) %>
-					<% @ailes.push(Aile.find(id_aile)) %>
-					<% end %>
-
-					<% end %>
-					<% @light=1 %>
-					<%= render 'ailes/thumbnails' %>
+		<div class="span6 plusdemarge mobile">
+		<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
+		<% if !(@groupeaile.empty?) %>
 		
-					<% end %>
-				</br>
-		
+			<h4>Ailes semblables</h4>
+			</br>
+			<% @groupeaile.each do |groupe| %>
+
+				<!-- <h5><%= groupe.titre %></h5> -->
+				<% @ailes = Array.new %>
+				<% @ids = groupe.idailes.split(";") %>
+				<% @ids.each do |id_aile| %>
+				<% id_aile = id_aile.gsub(" ","")%>
+				<% if !(id_aile.to_i == @aile.id.to_i) && (id_aile.to_i > 0) %>
+				<% @ailes.push(Aile.find(id_aile)) %>
+				<% end %>
+
+				<% end %>
+				<% @light=1 %>
+				<%= render 'ailes/thumbnails' %>
+				<% end %>
+			</br>
 		<%end%>
 		</div> <!-- span autre ailes -->
 		
 
 		<% if !(@aile.description == "") %>
-		<div class="span5 plusdemarge">
-			<h4>Description officielle</h4>
-			<center>
+		<div class="span6 plusdemarge mobile">
+			<h4>Description</h4>
 			</br>
-			<div class="desc_officielle">
-				<%= simple_format @aile.description.gsub("\n","\n \n") %>
+			<div style="margin: auto; text-align: center;">
+				<div class="desc_officielle">
+					<%= simple_format @aile.description.gsub("\n","\n \n") %>
+				</div>
 			</div>
-		</center>
 	</div> <!-- span description officielle -->
 	<% end %>
 
-
-
-</div>
+	</div>
+	
 </div>
