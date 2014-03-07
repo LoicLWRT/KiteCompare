@@ -2,6 +2,95 @@
 
 module AilesHelper
 
+  def generateParticulariteAile(aile)
+    content = ""
+    
+    if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1)
+		content += "Oops, aucun détail n'est disponible pour cette aile."
+		end
+    
+
+    if !(aile.score_relaunch==-1)
+      content +='<tr><td class=\"table_padding\">Redécollage :</td><td>'
+      (aile.score_relaunch/2).round(0).times do |n|
+       content += image_tag("score/hori/1.png")
+      end  
+
+      (4.999 - aile.score_relaunch/2).round(0).times do |n|
+        content += image_tag "score/hori/0.png"
+      end 
+      content += "</td></tr>"
+    end
+
+
+    if !(aile.score_highwind==-1)
+      content += "<tr><td class=\"table_padding\">Plage haute :</td><td>"
+      (aile.score_highwind/2).round(0).times do |n|
+        content += image_tag "score/hori/2.png"
+      end 
+      (4.999 - aile.score_highwind/2).round(0).times do |n|
+        content += image_tag "score/hori/0.png"
+      end 
+
+      content += "</td></tr>"
+    end	
+
+
+
+    if !(aile.score_lowwind==-1) 
+      content += "<tr><td class=\"table_padding\">Plage basse :</td><td>"
+      (aile.score_lowwind/2).round(0).times do |n|
+        content += image_tag "score/hori/3.png"
+      end 
+      (4.999 - aile.score_lowwind/2).round(0).times do |n|
+        content += image_tag "score/hori/0.png"
+      end 
+      content += "</td></tr>"
+    end	
+
+
+    if !(aile.score_easyofuse==-1) 
+      content += "<tr><td class=\"table_padding\">Débutant :</td><td>"
+      (aile.score_easyofuse/2).round(0).times do |n| 
+        content += image_tag "score/hori/4.png" 
+      end  
+
+      (4.999 - aile.score_easyofuse/2).round(0).times do |n| 
+        content += image_tag "score/hori/0.png" 
+      end  
+      content += "</td></tr>" 	
+    end	  
+
+
+
+    if !(aile.score_wave==-1) 
+      content += "<tr><td class=\"table_padding\">Vagues : &nbsp;</td><td>"
+      (aile.score_wave/2).round(0).times do |n| 
+        content += image_tag "score/hori/5.png" 
+      end  
+      (4.999 - aile.score_wave/2).round(0).times do |n| 
+        content += image_tag "score/hori/0.png" 
+      end  
+      content += "</td></tr>" 	
+    end	  
+
+
+    if !(aile.score_unhooked==-1) 
+      content += "<tr><td class=\"table_padding\">Déhooké :</td><td>"
+      (aile.score_unhooked/2).round(0).times do |n| 
+        content += image_tag "score/hori/6.png" 
+      end  
+
+      (4.999 - aile.score_unhooked/2).round(0).times do |n| 
+        content += image_tag "score/hori/0.png" 
+      end  
+      content += "</td></tr>" 	
+    end	  
+
+
+    return content
+  end
+
   def generateTableHTML(c)
     content = '<table class="table table-bordered table-striped" align="center">
     <TR>' 
