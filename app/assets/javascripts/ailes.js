@@ -63,11 +63,11 @@ function redirect_to_comparison()
 		break;
 
 		case 1:
-		url = "/comparer_ailes" + "?aile1=" + ailes_id[0]
+		url = "/ailes/" + ailes_id[0]
 		break;
 
 		case 2:
-		url = "/comparer_ailes" + "?aile1=" + ailes_id[0] + "&aile2=" + ailes_id[1] 
+		url = "/compare/show?un=" + ailes_id[0] + "&deux=" + ailes_id[1] 
 		break;
 
 		case 3:
