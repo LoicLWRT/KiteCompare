@@ -36,6 +36,7 @@
 }
 .thumbnails {
 	text-align: center;
+	margin-left: 20px; /* Contre boostrap (margin-left:-30px;)*/
 }
 .thumbnail {
 	display: inline-block;
@@ -47,10 +48,9 @@
 	border-radius: 4px;
 	overflow: hidden;
 	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06);
-
+	
 }
 .thumbnails li {
-	/*float: none !important;*/
 	float: none;
 	display: inline-block;
 	*display: inline; /* ie7 support */
@@ -162,23 +162,43 @@
 	padding-right:2px;
 }
 
-@media screen and (min-width: 968px) {
-	.smallmargin{
-		width: 95%;
-		max-width: 125px;
-	}
-}
-
-@media screen and (max-width: 968px) {
-	.span-modified-stack{
-		width: 95% !important;
-	}
-}
 
 .table_padding {
 	padding-right:15px;
 }
 
+@media screen and (min-width: 968px) {
+	.smallmargin {
+		width: 95%;
+		max-width: 125px;
+	}
+
+	.menu {
+		margin-top: 16px; /* Pour l'aligner avec les ailes */
+	}
+
+	
+
+}
+
+
+
+/* Mobile Optimization */
+
+@media screen and (max-width: 500px) {
+	.showaile {
+		margin:0px;
+		padding:0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.thumbnails li {
+		float: none !important;
+		margin: 0 auto !important;
+	}
+	
+}
 
 @media screen and (max-width: 550px){
 	.mobile {
@@ -189,14 +209,20 @@
 	table {
 		margin: 0 auto;
 	}
+
 }
 
-/* Mobile Optimization */
 
-@media screen and (max-width: 500px) {
-	.showaile {
-		margin:0px;
-		padding:0;
+@media screen and (max-width: 968px) {
+	.menu {
+		margin: 0 auto !important;
+		float: none !important;
+		max-width: 500px !important;
+		width: auto !important;
+
+	}
+	.thumbnails {
+		margin-left: -10px; /* Pour a peu près bien centrer les divs. Hack*/
 	}
 }
 
