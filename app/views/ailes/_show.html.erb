@@ -52,11 +52,6 @@
 			<h4>Particularités</h4>
 			
 			</br>
-			<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
-			<%= "Oops, aucun détail n'est disponible pour cette aile." %>
-			<% end %>
-			
-			
 			
 			<table style="text-align:left !important;">
 				<%== generateParticulariteAile(@aile) %>
