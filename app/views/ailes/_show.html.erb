@@ -36,7 +36,6 @@
 				<% end %>
 			</p>
 
-
 			<table align="center">
 				<tr>
 					<td><h5 class="text-center"> <%= @aile.vote.to_s %> &nbsp;<%= image_tag("heart_32.png") %></h5></td>
@@ -46,99 +45,16 @@
 			</table>
 
 			<p id="notice" class="text-center"><%= notice %></p>
-
-
 			<br><br>
-
 
 
 
 			<h4>Particularités</h4>
 			
 			</br>
-			<%  if (@aile.score_relaunch==-1) &&  (@aile.score_highwind==-1) && (@aile.score_lowwind==-1) && (@aile.score_easyofuse==-1) && (@aile.score_wave==-1) && (@aile.score_unhooked==-1) %>
-			<%= "Oops, aucun détail n'est disponible pour cette aile." %>
-			<% end %>
 			
 			<table style="text-align:left !important;">
-
-				<%  if !(@aile.score_relaunch==-1) %>
-				<%== '<tr><td class=\"table_padding\">Redécollage :</td><td>'%>
-					<%(@aile.score_relaunch/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/1.png" %>
-					<%	end  %>
-
-					<%(4.999 - @aile.score_relaunch/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/0.png" %>
-					<%	end  %>
-
-					<%== "</td></tr>" %>	
-					<%	end	  %>
-
-
-				<%  if !(@aile.score_highwind==-1) %>
-				<%== "<tr><td class=\"table_padding\">Plage haute :</td><td>"%>
-					<%(@aile.score_highwind/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/2.png" %>
-					<%	end  %>
-					<%(4.999 - @aile.score_highwind/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/0.png" %>
-					<%	end  %>
-
-					<%== "</td></tr>" %>	
-					<%	end	  %>
-
-
-
-				<%  if !(@aile.score_lowwind==-1) %>
-				<%== "<tr><td class=\"table_padding\">Plage basse :</td><td>"%>
-					<%(@aile.score_lowwind/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/3.png" %>
-					<%	end  %>
-					<%(4.999 - @aile.score_lowwind/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/0.png" %>
-					<%	end  %>
-					<%== "</td></tr>" %>	
-					<%	end	  %>
-
-
-				<%  if !(@aile.score_easyofuse==-1) %>
-				<%== "<tr><td class=\"table_padding\">Débutant :</td><td>"%>
-					<%(@aile.score_easyofuse/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/4.png" %>
-					<%	end  %>
-
-					<%(4.999 - @aile.score_easyofuse/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/0.png" %>
-					<%	end  %>
-					<%== "</td></tr>" %>	
-					<%	end	  %>
-
-
-
-				<%  if !(@aile.score_wave==-1) %>
-				<%== "<tr><td class=\"table_padding\">Vagues : &nbsp;</td><td>"%>
-					<%(@aile.score_wave/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/5.png" %>
-					<%	end  %>
-					<%(4.999 - @aile.score_wave/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/0.png" %>
-					<%	end  %>
-					<%== "</td></tr>" %>	
-					<%	end	  %>
-
-
-				<%  if !(@aile.score_unhooked==-1) %>
-				<%== "<tr><td class=\"table_padding\">Déhooké :</td><td>"%>
-					<%(@aile.score_unhooked/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/6.png" %>
-					<%	end  %>
-
-					<%(4.999 - @aile.score_unhooked/2).round(0).times do |n| %>
-					<%= image_tag "score/hori/0.png" %>
-					<%	end  %>
-					<%== "</td></tr>" %>	
-					<%	end	  %>
+				<%== generateParticulariteAile(@aile) %>
 			</table>
 			
 			</br></br>
@@ -224,10 +140,10 @@
 
 
 	<div class="row-fluid">
+
 		<div class="span6 plusdemarge mobile">
 		<%  @groupeaile = GroupeAile.all.where("idailes LIKE '%;" + @aile.id.to_s + ";%'") %>
 		<% if !(@groupeaile.empty?) %>
-
 		
 			<h4>Ailes semblables</h4>
 			</br>
@@ -247,9 +163,9 @@
 				<%= render 'ailes/thumbnails' %>
 				<% end %>
 			</br>
-		</div> <!-- autre ailes -->
 		<%end%>
-
+		</div> <!-- span autre ailes -->
+		
 
 		<% if !(@aile.description == "") %>
 		<div class="span6 plusdemarge mobile">
@@ -260,8 +176,8 @@
 					<%= simple_format @aile.description.gsub("\n","\n \n") %>
 				</div>
 			</div>
-		</div> <!-- description officielle -->
-		<% end %>
+	</div> <!-- span description officielle -->
+	<% end %>
 
 	</div>
 	
