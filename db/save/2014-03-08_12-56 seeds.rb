@@ -1,15 +1,11 @@
 # encoding: utf-8
 
-Aile.create(modele: 'Bandit 5', marque_id: 2, annee: 2012, note: 4, vote: '12', description: %Q[Depuis la première Bandit l'objectif de F-one est de proposer une aile unique, performante dans chaque discipline et style de rider, du débutant au compétiteur.
- En matière de R&D être performant dans tous les domaines se révèle bien plus complexe que de développer plusieurs modèles d'ailes très spécifiques. L'autre défi difficile à relever pour la Bandit 5 était d'améliorer la Bandit 4, sans perdre aucune de ses qualités. 
-Parce que se dépasser soi même est une course qui ne fini jamais. Un nouveau type de profil plus plat a donc été retenu, plus facile a choquer pour garder le contrôle dans la plage haute et qui tolère mieux d’être bordé en plage basse, ce qui offre une puissance constamment disponible. 
-La pression de barre a été justement dosée pour que le pilotage ne soit pas trop physique. 
-La B5 procure une pression plus importante dans le harnais tous en soulageant les bras. La barre reste idéalement présente pour retransmettre l’ensemble des informations nécessaires. ], score_relaunch: 9.0, score_highwind: 4.0, score_lowwind: 10.0, score_easyofuse: 8.0, score_wave: 8.0, score_unhooked: 2.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Delta', test_link: %Q[FR;Test du forum Kite-Spirit;http://www.kite-spirit.com/forum/viewtopic.php?id=2211
+Aile.create(modele: 'Bandit 5', marque_id: 2, annee: 2012, note: 4, vote: '12', description: %Q[ Depuis la première Bandit l'objectif de F-one est de proposer une aile unique, performante dans chaque discipline et style de rider, du débutant au compétiteur. En matière de R&D être performant dans tous les domaines se révèle bien plus complexe que de développer plusieurs modèles d'ailes très spécifiques. L'autre défi difficile à relever pour la Bandit 5 était d'améliorer la Bandit 4, sans perdre aucune de ses qualités. Parce que se dépasser soi même est une course qui ne fini jamais. Un nouveau type de profil plus plat a donc été retenu, plus facile a choquer pour garder le contrôle dans la plage haute et qui tolère mieux d’être bordé en plage basse, ce qui offre une puissance constamment disponible. La pression de barre a été justement dosée pour que le pilotage ne soit pas trop physique. La B5 procure une pression plus importante dans le harnais tous en soulageant les bras. La barre reste idéalement présente pour retransmettre l’ensemble des informations nécessaires. ], score_relaunch: 9.0, score_highwind: 4.0, score_lowwind: 10.0, score_easyofuse: 8.0, score_wave: 8.0, score_unhooked: 2.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Delta', test_link: %Q[FR;Test du forum Kite-Spirit;http://www.kite-spirit.com/forum/viewtopic.php?id=2211
 FR;Avis de la team Flysurf;http://www.flysurf.com/tests-matos/fiche/f-one-bandit-5.htm?testmatosid=102
 FR;Test du site Le Menhir;http://www.lemenhir.com/wp/2011/11/test-f-one-bandit-5-2012/
 EN;Test d'un forum anglophone;http://www.eastkb.com/forum/viewtopic.php?p=37985
 EN;Review de King of Watersport;https://www.kingofwatersports.com/item.do?item=26176&path=the-fone-bandit-5-kite-review-i26176.html
-EN;Avis/tests de nombreux utilisateurs;http://www.kiteboardingreview.com/kitereviews/14-f-one/164-f-one-bandit-5-2012
+EN;Avis/test de nombreux utilisateurs;http://www.kiteboardingreview.com/kitereviews/14-f-one/164-f-one-bandit-5-2012
 EN;Test du magazine IKSurfMag;http://www.iksurfmag.com/issue29/?page=129] )
 Aile.create(modele: 'Bandit 6', marque_id: 2, annee: 2013, note: 5, vote: '14', description: %Q[La Bandit est l’aile de référence de la marque. Caractérisé par son Delta C Shape, la Bandit a su au cours des années s’affirmer comme modèle de référence dans de nombreuses disciplines du kitesurf (freestyle, freeride, Waveriding)
 Pour permettre d’ajuster au mieux les qualités à la demande des pratiquants, les évolutions cette année ont essentiellement portées sur 2 éléments clés du développement de la 6e édition.
@@ -361,35 +357,19 @@ L’HYDRA v5 est la réponse imparable à tout programme pour tous styles de nav
 L’HYDRA est l’aile la plus plate du marché. Son design optimisé intègre une technologie optimisée Flat-shape pour une surface projetée proche de 100%.
 Développé par GENETRIX, le SPS permet de maintenir le profil arrière et avant de manière optimale. Les lattes arrières possèdent un bridage spécifique qui maintient le profil et apporte ainsi une stabilité parfaite pour une puissance totalement maîtrisable, dans les conditions de vent les plus extrêmes. L’Hydra est le seul kite à structure gonflable à utiliser ce système.
 En terme de plage d’utilisation l’HYDRA v5 est la référence et aucun autre kite ne rivalise sur ce point. Ses résultats au plus haut niveau sont là pour le prouver. Cette aile est idéale pour les riders à la recherche d’une aile hyper sécurisante associée à une très grande plage d’utilisations.], score_relaunch: 4.0, score_highwind: 10.0, score_lowwind: 10.0, score_easyofuse: 8.0, score_wave: 6.0, score_unhooked: 5.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Race,Hybride', test_link: %Q[] )
-Aile.create(modele: 'Rally', marque_id: 10, annee: 2014, note: 4, vote: '14', description: %Q[La nouvelle RALLY  est la nouvelle aile Delta open C shape. Elle a était cette année complètement re-designé. Elle s’adresse aux tops riders qui recherchent une aile très performante, mais aussi aux riders intermédiaires qui veulent de la polyvalence et de l’accessibilité. 
-Avec la Rally : freestyle, wave ou race à vous de choisir ! En terme de design la Rally  est un mixte entre Delta Shape et C Shape : Les caractéristiques reconnues du Delta shape apportent de la puissance à bas régime, de la réactivité, du hang time, un redécollage sans effort ainsi qu’une plage d’utilisation incroyable. Ces atouts ont été couplés avec la puissance prévisible et la stabilité irréprochable du C kite. 
-La nouvelle Rally  est composée de 5 lattes: 3 principales + 2 minis lattes. Le design des 3 lattes principales de l’Open Delta C de la Rally développe une puissance efficace et linéaire et offre une construction légère pour un maximum de stabilité en vol. Ces 3 lattes principales sont cousues en 2 points « Splitstrut », elles sont intégrées au profil du kite ; cette construction permet d’augmenter la rigidité globale du kite.
-
-Les 2 minis lattes sont situées au niveau des oreilles de l’aile, elles se gonflent bien sur avec le One Pump; Elles apportent de la rigidité et augmentent la stabilité de l’aile, et elles permettent un meilleur aérodynamisme et une meilleur maniabilité: « Reflex Wingtip » La Rally  possède un nouveau bridage sans poulie, ce qui apporte un pilotage direct, une meilleure réactivité ainsi qu’une capacité à remonter au vent inégalable ; de plus l’absence de poulie supprime complètement l’usure du bridage. 
-La plage d’utilisation de la Rally  a été optimisée pour apporter beaucoup plus de puissance dans la plage basse de l’aile, sans pénaliser la plage haute. Le hangtime ( portance) est nettement supérieur.
-La présence en barre a augmenté de façon à mieux situer l’aile dans la fenêtre,et celle-ci combinée au bridage sans poulie facilite le contrôle et depower du kite quand le vent monte. Au niveau des points d’attaches arrières, le bord d’attaque a été renforcé pour éviter les frottements et l’usure. Même chose pour le bord de fuite qui est plus renforcé pour limiter l’usure lorsque l’aile flape sur la plage!
-
-La RALLY est équipée de la nouvelle « Compstick Control Bar  » qui apporte sécurité, simplicité et performance avec bien sur le Center Safety System : simplicité du 4 lignes avec la sécurité et l’autonomie du 5 lignes. Les longueurs des lignes et de la barre sont adaptées à chaque taille de kite pour affronter chaque condition. Les avantages sont : la précision, la puissance et la plage d’utilisation. La barre est équipée dans nouveau filloir: il est plus ergonomique pour la prise en main et il permet au bout de borde choque de coulisser plus facilement. Le diamètre de la barre est plus fin et celle-ci est équipée d’un nouveau grip plus doux que sur l’ancienne version.
-
-Nouvelle taille cette année :
-
-la 7m pour ajuster au mieux votre quiver !
-Barre de 17’ avec 20 m de ligne pour la 4 / 6 / 7 et 8m
-Barre de 20’ avec 23 m de ligne pour la 9/ 10 et 12m
-Barre de 23’ avec 27 m de ligne pour la 14
-Construction authentique Slingshot et bien sûr le système original One Pump], score_relaunch: 10.0, score_highwind: 4.0, score_lowwind: 8.0, score_easyofuse: 10.0, score_wave: 6.0, score_unhooked: 2.0 ,url_flysurf: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rally-2014-nue.htm?sectionid=25&productid=5404' ,url_vagueetvent: '6;http://www.vagueetvent.com/6,0,slingshot,rally,nue,2014-179909-40201.html
+Aile.create(modele: 'Rally', marque_id: 10, annee: 2014, note: 4, vote: '14', description: %Q[La nouvelle RALLY  est la nouvelle aile Delta open C shape. 
+Elle s’adresse aux tops riders qui recherchent une aile très performante, mais aussi aux riders intermédiaires qui veulent de la polyvalence et de l’accessibilité. 
+Avec la Rally : freestyle, wave ou race à vous de choisir ! 
+En terme de design la Rally  est un mixte entre Delta Shape et C Shape : Les caractéristiques reconnues du Delta shape apportent de la puissance à bas régime, de la réactivité, du hang time, un redécollage sans effort ainsi qu’une plage d’utilisation incroyable. 
+Ces atouts ont été couplés avec la puissance prévisible et la stabilité irréprochable du C kite. La plage d’utilisation de la Rally  a été optimisée pour apporter beaucoup plus de puissance dans la plage basse de l’aile, sans pénaliser la plage haute.
+La présence en barre a augmenté de façon à mieux situer l’aile dans la fenêtre,et celle-ci combinée au bridage sans poulie facilite le contrôle et depower du kite quand le vent monte. 
+Au niveau des points d’attaches arrières, le bord d’attaque a été renforcé pour éviter les frottements et l’usure. Même chose pour le bord de fuite qui est plus renforcé pour limiter l’usure lorsque l’aile flape sur la plage!], score_relaunch: 9.0, score_highwind: 7.0, score_lowwind: 8.0, score_easyofuse: 9.0, score_wave: 10.0, score_unhooked: 6.0 ,url_flysurf: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rally-2014-nue.htm?sectionid=25&productid=5404' ,url_vagueetvent: '6;http://www.vagueetvent.com/6,0,slingshot,rally,nue,2014-179909-40201.html
 7;http://www.vagueetvent.com/7,0,slingshot,rally,nue,2014-179911-40201.html
 8;http://www.vagueetvent.com/8,0,slingshot,rally,nue,2014-179913-40201.html
 9;http://www.vagueetvent.com/9,0,slingshot,rally,nue,2014-179915-40201.html
 10;http://www.vagueetvent.com/10,0,slingshot,rally,nue,2014-179903-40201.html
 12;http://www.vagueetvent.com/12,0,slingshot,rally,nue,2014-179905-40202.html
-14;http://www.vagueetvent.com/14,0,slingshot,rally,nue,2014-179907-40202.html' ,url_freerideattitude: 'http://www.freeride-attitude.com/slingshot-rally-2014,24884.html', tags: '4 lignes,Allround,Hybride', test_link: %Q[FR;Test par Le Menhir;http://www.lemenhir.com/wp/2013/07/le-test-singshot-rally-2014/
-FR;Retour du shop TheCornerShop;http://www.thecornershopparis.fr/news/2013/11/19/test-slingshot-rally-2014/
-FR;Test express par YouRide;http://www.youride.fr/blog/test-express-de-la-slingshot-rally-2014/
-EN;Test par Kiteworld mag;http://www.kiteworldmag.com/gear/slingshot-rally-12m/
-EN;Review du mag IKSurfMag;http://www.iksurfmag.com/issue41/?page=109
-EN;Avis par des utilisateurs de Epikoo;http://epikoo.com/kiteboarding/gear/kites/slingshot-rally-2014
-] )
+14;http://www.vagueetvent.com/14,0,slingshot,rally,nue,2014-179907-40202.html' ,url_freerideattitude: 'http://www.freeride-attitude.com/slingshot-rally-2014,24884.html', tags: '4 lignes,Allround,Hybride', test_link: %Q[] )
 Aile.create(modele: 'Switchblade', marque_id: 12, annee: 2012, note: 4, vote: '11', description: %Q[La Switchblade est devenue synonyme de polyvalence.
 Fiable et prévisible la Switchblade est performante en Wakestyle et idéale pour le Freestyle et le Freeride. C’est une des raisons pour laquelle elle s’est imposée dans le monde entier comme le choix évident des riders de Wakestyle.
 La Switchblade vous donne une constante source de puissance qui se retransmet dans un pop incroyable. L’aile est un réel plaisir à manier et ne demande que très peu d’effort de la part du rider.
@@ -471,33 +451,24 @@ La RPM possède un design innovant de 3 lattes et un shape en » Open C kite » 
 EN;Test par un rider Slingshot sur Seabreeze;http://www.seabreeze.com.au/forums/Kitesurfing/Review/Slingshot-RPM-2013/
 EN;Avis par le blog Boarderlines;http://boarder-lines.blogspot.fr/2013/08/slingshot-rpm-2013-test-review.html
 ] )
-Aile.create(modele: 'Fuel', marque_id: 10, annee: 2012, note: 3, vote: '26', description: %Q[La Fuel est le  C shape le plus performant et le choix des pro riders les plus engagés!!
+Aile.create(modele: 'Fuel', marque_id: 10, annee: 2012, note: 4, vote: '26', description: %Q[La Fuel est le  C shape le plus performant et le choix des pro riders les plus engagés!!
 La fuel 2011 est sans aucun doute le seul vrai C-shape du marché, la réputation de ce kite n’est plus à faire puisque qu’il est déjà dans la légende.
 Ce douzième cru ravira les rideurs recherchant une aile avec beaucoup de caractère. Au programme une aile très seine qui ne bouge pas en dehooké avec une grosse détente de ligne. Elle satisfera les adeptes du Freestyle wakestyle et permettra de progresser dans les passages de barre et les grabs unhooked. 
 Elle pardonne les mouvements parasites de barres et bénéficie d’un excellent pop aile basse. 
 Par ailleurs l’aile s’adresse aussi au rideurs désireux de sensations extrêmes en kiteloop, le coup pied est garantie sans pour autant tomber comme une pierre puisque le kite bénéficie d’une bonne ressource.
-Simplicité est aussi une caractéristique de ce kite qui est livré avec une barre 4 lignes adaptable aux autres ailes de la marque. Le redécollage n’en n’est pas sacrifié, il suffit de tirer sur un arriére et l’aile repart de suite.], score_relaunch: 2.0, score_highwind: 8.0, score_lowwind: 4.0, score_easyofuse: 2.0, score_wave: 6.0, score_unhooked: 10.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Wakestyle,C-kite', test_link: %Q[EN;Test par le mag Kiteworld;http://www.kiteworldmag.com/gear/slingshot-fuel-7m/
+Simplicité est aussi une caractéristique de ce kite qui est livré avec une barre 4 lignes adaptable aux autres ailes de la marque. Le redécollage n’en n’est pas sacrifié, il suffit de tirer sur un arriére et l’aile repart de suite.], score_relaunch: 6.0, score_highwind: 10.0, score_lowwind: 4.0, score_easyofuse: 7.0, score_wave: 8.0, score_unhooked: 10.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Wakestyle,C-kite', test_link: %Q[EN;Test par le mag Kiteworld;http://www.kiteworldmag.com/gear/slingshot-fuel-7m/
 EN;Avis sur le forum Kiteforum.com;http://www.kiteforum.com/viewtopic.php?t=2371702&p=710880
 EN;Review par le magazine IKSurfMag;http://www.kiteforum.com/viewtopic.php?t=2371702&p=710880
 EN;Test par Ruben Lenten sur Kitefinder;http://www.kitefinder.com/en/kites/1066/slingshot-fuel-2012#user-reviews
 EN;Review par Lene Baxter;http://lenebaxter.com/2012/08/06/slingshot-2012-fuel-review/
 EN;Avis d'utilisateurs sur KiteboardingReview;http://www.kiteboardingreview.com/20-kites/slingshot/171-slingshot-fuel-2012] )
-Aile.create(modele: 'Fuel', marque_id: 10, annee: 2014, note: 3, vote: '28', description: %Q[La Fuel est le  C shape le plus performant et le choix des pro riders les plus engagés!!
+Aile.create(modele: 'Fuel', marque_id: 10, annee: 2014, note: 4, vote: '28', description: %Q[La Fuel est le  C shape le plus performant et le choix des pro riders les plus engagés!!
 La fuel 2014 est sans aucun doute le seul vrai C-shape du marché, la réputation de ce kite n’est plus à faire puisque qu’il est déjà dans la légende.
-Ce quatorzième cru ravira les rideurs recherchant une aile avec beaucoup de caractère. Au programme une aile très seine qui ne bouge pas en dehooké avec une grosse détente de ligne. Elle satisfera les adeptes du Freestyle wakestyle et permettra deprogresser dans les passages de barre et les grabs unhooked. Elle pardonne les mouvements parasites de barres et bénéficie d’un excellent pop aile basse. Par ailleurs l’aile s’adresse aussi au rideurs désireux de sensations extrêmes en kiteloop, le coup pied est garantie sans pour autant tomber comme une pierre puisque le kite bénéficie d’une bonne ressource.
-Simplicité est aussi une caractéristique de ce kite qui est livré avec une barre 4 lignes adaptable aux autres ailes de la marque. Le redécollage n’en n’est pas sacrifié, il suffit de tirer sur un arriére et l’aile repart de suite.
-
-Le kite est équipé du système de sécurité CSS : la simplicité du 4 lignes avec la sécurité et l’autonomie du 5 ligne.
-La FUEL reprend une de nos caractéristiques les plus importantes en design : la technologie Splitstrut, les 5 lattes sont cousues en 2 points, elles sont intégrées au profil du kite ; cette construction permet d’augmenter la rigidité globale du kite et apporte une solidité à tout épreuve !
-La FUEL 2014 est construite avec un shape en 5 lattes, ce qui rend le kite incroyablement rigide et stable même dans les conditions les plus durs.
-Les réglages « Custom Fuel injection » sur les avants permettent d’ajuster la Fuel pour une utilisation wakestyle oufreestyle. Deux  points d’accroche sont également présent sur les arriéres afin de réduire ou augmenter la vitesse et la présence en barre de l’aile.
-Puissante à bas régime elle vous surprendra cette année dans sa plage haute puisqu’elle offre un control étonnant dans le vent fort ou les rafales.
-
-Barre de 17’ avec 20 m de ligne pour la  7 et 9
-Barre de 20’ avec 23 m de ligne pour la 11 et 13
-Au niveau des lignes pour un maximum de solidité : les avants sont en 320Kg et les arrières en 220 kg
-Construction authentique Slingshot et bien sur le system original One pump.
-Envie de méga loop  ou de pure wakestyle ? A vous de jouer !], score_relaunch: 2.0, score_highwind: 8.0, score_lowwind: 4.0, score_easyofuse: 2.0, score_wave: 6.0, score_unhooked: 10.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Wakestyle,C-kite', test_link: %Q[EN;Retour rapide d'un utilisateur sur Seabreeze;http://www.seabreeze.com.au/forums/Kitesurfing/Review/2014-Slingshot-Fuel-9-metre/] )
+Ce quatorzième cru ravira les rideurs recherchant une aile avec beaucoup de caractère. Au programme une aile très seine qui ne bouge pas en dehooké avec une grosse détente de ligne. Elle satisfera les adeptes du Freestyle wakestyle et permettra de
+progresser dans les passages de barre et les grabs unhooked. 
+Elle pardonne les mouvements parasites de barres et bénéficie d’un excellent pop aile basse. 
+Par ailleurs l’aile s’adresse aussi au rideurs désireux de sensations extrêmes en kiteloop, le coup pied est garantie sans pour autant tomber comme une pierre puisque le kite bénéficie d’une bonne ressource.
+Simplicité est aussi une caractéristique de ce kite qui est livré avec une barre 4 lignes adaptable aux autres ailes de la marque. Le redécollage n’en n’est pas sacrifié, il suffit de tirer sur un arriére et l’aile repart de suite.], score_relaunch: 6.0, score_highwind: 10.0, score_lowwind: 4.0, score_easyofuse: 7.0, score_wave: 8.0, score_unhooked: 10.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Wakestyle,C-kite', test_link: %Q[] )
 Aile.create(modele: 'Rally', marque_id: 10, annee: 2012, note: 5, vote: '22', description: %Q[La Slingshot Rally 2012 reste dans la lignée de la première génération.
 Son profil reste identique à celui du modèle 2011, mais avec un bridage sans poulies. 
 Elle  s'adresse aux riders à la recherchent d'une aile très performante, comme les riders intermédiaires qui veulent de la polyvalence et de l’accessibilité. 
@@ -528,7 +499,7 @@ Aile.create(modele: 'NRG', marque_id: 14, annee: 2012, note: 5, vote: '9', descr
 Aile.create(modele: 'NRG', marque_id: 14, annee: 2013, note: 5, vote: '', description: %Q[], score_relaunch: 10.0, score_highwind: 8.0, score_lowwind: 10.0, score_easyofuse: 10.0, score_wave: 7.0, score_unhooked: 6.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Hybride', test_link: %Q[] )
 Aile.create(modele: 'NRG', marque_id: 14, annee: 2014, note: 5, vote: '29', description: %Q[], score_relaunch: 10.0, score_highwind: 7.0, score_lowwind: 10.0, score_easyofuse: 10.0, score_wave: 8.0, score_unhooked: 6.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Hybride', test_link: %Q[] )
 Aile.create(modele: 'Light Breeze', marque_id: 14, annee: 2012, note: 5, vote: '12', description: %Q[], score_relaunch: 8.0, score_highwind: 4.0, score_lowwind: 10.0, score_easyofuse: 10.0, score_wave: 6.0, score_unhooked: 4.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Hybride', test_link: %Q[] )
-Aile.create(modele: 'NRG Light B.', marque_id: 14, annee: 2014, note: 5, vote: '', description: %Q[], score_relaunch: 8.0, score_highwind: 4.0, score_lowwind: 10.0, score_easyofuse: 10.0, score_wave: 8.0, score_unhooked: 6.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Hybride', test_link: %Q[] )
+Aile.create(modele: 'Light Breeze', marque_id: 14, annee: 2014, note: 5, vote: '', description: %Q[], score_relaunch: 8.0, score_highwind: 4.0, score_lowwind: 10.0, score_easyofuse: 10.0, score_wave: 8.0, score_unhooked: 6.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Hybride', test_link: %Q[] )
 Aile.create(modele: 'Nitro', marque_id: 15, annee: 2012, note: 4, vote: '2', description: %Q[], score_relaunch: 10.0, score_highwind: 6.0, score_lowwind: 8.0, score_easyofuse: 10.0, score_wave: 8.0, score_unhooked: 6.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Race,Hybride', test_link: %Q[] )
 Aile.create(modele: 'Nitro2', marque_id: 15, annee: 2013, note: 4, vote: '2', description: %Q[], score_relaunch: 10.0, score_highwind: 6.0, score_lowwind: 8.0, score_easyofuse: 10.0, score_wave: 8.0, score_unhooked: 6.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Race,Hybride', test_link: %Q[] )
 Aile.create(modele: 'Squall', marque_id: 13, annee: 2014, note: 5, vote: '7', description: %Q[La SQUALL pour sa seconde édition reçoit des améliorations de forme (profils, lobe etc…), et de construction (poulies et slider alu dans le bridage).
@@ -651,36 +622,6 @@ La Kahoona v4 vous permet aussi d’effectuer les dernières figures new school.
 La construction de la Kahoona v4 est à la fois résistante à l’épreuve des chocs et légère en même temps. 
 L’introduction d’un nouveau modèle "Kahoona+" apporte le confort du one-Pump lors du gonflage (système de gonflage de toute l'aile en un seul point). Avec une prise en main facile, une performance exceptionnelle et une facilité d’utilisation hors du commun, la Kahoona v4 est l’aile qu’il vous faut pour améliorer votre niveau.], score_relaunch: 8.0, score_highwind: 6.0, score_lowwind: 6.0, score_easyofuse: 10.0, score_wave: 6.0, score_unhooked: 2.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Allround,Hybride', test_link: %Q[EN;Review du mag Kitesurf_magazine;http://www.kitesurf-magazine.co.uk/test/best-kahoona/
 EN;Retour du site KiteboardingReview;http://www.kiteboardingreview.com/north/162-north-fuse-2010] )
-Aile.create(modele: 'Nomad', marque_id: 12, annee: 2012, note: 3, vote: '3', description: %Q[En 2012 Cabrinha pousse la nouvelle Nomad encore plus loin dans le domaine du Freestyle/New School garce à de subtiles améliorations. 
-
-L'objectif était de peaufiner davantage la vitesse de rotation de la Nomad et son potentiel en déhooké afin de passer à l'étape supérieure.
-
-Le Résultat: Une aile d'une efficacité incroyable, d'un réglage parfait qui garde sa position avant dans la fenêtre même en dehooké. 
-
-Et c'est pas fini !!
-
-D'une stabilité surprenante la nouvelle Cabrinha Nomad 2012 vous délivrera une puissance constante, indispensable pour des ralleys encore plus puissants, et nécesaire pour une navigation toujours plus confortable. 
-
-Dans les kiteloops, sa capacité à générer une puissance progressive, donne à la Nomad 2012 une vraie identité de compétitrice. 
-
-C'est d'ailleurs le choix des pros lors des championnats.], score_relaunch: 4.0, score_highwind: 8.0, score_lowwind: 4.0, score_easyofuse: 4.0, score_wave: 6.0, score_unhooked: 10.0 ,url_flysurf: '' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '4 lignes,Wakestyle,Hybride', test_link: %Q[EN;Review par SBC Kiteboard;http://www.sbckiteboard.com/2012-kite-reviews-display?news_id=1879
-EN;Test par Force 6 Kiteboarding;http://www.forcesix.com/2012-cabrinha-nomad-review.html
-EN;Avis par des utilisateurs de Epikoo;http://epikoo.com/kiteboarding/gear/kites/cabrinha-nomad-2012
-EN;Retour sur MacKiteboarding;http://mackiteboarding.wordpress.com/2013/01/30/2012-cabrinha-nomad-kiteboarding-kite-review/
-EN;Test du mag KiteworldMag;http://www.kiteworldmag.com/gear/cabrinha-nomad-9m/] )
-Aile.create(modele: 'RPM', marque_id: 10, annee: 2014, note: 5, vote: '12', description: %Q[Voici la 6 ème génération de la RPM, c’est l’aile hybride freestyle de la gamme Slingshot 2014. Depuis son lancement la RPM a radicalement changé le marché en apportant des performances et des technologies de nouvelle génération.
-Construit à partir du spectaculaire succès de l’orignal Open C shape et de notre technologie breveté du Split Strut, La RPM 2014 repousse le design d’un kite encore à un niveau supérieur. Cette année, les renforts en dacron rigidifient le kite. Le top de la performance pour tous les styles dans toutes les conditions, le tout en restant accessible : c’est l’objectif de la RPM 2014.
-
-Elle vient s’intercaler entre la Rally et la Fuel.     La RPM possède un design innovant de 3 lattes et un shape en » Open C kite » ce qui lui procure des performances illimités pour exceller dans toutes les conditions et notamment en freestyle new school. Pour cette nouvelle génération de RPM on retrouve au niveau de la construction le « Splitstrut » : les lattes sont cousues en 2 points, elles sont donc intégrées au profil du kite ; cela permet d’augmenter la rigidité globale du kite, l’aile ne se déforme pas et encaisse mieux les rafales de vent.
-
-Pour 2014, la RPM  est plus puissante à bas régime, elle développe un pop énorme et son redécollage est rapide et facile. Le dacron sur le bord de fuite couplé aux nouveaux renforts sur le bord d’attaque et sur les panneaux pour augmenter la rigidité et limiter les déchirures en cas d’impact ou de frottement. De part sa maniabilité et sa faculté a reculer dans la fenêtre la RPM est une excellente aile de surf.
-
-Nouveau bridage « Full Suspension Bridle » : Lorsqu’ on borde, le kite est plus puissant, plus rapide et plus réactif ; lorsqu’on choque, il augmente le depower et la stabilité du kite. Ce bridage procure à la RPM un bordé choqué très progressif, la puissance est linéaire ( pas d’accoups dans la barre). Nous avons modifié les points d’attaches sur les oreilles pour optimiser les performances du kite et apporter une possibilité de réglage plus complète, ils permettent d’ajuster la pression de barre et de régler le kite a votre préférence de sensation ( dureté ou légèreté de barre ).
-
-Cette nouvelle génération est équipée des toutes nouvelles poulies à friction, une premiere dans le monde du kite.
-La RPM 2014 est équipée de la nouvelle « Compstick Control Bar 2014 » qui apporte sécurité, simplicité et performance avec bien sur le Center Safety System : simplicité du 4 lignes avec la sécurité et l’autonomie du 5 lignes. Les longueurs des lignes et de la barre sont adaptées à chaque taille de kite pour affronter chaque condition. Les avantages sont : la précision, la puissance et la plage d’utilisation. La barre 2014 est équipée dans nouveau largueur plus ergonomique et sécuritaire.], score_relaunch: 6.0, score_highwind: 6.0, score_lowwind: 6.0, score_easyofuse: 6.0, score_wave: 6.0, score_unhooked: 8.0 ,url_flysurf: 'http://www.flysurf.com/ficheproduit-aile-slingshot-rpm-2014-nue.htm?sectionid=25&productid=6784' ,url_vagueetvent: '' ,url_freerideattitude: '', tags: '5 lignes,Allround,Hybride', test_link: %Q[EN;Test sur le shop Mackiteboarding;http://www.mackiteboarding.com/2014-slingshot-rpm-kiteboarding-kite/
-EN;Test sur TKB;http://www.thekiteboarder.com/2014/02/tkb-review-2014-slingshot-rpm/
-] )
 
 Marque.create(name: 'Naish')
 Marque.create(name: 'F.One')
@@ -1197,15 +1138,4 @@ PrixSurShop.create(nom_shop: "StormKitesurfing", lien_produit: 'http://www.storm
 PrixSurShop.create(nom_shop: "StormKitesurfing", lien_produit: 'http://www.stormkitesurfing.net/produit/squall-9m%C2%B2/', prix_sans_barre: 799.0, surface: 9, aile_id: 61, auto: '0' )
 PrixSurShop.create(nom_shop: "StormKitesurfing", lien_produit: 'http://www.stormkitesurfing.net/produit/squall-13m%C2%B2/', prix_sans_barre: 875.0, surface: 11, aile_id: 61, auto: '0' )
 PrixSurShop.create(nom_shop: "StormKitesurfing", lien_produit: 'http://www.stormkitesurfing.net/produit/squall-13m%C2%B2-2/', prix_sans_barre: 950.0, surface: 13, aile_id: 61, auto: '0' )
-GroupeAile.create(titre: %Q[NewSchool 2012], idailes: ';8;15;42;70;53;73;' )
-GroupeAile.create(titre: %Q[NewSchool 2013], idailes: ';16;26;3;51;66;' )
-GroupeAile.create(titre: %Q[NewSchool 2014], idailes: ';52;45;65;38;27;43;' )
-GroupeAile.create(titre: %Q[Allround 2014], idailes: ';24;28;36;30;63;50;61;33;' )
-GroupeAile.create(titre: %Q[Allround 2013], idailes: ';2;4;14;19;20;68;35;49;' )
-GroupeAile.create(titre: %Q[Race], idailes: ';60;59;32;' )
-GroupeAile.create(titre: %Q[Allround 2012], idailes: ';1;7;13;18;31;71;44;' )
-GroupeAile.create(titre: %Q[Wave 2014], idailes: ';39;25;62;' )
-GroupeAile.create(titre: %Q[Hybrides Freestyle 2014], idailes: ';17;23;64;74;' )
-GroupeAile.create(titre: %Q[Hybrides freestyle 2013], idailes: ';22;69;6;41;' )
-GroupeAile.create(titre: %Q[Hybrides freestyle 2012], idailes: ';9;72;34;40;' )
 
