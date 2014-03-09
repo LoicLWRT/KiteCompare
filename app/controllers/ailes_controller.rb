@@ -55,22 +55,22 @@ class AilesController < ApplicationController
   end
   
   def allround
-    @ailes = Aile.all.where("tags LIKE '%allround%'")
+    @ailes = Aile.all.order('annee DESC').where("tags LIKE '%allround%'")
     @title = "Ailes"
   end
 
   def wave
-    @ailes = Aile.all.where("tags LIKE '%wave%'")
+    @ailes = Aile.all.order('annee DESC').where("tags LIKE '%wave%'")
     @title = "Ailes"
   end
   
   def race
-    @ailes = Aile.all.where("tags LIKE '%race%'")
+    @ailes = Aile.all.order('annee DESC').where("tags LIKE '%race%'")
     @title = "Ailes"
   end
   
   def wakestyle
-    @ailes = Aile.all.where("tags LIKE '%wakestyle%'")
+    @ailes = Aile.all.order('annee DESC').where("tags LIKE '%wakestyle%'")
     @title = "Ailes"
   end
 
